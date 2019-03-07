@@ -22,9 +22,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.StringTokenizer;
@@ -32,11 +35,14 @@ import java.util.StringTokenizer;
 import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
+import javax.lang.model.element.AnnotationMirror;
+import javax.lang.model.element.AnnotationValue;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic.Kind;
 
 import org.springframework.boot.graal.reflectconfig.ClassDescriptor;
+import org.springframework.boot.graal.reflectconfig.ClassDescriptor.Flag;
 import org.springframework.boot.graal.reflectconfig.MethodDescriptor;
 import org.springframework.boot.graal.reflectconfig.ReflectionDescriptor;
 
@@ -141,7 +147,9 @@ public class ReflectionInfoCollector {
 		// Merge the 'defaults' for a boot app from the defaults json file into the
 		// results being collected
 		mergeDefaults();
-		processSpringFactories(projectCompilationClasspath);
+		if (projectCompilationClasspath != null) {
+			processSpringFactories(projectCompilationClasspath);
+		}
 	}
 
 	private void mergeDefaults() {
@@ -175,7 +183,7 @@ public class ReflectionInfoCollector {
 				e.printStackTrace();
 			}
 		}
-
+		Set<String> newTypes = new HashSet<>();
 		try (URLClassLoader ucl = new URLClassLoader(urls.toArray(new URL[] {}), null)) {
 			Enumeration<URL> resources = ucl.getResources("META-INF/spring.factories");
 			while (resources.hasMoreElements()) {
@@ -186,16 +194,73 @@ public class ReflectionInfoCollector {
 				}
 				String typesMaybeNeedingReflectiveAccess = (String) p
 						.get("org.springframework.boot.autoconfigure.EnableAutoConfiguration");
+				if (typesMaybeNeedingReflectiveAccess != null) {
+					System.out.println("From: "+nextElement+" we have "+typesMaybeNeedingReflectiveAccess);
+					st = new StringTokenizer(typesMaybeNeedingReflectiveAccess,",");
+					while (st.hasMoreElements()) {
+						String typename = st.nextToken();
+						if (typeAvailable(typename)) {
+//							System.out.println("This exists: "+typename);
+							newTypes.add(typename);
+						}
+					}
+				}
 			}
 		} catch (Throwable t) {
 			t.printStackTrace();
+		}
+		System.out.println("Types from spring.factories: #"+newTypes.size());
+		for (String t: newTypes) {
+			addConstructorDescriptor(t);
 		}
 	}
 
 	private boolean typeAvailable(String typename) {
 		boolean b = processingEnvironment.getElementUtils().getTypeElement(typename) != null;
-		System.out.println("Looking for "+typename+" found = "+b);
+//		System.out.println("Looking for "+typename+" found = "+b);
 		return b;
+	}
+
+	private Map<String, Object> getAnnotationElementValues(AnnotationMirror annotation) {
+		Map<String, Object> values = new LinkedHashMap<>();
+		annotation.getElementValues().forEach((name, value) -> {
+			values.put(name.getSimpleName().toString(), value.getValue());
+				});
+		return values;
+	}
+	
+	public void addConstructorDescriptor(String typename) {
+		TypeElement typeElement = processingEnvironment.getElementUtils().getTypeElement(typename);
+		TypeElement coc = processingEnvironment.getElementUtils().getTypeElement("org.springframework.boot.autoconfigure.condition.ConditionalOnClass");
+
+		boolean cocCheckFailed= false;
+		List<? extends AnnotationMirror> annotationMirrors = typeElement.getAnnotationMirrors();
+		for (AnnotationMirror am: annotationMirrors) {
+//			System.out.println("COC check on "+am);
+			if (am.getAnnotationType().asElement().equals(coc)) {
+				Map<String,Object> vals = getAnnotationElementValues(am);
+//				System.out.println(vals.get("value"));
+				Collection c = (Collection)vals.get("value");
+				if (c != null) {
+					for (Object o: c) {
+						AnnotationValue av = (AnnotationValue)o;
+						String s = av.toString(); // org.neo4j.ogm.session.Neo4jSession.class
+						s = s.substring(0,s.length()-".class".length());
+						if (!typeAvailable(s)) {
+							cocCheckFailed=true;
+							System.out.println("Rejecting "+typename+" because ConditionalOnClass for "+s+" not satisfied by classpath");
+							break;
+						}
+					}
+				}
+			}
+		}
+		if (!cocCheckFailed) {
+			System.out.println("Adding "+typename+" to reflect.json");
+			ClassDescriptor cd = ClassDescriptor.of(typename);
+			cd.setFlag(Flag.allDeclaredConstructors);
+			this.mergeClassDescriptor(cd);
+		}
 	}
 
 	public void addNoArgConstructorDescriptor(String type) {

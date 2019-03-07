@@ -84,6 +84,6 @@ class JsonConverter {
 	}
 
 	private void putTrueFlag(JSONObject jsonObject, String name) throws Exception {
-		jsonObject.put(name, "true");
+		jsonObject.put(name, true);
 	}
 }

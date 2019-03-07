@@ -94,9 +94,8 @@ public class ReflectiveAccessAnnotationProcessor extends AbstractProcessor {
 		String projectCompilationClasspath = env.getOptions().get(CLASSPATH);
 		if (projectCompilationClasspath == null) {
 			env.getMessager().printMessage(Kind.WARNING,CLASSPATH+" option not set for processor");
-		} else {
-			this.metadataCollector.init(projectCompilationClasspath);
 		}
+		this.metadataCollector.init(projectCompilationClasspath);
 	}
 
 	@Override
