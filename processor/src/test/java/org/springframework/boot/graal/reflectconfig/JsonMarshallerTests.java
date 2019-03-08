@@ -17,6 +17,7 @@
 package org.springframework.boot.graal.reflectconfig;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+import org.springframework.boot.graal.reflectconfig.ClassDescriptor.Flag;
 
 /**
  * Tests for {@link JsonMarshaller}.
@@ -36,6 +38,7 @@ public class JsonMarshallerTests {
 	public void marshallAndUnmarshal() throws Exception {
 		ReflectionDescriptor metadata = new ReflectionDescriptor();
 		ClassDescriptor cd = new ClassDescriptor();
+		cd.setFlag(Flag.allDeclaredConstructors);
 		cd.setName("java.lang.String");
 		cd.addFieldDescriptor(new FieldDescriptor("length",true));
 		List<String> parameterTypes =new ArrayList<>();
@@ -67,6 +70,7 @@ public class JsonMarshallerTests {
 		assertEquals(2, parameterTypes2.size());
 		assertEquals("java.util.List",parameterTypes2.get(0));
 		assertEquals("java.net.URL",parameterTypes2.get(1));
+		assertTrue(cd1.getFlags().contains(Flag.allDeclaredConstructors));
 	}
 
 }
