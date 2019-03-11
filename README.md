@@ -106,13 +106,25 @@ native-image
 ```
 which will result in a executable form of the app in the current folder.
 
+
 ### Agent usage
 
-The spring-boot-graal-processor can also be run as an agent that will create a JSON file based on what it discovers as the process runs. For example:
+The `spring-boot-graal-processor` can also be run as an agent that will create a JSON file based on what it discovers as the process runs. For example:
+
 ```
 java -Dspringbootgraal=file=myreflect.json -javaagent:spring-boot-graal-processor-0.0.1.BUILD-SNAPSHOT.jar -jar target/demo1-0.0.1-SNAPSHOT.jar
 ```
-(If file is not specified, the default name is reflect.json in current folder)
+
+(If file is not specified in the system property, the default name is `reflect.json` in current folder)
+
+
+### Comparing reflect json files
+
+The `spring-boot-graal-processor` is also a runnable jar. In this mode it should be passed two .json files and it will produce a simple diff:
+
+```
+java -jar spring-boot-graal-processor-XXX.jar r1.json r2.json
+```
 
 
 ### Resources
