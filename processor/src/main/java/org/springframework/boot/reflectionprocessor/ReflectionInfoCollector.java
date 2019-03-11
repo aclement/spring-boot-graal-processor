@@ -229,6 +229,7 @@ public class ReflectionInfoCollector {
 		return values;
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public void addConstructorDescriptor(String typename) {
 		TypeElement typeElement = processingEnvironment.getElementUtils().getTypeElement(typename);
 		TypeElement coc = processingEnvironment.getElementUtils().getTypeElement("org.springframework.boot.autoconfigure.condition.ConditionalOnClass");
