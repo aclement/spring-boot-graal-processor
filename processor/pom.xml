@@ -101,6 +101,7 @@
             	<Premain-Class>org.springframework.boot.agent.reflectionrecorder.RecorderAgent</Premain-Class>
             	<Agent-Class>org.springframework.boot.agent.reflectionrecorder.RecorderAgent</Agent-Class>
 				<Can-Redefine-Classes>true</Can-Redefine-Classes>
+				<Main-Class>org.springframework.boot.graal.compare.ReflectJsonCompare</Main-Class>
             </manifestEntries>
           </archive>
         </configuration>
