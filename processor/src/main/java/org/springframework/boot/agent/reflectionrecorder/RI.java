@@ -278,7 +278,6 @@ public class RI {
 		}
 		int traceLevel = 3;
 		StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-		new RuntimeException().printStackTrace();
 		StackTraceElement ste = stackTrace[traceLevel];
 		while (ste.getClassName().contains("AnnotatedElementUtils")) {
 			ste = stackTrace[++traceLevel];
