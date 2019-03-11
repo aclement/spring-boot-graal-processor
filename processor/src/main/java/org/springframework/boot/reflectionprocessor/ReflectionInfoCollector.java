@@ -192,11 +192,11 @@ public class ReflectionInfoCollector {
 				try (InputStream is = nextElement.openStream()) {
 					p.load(is);
 				}
-				String typesMaybeNeedingReflectiveAccess = (String) p
-						.get("org.springframework.boot.autoconfigure.EnableAutoConfiguration");
-				if (typesMaybeNeedingReflectiveAccess != null) {
-					System.out.println("From: "+nextElement+" we have "+typesMaybeNeedingReflectiveAccess);
-					st = new StringTokenizer(typesMaybeNeedingReflectiveAccess,",");
+				for (Object o: p.keySet()) {
+					String k = (String)o;
+					String v = p.getProperty(k);
+					System.out.println("From: "+nextElement+" "+k+" we have "+v);
+					st = new StringTokenizer(v,",");
 					while (st.hasMoreElements()) {
 						String typename = st.nextToken();
 						if (typeAvailable(typename)) {
@@ -205,6 +205,22 @@ public class ReflectionInfoCollector {
 						}
 					}
 				}
+				
+				
+//				String typesMaybeNeedingReflectiveAccess = (String) p
+//						.get("org.springframework.boot.autoconfigure.EnableAutoConfiguration");
+//				System.out.println("Keys: "+p.keySet());
+//				if (typesMaybeNeedingReflectiveAccess != null) {
+//					System.out.println("From: "+nextElement+" we have "+typesMaybeNeedingReflectiveAccess);
+//					st = new StringTokenizer(typesMaybeNeedingReflectiveAccess,",");
+//					while (st.hasMoreElements()) {
+//						String typename = st.nextToken();
+//						if (typeAvailable(typename)) {
+////							System.out.println("This exists: "+typename);
+//							newTypes.add(typename);
+//						}
+//					}
+//				}
 			}
 		} catch (Throwable t) {
 			t.printStackTrace();
@@ -259,6 +275,7 @@ public class ReflectionInfoCollector {
 			System.out.println("Adding "+typename+" to reflect.json");
 			ClassDescriptor cd = ClassDescriptor.of(typename);
 			cd.setFlag(Flag.allDeclaredConstructors);
+			cd.setFlag(Flag.allDeclaredMethods);
 			this.mergeClassDescriptor(cd);
 		}
 	}
