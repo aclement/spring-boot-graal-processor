@@ -27,11 +27,12 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Pattern;
 
 import org.springframework.boot.graal.reflectconfig.ClassDescriptor;
 import org.springframework.boot.graal.reflectconfig.ClassDescriptor.Flag;
@@ -46,7 +47,7 @@ import org.springframework.boot.graal.reflectconfig.ReflectionDescriptor;
  */
 public class RI {
 
-	private static Map<ReflectiveCall, List<Info>> x = new ConcurrentHashMap<>();
+	private static Map<ReflectiveCall, List<Info>> reflectionInvokers = new ConcurrentHashMap<>();
 
 	public static Map<String, Integer> reflectedClasses = new HashMap<>();
 
@@ -118,23 +119,16 @@ public class RI {
 		System.out.println("Reflected types: #" + reflectedClasses.size());
 		ReflectionDescriptor rd = new ReflectionDescriptor();
 
-		Pattern p = null;
-
-		String filterRegex = System.getProperty("filter");
-		if (filterRegex != null) {
-			p = Pattern.compile(filterRegex);
-		}
 		for (Map.Entry<String, Integer> e : reflectedClasses.entrySet()) {
-			System.out.println("ReflectedType(#" + e.getValue() + "): " + e.getKey());
+			System.out.println("ReflectedType(Occurrences #" + e.getValue() + "): " + e.getKey());
 			if (!e.getKey().contains("CGLIB") && !e.getKey().contains("$$Lambda")) {
-				if (p == null || p.matcher(e.getKey()).matches()) {
-					ClassDescriptor cd = ClassDescriptor.of(e.getKey());
-					cd.setFlag(Flag.allDeclaredConstructors);
-					cd.setFlag(Flag.allDeclaredMethods);
-					rd.add(cd);
-				}
+				ClassDescriptor cd = ClassDescriptor.of(e.getKey());
+				cd.setFlag(Flag.allDeclaredConstructors);
+				cd.setFlag(Flag.allDeclaredMethods);
+				rd.add(cd);
 			}
 		}
+		
 		try (FileOutputStream fos = new FileOutputStream(
 				new File(Configuration.reflectFile == null ? "reflect.json" : Configuration.reflectFile))) {
 			new JsonMarshaller().write(rd, fos);
@@ -142,89 +136,71 @@ public class RI {
 			e.printStackTrace();
 		}
 
-		// System.out.println("Reflection Summary");
-		// // System.out.println(x);
-		// List<Info> list = x.get(ReflectiveCall.METHOD_GETANNOTATIONS);
-		// // What objects are being reflected on?
-		// // Who is doing the reflection?
-		//
-		// int reflectiveCallCount = 0;
-		// SortableThing<String> whoIsMakingTheCalls = new SortableThing<>();
-		// for (Map.Entry<ReflectiveCall, List<Info>> entry : x.entrySet()) {
-		// reflectiveCallCount += entry.getValue().size();
-		// for (Info info : entry.getValue()) {
-		// String source = info.callingClass + "." + info.callingMethod;
-		// whoIsMakingTheCalls.add(source);
-		// }
-		// }
-		// System.out.println("Number of reflective calls: #" + reflectiveCallCount);
-		// System.out.println("Top 20 sources of reflection: ");
-		// Map<String, Integer> sortedElements =
-		// whoIsMakingTheCalls.getSortedElements();
-		// sortedElements.keySet().stream().limit(20).forEach(k -> {
-		// System.out.println(k + " #" + sortedElements.get(k));
-		// });
-		//
-		// System.out.println("Number of classes loaded: #" + classes.size());
-		//
-		// System.out.println("Number of cglib classes loaded: #" +
-		// cglibClasses.size());
-		// System.out.println("First few cglib types:");
-		// cglibClasses.stream().limit(15).forEach(s -> System.out.println(s));
-		// //
-		// // Map<String, Integer> callers = new HashMap<>();
-		// // for (Map.Entry<ReflectiveCall, List<Info>> entry : x.entrySet()) {
-		// // for (Info info : entry.getValue()) {
-		// // String key = info.callingClass+"."+info.callingMethod;
-		// // Integer i = callers.get(key);
-		// // if (i == null) {
-		// // callers.add(info.callingClass + "." + info.callingMethod);
-		// // }
-		// // }
-		//
-		// // Let's look at:
-		// //
-		// org.springframework.core.annotation.AnnotatedElementUtils.searchWithFindSemantics
-		// #10036
-		//
-		// Map<ReflectiveCall, Integer> m = new HashMap<>();
-		// // What are all these calls?
-		// int none = 0;
-		// List<Object> commonObjects = new ArrayList<>();
-		// // for (Map.Entry<ReflectiveCall, List<Info>> entry : x.entrySet()) {
-		// // reflectiveCallCount += entry.getValue().size();
-		// // for (Info info : entry.getValue()) {
-		// // String source = info.callingClass + "." + info.callingMethod;
-		// // if (source.equals(
-		// //
-		// "org.springframework.core.annotation.AnnotatedElementUtils.searchWithFindSemantics"))
-		// {
-		// // Integer i = m.get(entry.getKey());
-		// // if (i == null) {
-		// // m.put(entry.getKey(), 1);
-		// // }
-		// // else {
-		// // m.put(entry.getKey(), i + 1);
-		// // }
-		// // Annotation[] declaredAnnotations = ((AnnotatedElement)
-		// info.os[0]).getDeclaredAnnotations();
-		// // if (declaredAnnotations == null || declaredAnnotations.length == 0) {
-		// // none++;
-		// // }
-		// // if (commonObjects.contains(info.os[0])) {
-		// // System.out.println("Asking thise more than once " + info.os[0]);
-		// // }
-		// // commonObjects.add(info.os[0]);
-		// // }
-		// // }
-		// //// }
-		// // System.out.println(m);
-		// // System.out.println("How many had no annotations " + none);
-		//
-		// // tellMeAboutTarget("java.io.Serializable");
-		// //
-		// tellMeAboutCaller("org.springframework.transaction.annotation.JtaTransactionAnnotationParser",
-		// // "parseTransactionAnnotation");
+		if (Configuration.reflectionSummary) {
+			System.out.println("Reflection Summary");
+			// What objects are being reflected on? Who is doing the reflection?
+			int reflectiveCallCount = 0;
+			Sortable<String> whoIsMakingTheCalls = new Sortable<>();
+			for (Map.Entry<ReflectiveCall, List<Info>> entry : reflectionInvokers.entrySet()) {
+				reflectiveCallCount += entry.getValue().size();
+				for (Info info : entry.getValue()) {
+					String source = info.callingClass + "." + info.callingMethod;
+					whoIsMakingTheCalls.add(source);
+				}
+			}
+			System.out.println("Number of reflective calls: #" + reflectiveCallCount);
+			System.out.println("Top 20 sources of reflection: ");
+			Map<String, Integer> sortedElements = whoIsMakingTheCalls.getSortedElements();
+			sortedElements.keySet().stream().limit(20).forEach(k -> {
+				System.out.println(k + " #" + sortedElements.get(k));
+			});
+		}
+	}
+	
+	static class Sortable<T> {
+		List<Thing> things = new ArrayList<>();
+		class Thing {
+			private T o;
+			private int count;
+			Thing(T o) {
+				this.o = o;
+				this.count = 1;
+			}
+			@Override
+			public String toString() {
+				return "("+o+":"+count+")";
+			}
+			public void incCount() {
+				count++;
+			}
+			public boolean sameThing(T o2) {
+				return o.equals(o2);
+			}
+		}
+		public void add(T o) {
+			boolean found = false;
+			for (Thing thing: things) {
+				if (thing.sameThing(o)) {
+					// Already in there, inc count
+					thing.incCount();
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				things.add(new Thing(o));
+			}
+		}
+		public Map<T,Integer> getSortedElements() {
+			Collections.sort(things, (a,b) -> {
+				return b.count - a.count;
+			});
+			Map<T,Integer> result = new LinkedHashMap<>();
+			for (Thing thing: things) {
+				result.put(thing.o, thing.count);
+			}
+			return result;
+		}
 	}
 
 //	private static void tellMeAboutTarget(String string) {
@@ -253,7 +229,7 @@ public class RI {
 
 	@SuppressWarnings("rawtypes")
 	private static void record(ReflectiveCall type, Object... objs) {
-		List<Info> existing = x.get(type);
+		List<Info> existing = reflectionInvokers.get(type);
 		try {
 			Class c = null;
 			if (objs[0] instanceof Method) {
@@ -265,7 +241,6 @@ public class RI {
 			} else if (objs[0] instanceof Annotation) {
 				c = ((Annotation) objs[0]).annotationType();
 //			} else if (objs[0] instanceof AnnotatedElement) {
-//				// tODO hmm
 //				c = ((AnnotatedElement) objs[0]).getClass();// annotationType();
 			} else {
 				c = (Class) objs[0];
@@ -314,7 +289,7 @@ public class RI {
 		String methodName = ste.getMethodName() + ":" + ste.getLineNumber();
 		if (existing == null) {
 			existing = new ArrayList<>();
-			x.put(type, existing);
+			reflectionInvokers.put(type, existing);
 		}
 		existing.add(new Info(objs, clazzName, methodName));
 		id.ping();

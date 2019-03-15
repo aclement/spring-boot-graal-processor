@@ -35,6 +35,8 @@ public class Configuration {
 	public static String whyType;
 
 	public static boolean dontHideInfra;
+
+	public static boolean reflectionSummary;
 	
 
 	private static void printUsage() {
@@ -51,6 +53,7 @@ public class Configuration {
 		System.out.println("  verbose - more details reported as it runs");
 		System.out.println(" dontHideInfra - if specified will produce more detail (for debugging the collector itself)");
 		System.out.println("     exit - forces the process to finish once data output");
+		System.out.println(" reflectionSummary - produce a report of who is calling reflection");
 		System.out.println("Options:");
 		System.out.println(" file=xxx - specify the name for the JSON file");
 		System.out.println(" why=xxx - specify dotted type name and it will give you stack that led to it");
@@ -86,6 +89,9 @@ public class Configuration {
 						} else if (kv.equalsIgnoreCase("dontHideInfra")) {
 							System.out.println("[sprinbootgraal config] will include infrastructure details in output");
 							dontHideInfra = true;
+						} else if (kv.equalsIgnoreCase("reflectionSummary")) {
+							System.out.println("[sprinbootgraal config] will produce reflection summary");
+							reflectionSummary = true;
 						} else if (kv.equalsIgnoreCase("exit")) {
 							System.out.println("[sprinbootgraal config] will exit after data output");
 							exit = true;
