@@ -28,6 +28,7 @@ public class RecorderPreProcessor {
 	public byte[] preProcess(ClassLoader classLoader, String slashedClassName, ProtectionDomain protectionDomain,
 			byte[] bytes) {
 		
+//		System.out.println("Considering "+slashedClassName);
 		// TODO rewrite reflection in system classes?
 		if (classLoader == null && slashedClassName != null) { // Indicates loading of a system class
 			return bytes;
@@ -40,20 +41,24 @@ public class RecorderPreProcessor {
 			// Ignore ourselves
 			return bytes;
 		}
-		bytes = rewrite(bytes);
-		return bytes;
+		Object[] data =  rewrite(bytes);
+		if (Configuration.verboseMode) {
+			System.out.println("Rewrote "+data[1]);
+		}
+		return (byte[])data[0];
 	}
 	
-	public static byte[] rewrite(byte[] bytes) {
+	public static Object[] rewrite(byte[] bytes) {
 		ClassReader fileReader = new ClassReader(bytes);
 		RewriteReflectionAdaptor classAdaptor = new RewriteReflectionAdaptor();
 		try {
 			fileReader.accept(classAdaptor, 0);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			return bytes;
+			return new Object[] {bytes,classAdaptor.name};
 		}
 		byte[] bs = classAdaptor.getBytes();
-		return bs;
+		return new Object[] {bs,classAdaptor.name};
 	}
+	
 }

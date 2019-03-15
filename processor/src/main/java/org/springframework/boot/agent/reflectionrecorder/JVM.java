@@ -184,18 +184,18 @@ public class JVM {
 		}
 	}
 
-//	public static Constructor<?> copyConstructor(Constructor<?> c) {
-//		try {
-//			if (jlrConstructorRootField != null) {
-//				jlrConstructorRootField.set(c, null);
-//			}
-//			return (Constructor<?>) jlrConstructorCopy.invoke(c);
-//		}
-//		catch (Exception e) {
-//			log.log(Level.SEVERE, "Problems copying constructor. Incompatible JVM?", e);
+	public static Constructor<?> copyConstructor(Constructor<?> c) {
+		try {
+			if (jlrConstructorRootField != null) {
+				jlrConstructorRootField.set(c, null);
+			}
+			return (Constructor<?>) jlrConstructorCopy.invoke(c);
+		}
+		catch (Exception e) {
+			throw new RuntimeException("Problems copying constructor. Incompatible JVM?", e);
 //			return c; // return original as the best we can do
-//		}
-//	}
+		}
+	}
 
 //	public static void setMethodModifiers(Method method, int modifiers) {
 //		try {

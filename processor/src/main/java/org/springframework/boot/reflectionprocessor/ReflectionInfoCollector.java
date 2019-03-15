@@ -276,7 +276,7 @@ public class ReflectionInfoCollector {
 			System.out.println("Adding "+typename+" to reflect.json");
 			ClassDescriptor cd = ClassDescriptor.of(typename);
 			cd.setFlag(Flag.allDeclaredConstructors);
-			cd.setFlag(Flag.allDeclaredMethods);
+//			cd.setFlag(Flag.allDeclaredMethods);
 			this.mergeClassDescriptor(cd);
 		}
 	}

@@ -28,7 +28,14 @@ public class Configuration {
 	 */
 	public static boolean verboseMode = false;
 	
+	public static boolean exit = false;
+	
 	public static String reflectFile;
+	
+	public static String whyType;
+
+	public static boolean dontHideInfra;
+	
 
 	private static void printUsage() {
 		System.out.println("RecorderAgent");
@@ -42,8 +49,11 @@ public class Configuration {
 		System.out.println("Directives:");
 		System.out.println("        ? - print this usage text");
 		System.out.println("  verbose - more details reported as it runs");
+		System.out.println(" dontHideInfra - if specified will produce more detail (for debugging the collector itself)");
+		System.out.println("     exit - forces the process to finish once data output");
 		System.out.println("Options:");
 		System.out.println(" file=xxx - specify the name for the JSON file");
+		System.out.println(" why=xxx - specify dotted type name and it will give you stack that led to it");
 		System.exit(0);
 	}
 
@@ -60,16 +70,25 @@ public class Configuration {
 					if (equals != -1) {
 						// key=value
 						String key = kv.substring(0, equals);
-						if (key.equals("file")) { // global setting
+						if (key.equalsIgnoreCase("file")) { // global setting
 							reflectFile = kv.substring(equals + 1);
 							System.out.println("[sprinbootgraal config] reflect file = "+reflectFile);
+						} else if (key.equalsIgnoreCase("why")) {
+							whyType = kv.substring(equals + 1);
+							System.out.println("[sprinbootgraal config] check on why this type is listed = "+whyType);							
 						}
 					} else {
 						if (kv.equals("?")) {
 							printUsage();
-						} else if (kv.equals("verbose")) {
+						} else if (kv.equalsIgnoreCase("verbose")) {
 							System.out.println("[sprinbootgraal config] verbose mode on");
 							verboseMode = true;
+						} else if (kv.equalsIgnoreCase("dontHideInfra")) {
+							System.out.println("[sprinbootgraal config] will include infrastructure details in output");
+							dontHideInfra = true;
+						} else if (kv.equalsIgnoreCase("exit")) {
+							System.out.println("[sprinbootgraal config] will exit after data output");
+							exit = true;
 						}
 					}
 				}

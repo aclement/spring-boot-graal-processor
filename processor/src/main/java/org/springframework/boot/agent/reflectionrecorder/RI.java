@@ -26,6 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +78,9 @@ public class RI {
 				long currenttime = System.currentTimeMillis();
 				if (currenttime > endTime) {
 					RI.dumpData();
+					if (Configuration.exit) {
+						System.exit(0);
+					}
 					break;
 				}
 				System.out.println("Time until dump... " + (endTime - currenttime));
@@ -104,10 +108,10 @@ public class RI {
 		CLASS_GETCONSTRUCTOR, //
 		METHOD_INVOKE, METHOD_ISANNOTATIONPRESENT, METHOD_GETANNOTATION, CONSTRUCTOR_GETANNOTATION, AE_GETANNOTATIONS, //
 		AE_GETDECLAREDANNOTATIONS, AO_GETDECLAREDANNOTATIONS, //
-		FIELD_GETDECLAREDANNOTATIONS, FIELD_GETCHAR, FIELD_GETBOOLEAN, FIELD_GETBYTE, FIELD_GETFLOAT, FIELD_GETLONG, FIELD_GETSHORT, FIELD_GETDOUBLE,
-		FIELD_ISANNOTATIONPRESENT, //
-		CONSTRUCTOR_GETDECLAREDANNOTATIONS, FIELD_GETANNOTATION, CONSTRUCTOR_ISANNOTATIONPRESENT, FIELD_SETBYTE,
-		FIELD_SETCHAR
+		FIELD_GETDECLAREDANNOTATIONS, FIELD_GETCHAR, FIELD_GETBOOLEAN, FIELD_GETBYTE, FIELD_GETFLOAT, FIELD_GETLONG,
+		FIELD_GETSHORT, FIELD_GETDOUBLE, FIELD_ISANNOTATIONPRESENT, //
+		CONSTRUCTOR_GETDECLAREDANNOTATIONS, CONSTRUCTOR_NEWINSTANCE, FIELD_GETANNOTATION,
+		CONSTRUCTOR_ISANNOTATIONPRESENT, FIELD_SETBYTE, FIELD_SETCHAR, CLASS_NEWINSTANCE,
 	}
 
 	public static void dumpData() {
@@ -256,15 +260,36 @@ public class RI {
 				c = ((Method) objs[0]).getDeclaringClass();
 			} else if (objs[0] instanceof Field) {
 				c = ((Field) objs[0]).getDeclaringClass();
-			} else if (objs[0] instanceof Annotation) {
-				c = ((Annotation) objs[0]).annotationType();
-			} else if (objs[0] instanceof AnnotatedElement) {
-				// tODO hmm
-				c = ((AnnotatedElement) objs[0]).getClass();// annotationType();
 			} else if (objs[0] instanceof Constructor) {
 				c = ((Constructor) objs[0]).getDeclaringClass();
+			} else if (objs[0] instanceof Annotation) {
+				c = ((Annotation) objs[0]).annotationType();
+//			} else if (objs[0] instanceof AnnotatedElement) {
+//				// tODO hmm
+//				c = ((AnnotatedElement) objs[0]).getClass();// annotationType();
 			} else {
 				c = (Class) objs[0];
+			}
+			if (Configuration.whyType != null && (Configuration.whyType.equals("*") || Configuration.whyType.equals(c.getName()))) {
+				StackTraceElement[] stes = Thread.currentThread().getStackTrace();
+				StringBuilder s = new StringBuilder();
+				s.append("================================\n");
+				s.append("This stack is why type " + c + " is recorded:\n");
+				s.append("Recording event "+type+": supplied parameters: "+Arrays.toString(objs)+"\n");
+				for (int i=1;i<stes.length;i++) { // Skip 0 which is java.lang.Thread.getStackTrace()
+					StackTraceElement ste = stes[i];
+					if (ste.getClassName().contains("org.springframework.boot.agent.reflectionrecorder")) {
+						if (Configuration.dontHideInfra) {
+							s.append(ste+"\n");
+						} else {
+							s.append(".");
+						}
+					} else {
+						s.append(ste+"\n");
+					}
+				}
+				s.append("================================\n");
+				System.out.println(s.toString());
 			}
 			String n = c.getName();
 			Integer i = reflectedClasses.get(n);
@@ -347,7 +372,7 @@ public class RI {
 	 * Get the Class that declares the method calling interceptor method that called
 	 * this method.
 	 */
-	@SuppressWarnings({"deprecation","restriction"})
+	@SuppressWarnings({ "deprecation", "restriction" })
 	public static Class<?> getCallerClass() {
 		// TODO not sure about this right now, needs reviewing
 		// 0 = sun.reflect.Reflection.getCallerClass
@@ -427,39 +452,36 @@ public class RI {
 		record(ReflectiveCall.METHOD_GETPARAMETERANNOTATIONS, method);
 		return method.getParameterAnnotations();
 	}
-	// public static Object jlClassNewInstance(Class<?> clazz) throws
-	// SecurityException, NoSuchMethodException,
-	// IllegalArgumentException, InstantiationException, IllegalAccessException,
-	// InvocationTargetException {
-	//
-	// // TODO: This implementation doesn't check access modifiers on the class. So
-	// may allow
-	// // instantiations that wouldn't be allowed by the JVM (e.g if constructor is
-	// public, but class is private)
-	//
-	// // TODO: what about trying to instantiate an abstract class? should produce
-	// an error, does it?
-	//
-	// Constructor<?> c;
-	// try {
-	// c = jlClassGetDeclaredConstructor(clazz);
-	// }
-	// catch (NoSuchMethodException e) {
-	// // e.printStackTrace();
-	// throw Exceptions.instantiation(clazz);
-	// }
-	// c = asAccessibleConstructor(c, true);
-	// return jlrConstructorNewInstance(c);
-	// }
 
-	// public static Object jlrConstructorNewInstance(Constructor<?> c, Object...
-	// params) throws InstantiationException,
-	// IllegalAccessException, IllegalArgumentException, InvocationTargetException,
-	// SecurityException,
-	// NoSuchMethodException {
-	// c = asAccessibleConstructor(c, true);
-	// return c.newInstance(params);
-	// }
+	public static Object jlClassNewInstance(Class<?> clazz) throws SecurityException, NoSuchMethodException,
+			IllegalArgumentException, InstantiationException, IllegalAccessException, InvocationTargetException {
+
+		// TODO: This implementation doesn't check access modifiers on the class. So may
+		// allow
+		// instantiations that wouldn't be allowed by the JVM (e.g if constructor is
+		// public, but class is private)
+
+		// TODO: what about trying to instantiate an abstract class? should produce an
+		// error, does it?
+
+		Constructor<?> c;
+		try {
+			c = jlClassGetDeclaredConstructor(clazz);
+		} catch (NoSuchMethodException e) {
+			throw new InstantiationException(clazz.getName());
+		}
+		c = asAccessibleConstructor(c, true);
+		record(ReflectiveCall.CLASS_NEWINSTANCE, clazz);
+		return jlrConstructorNewInstance(c);
+	}
+
+	public static Object jlrConstructorNewInstance(Constructor<?> c, Object... params)
+			throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException,
+			SecurityException, NoSuchMethodException {
+		record(ReflectiveCall.CONSTRUCTOR_NEWINSTANCE, c);
+		c = asAccessibleConstructor(c, true);
+		return c.newInstance(params);
+	}
 
 	// private static String toString(Object... params) {
 	// if (params == null) {
@@ -755,34 +777,32 @@ public class RI {
 //		return makeAccessibleCopy ? method : null;
 //	}
 
-//	private static Constructor<?> asAccessibleConstructor(Constructor<?> c, boolean makeAccessibleCopy)
-//			throws NoSuchMethodException, IllegalAccessException {
-//		Class<?> clazz = c.getDeclaringClass();
-//		int mods = c.getModifiers();
-//		if (c.isAccessible() || Modifier.isPublic(mods & jlClassGetModifiers(clazz))) {
-//			//More expensive check not required / copy not required
-//		}
-//		else {
-//			//More expensive check required
-//			Class<?> callerClass = getCallerClass();
-//			JVM.ensureMemberAccess(callerClass, clazz, null, mods);
-//			if (makeAccessibleCopy) {
-//				c = JVM.copyConstructor(c); // copy: we must not change accessible flag on original method!
-//				c.setAccessible(true);
-//			}
-//		}
-//		return makeAccessibleCopy ? c : null;
-//	}
-
+	private static Constructor<?> asAccessibleConstructor(Constructor<?> c, boolean makeAccessibleCopy)
+			throws NoSuchMethodException, IllegalAccessException {
+		Class<?> clazz = c.getDeclaringClass();
+		int mods = c.getModifiers();
+		if (c.isAccessible() || Modifier.isPublic(mods & jlClassGetModifiers(clazz))) {
+			// More expensive check not required / copy not required
+		} else {
+			// More expensive check required
+			Class<?> callerClass = getCallerClass();
+			JVM.ensureMemberAccess(callerClass, clazz, null, mods);
+			if (makeAccessibleCopy) {
+				c = JVM.copyConstructor(c); // copy: we must not change accessible flag on original method!
+				c.setAccessible(true);
+			}
+		}
+		return makeAccessibleCopy ? c : null;
+	}
 
 	/**
-	 * Performs access checks and returns a (potential) copy of the field with accessibility flag set if this necessary
-	 * for the acces operation to succeed.
+	 * Performs access checks and returns a (potential) copy of the field with
+	 * accessibility flag set if this necessary for the acces operation to succeed.
 	 * <p>
 	 * If any checks fail, an appropriate exception is raised.
 	 *
-	 * Warning this method is sensitive to stack depth! Should expect to be called DIRECTLY from a jlr redirection
-	 * method only!
+	 * Warning this method is sensitive to stack depth! Should expect to be called
+	 * DIRECTLY from a jlr redirection method only!
 	 */
 	private static Field asAccessibleField(Field field, Object target, boolean makeAccessibleCopy)
 			throws IllegalAccessException {

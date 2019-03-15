@@ -31,6 +31,8 @@ public class RewriteReflectionAdaptor extends ClassVisitor implements Opcodes {
 
 	private ClassVisitor cw;
 
+	public String name;
+
 	static {
 		intercept("java/lang/reflect/AccessibleObject", "getAnnotation");
 		intercept("java/lang/reflect/AccessibleObject", "getAnnotations");
@@ -54,7 +56,7 @@ public class RewriteReflectionAdaptor extends ClassVisitor implements Opcodes {
 		intercept("java/lang/reflect/Constructor", "getDeclaredAnnotations");
 		intercept("java/lang/reflect/Constructor", "getParameterAnnotations");
 		intercept("java/lang/reflect/Constructor", "isAnnotationPresent");
-		// interceptable("java/lang/reflect/Constructor", "newInstance");
+		intercept("java/lang/reflect/Constructor", "newInstance");
 
 		intercept("java/lang/reflect/Field", "getAnnotation");
 		intercept("java/lang/reflect/Field", "getAnnotations");
@@ -150,6 +152,7 @@ public class RewriteReflectionAdaptor extends ClassVisitor implements Opcodes {
 	@Override
 	public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
 		super.visit(version, access, name, signature, superName, interfaces);
+		this.name = name;
 	}
 
 	@Override
