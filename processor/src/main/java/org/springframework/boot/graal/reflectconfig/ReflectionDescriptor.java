@@ -60,7 +60,7 @@ public class ReflectionDescriptor {
 
 	public static ReflectionDescriptor of(String jsonString) {
 		try {
-			return JsonMarshaller.read(jsonString);
+			return JsonMarshaller.readReflectConfig(jsonString);
 		} catch (Exception e) {
 			throw new IllegalStateException("Unable to read json:\n"+jsonString, e);
 		}

@@ -131,7 +131,7 @@ public class RI {
 		
 		try (FileOutputStream fos = new FileOutputStream(
 				new File(Configuration.reflectFile == null ? "reflect.json" : Configuration.reflectFile))) {
-			new JsonMarshaller().write(rd, fos);
+			new JsonMarshaller().writeReflectConfig(rd, fos);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

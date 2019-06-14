@@ -38,11 +38,31 @@ public class JsonMarshaller {
 
 	private static final int BUFFER_SIZE = 4098;
 
-	public void write(ReflectionDescriptor metadata, OutputStream outputStream)
+	public void readReflectConfig(List<String> metadata, OutputStream outputStream)
 			throws IOException {
 		try {
 			JsonConverter converter = new JsonConverter();
-			JSONArray jsonArray = converter.toJsonArray(metadata);
+			JSONObject jsonObject = converter.resourceConfigToJsonObject(metadata);
+			System.out.println("Writing resource config"+jsonObject);
+			outputStream.write(jsonObject.toString(2).getBytes(StandardCharsets.UTF_8));
+		}
+		catch (Exception ex) {
+			if (ex instanceof IOException) {
+				throw (IOException) ex;
+			}
+			if (ex instanceof RuntimeException) {
+				throw (RuntimeException) ex;
+			}
+			throw new IllegalStateException(ex);
+		}
+	}
+
+	public void writeReflectConfig(ReflectionDescriptor metadata, OutputStream outputStream)
+			throws IOException {
+		try {
+			JsonConverter converter = new JsonConverter();
+			JSONArray jsonArray = converter.reflectConfigToJsonArray(metadata);
+			System.out.println("Writing reflect config"+jsonArray);
 			outputStream.write(jsonArray.toString(2).getBytes(StandardCharsets.UTF_8));
 		}
 		catch (Exception ex) {
@@ -56,15 +76,49 @@ public class JsonMarshaller {
 		}
 	}
 	
-	public static ReflectionDescriptor read(String input) throws Exception {
+	public void writeResourceConfig(List<String> patterns, OutputStream outputStream)
+			throws IOException {
+		try {
+			JsonConverter converter = new JsonConverter();
+			JSONObject jsonObject = converter.resourceConfigToJsonObject(patterns);
+			outputStream.write(jsonObject.toString(2).getBytes(StandardCharsets.UTF_8));
+		}
+		catch (Exception ex) {
+			if (ex instanceof IOException) {
+				throw (IOException) ex;
+			}
+			if (ex instanceof RuntimeException) {
+				throw (RuntimeException) ex;
+			}
+			throw new IllegalStateException(ex);
+		}
+	}
+	
+	public static ReflectionDescriptor readReflectConfig(String input) throws Exception {
 		try (ByteArrayInputStream bais = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8))) {
-			return read(bais);
+			return readReflectConfig(bais);
 		}
 	}
 
-	public static ReflectionDescriptor read(InputStream inputStream) throws Exception {
+	public static List<String> readResourceConfig(String input) throws Exception {
+		try (ByteArrayInputStream bais = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8))) {
+			return readResourceConfig(bais);
+		}
+	}
+
+	public static ReflectionDescriptor readReflectConfig(InputStream inputStream) throws Exception {
 		ReflectionDescriptor metadata = toReflectionDescriptor(new JSONArray(toString(inputStream)));
 		return metadata;
+	}
+
+	public static List<String> readResourceConfig(InputStream inputStream) throws Exception {
+		List<String> patterns = new ArrayList<>();
+		JSONObject obj = new JSONObject(toString(inputStream));
+		JSONArray resourcesArray = obj.getJSONArray("resources");
+		for (int i=0;i<resourcesArray.length();i++) {
+			patterns.add(resourcesArray.getJSONObject(i).getString("pattern"));
+		}
+		return patterns;
 	}
 	
 	private static ReflectionDescriptor toReflectionDescriptor(JSONArray array) throws Exception {

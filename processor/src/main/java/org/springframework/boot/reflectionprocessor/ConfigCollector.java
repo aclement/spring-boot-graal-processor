@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 the original author or authors.
+ * Copyright 2019 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.springframework.boot.reflectionprocessor;
 
 import java.io.File;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLClassLoader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 import java.util.Set;
-import java.util.StringTokenizer;
 
 import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
@@ -39,28 +32,31 @@ import javax.lang.model.element.AnnotationMirror;
 import javax.lang.model.element.AnnotationValue;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
-import javax.tools.Diagnostic.Kind;
 
 import org.springframework.boot.graal.reflectconfig.ClassDescriptor;
 import org.springframework.boot.graal.reflectconfig.ClassDescriptor.Flag;
 import org.springframework.boot.graal.reflectconfig.MethodDescriptor;
 import org.springframework.boot.graal.reflectconfig.ReflectionDescriptor;
 
+// TODO needs to handle deletion of files between calls (during incremental build)
+
 /**
- * Used by {@link ReflectiveAccessAnnotationProcessor} to collect
- * {@link ReflectionDescriptor}.
+ * Used by {@link ReflectiveAccessAnnotationProcessor} to collect configuration data for passing to the native-image
+ * command.
  *
  * @author Andy Clement
  */
-public class ReflectionInfoCollector {
+public class ConfigCollector {
 
-	private final static String DEFAULTS = "reflect.defaults.json";
-
-	private final List<ClassDescriptor> classDescriptors = new ArrayList<>();
+	private final List<ClassDescriptor> newClassDescriptors = new ArrayList<>();
+	
+	private final List<String> newResourcePatterns = new ArrayList<>();
 
 	private final ProcessingEnvironment processingEnvironment;
 
-	private final ReflectionDescriptor previousMetadata;
+	private final ReflectionDescriptor existingReflectConfig;
+
+	private final List<String> existingResourcePatterns;
 
 	private final TypeUtils typeUtils;
 
@@ -68,11 +64,16 @@ public class ReflectionInfoCollector {
 
 	private Messager messager;
 
-	public ReflectionInfoCollector(ProcessingEnvironment processingEnvironment, ReflectionDescriptor previousMetadata) {
+	private ConfigFileStorageManager configFileStorageManager;
+
+
+	public ConfigCollector(ProcessingEnvironment processingEnvironment) {
 		this.processingEnvironment = processingEnvironment;
-		messager = processingEnvironment.getMessager();
-		this.previousMetadata = previousMetadata;
+		this.messager = processingEnvironment.getMessager();
 		this.typeUtils = new TypeUtils(processingEnvironment);
+		this.configFileStorageManager = new ConfigFileStorageManager(processingEnvironment);
+		this.existingReflectConfig = configFileStorageManager.readReflectConfig();
+		this.existingResourcePatterns = configFileStorageManager.readResourceConfig();
 	}
 
 	public void processing(RoundEnvironment roundEnv) {
@@ -87,23 +88,42 @@ public class ReflectionInfoCollector {
 		}
 	}
 
-	public ReflectionDescriptor getMetadata() {
-		ReflectionDescriptor metadata = new ReflectionDescriptor();
-		for (ClassDescriptor cd : this.classDescriptors) {
-			metadata.add(cd);
-		}
-//		if (this.previousMetadata != null) {
-//			List<ClassDescriptor> cds = this.previousMetadata.getClassDescriptors();
-//			for (ClassDescriptor cd : cds) {
-//				if (shouldBeMerged(cd)) {
-//					metadata.add(cd);
-//				}
-//			}
-//		}
-		return metadata;
+	public void outputData() throws IOException {
+		configFileStorageManager.writeIfNecessary(getLatestReflectionDescriptor(),getLatestResourcePatterns());
 	}
 
-	private boolean shouldBeMerged(ClassDescriptor cd) {
+	/**
+	 * @return a complete descriptor that includes those discovered in this round of processing plus those loaded from the
+	 * disk (produced during a previous set of processing).
+	 */
+	public ReflectionDescriptor getLatestReflectionDescriptor() {
+		ReflectionDescriptor reflectionDescriptor = new ReflectionDescriptor();
+		for (ClassDescriptor cd : this.newClassDescriptors) {
+			reflectionDescriptor.add(cd);
+		}
+		if (this.existingReflectConfig != null) {
+			List<ClassDescriptor> cds = this.existingReflectConfig.getClassDescriptors();
+			for (ClassDescriptor cd : cds) {
+				if (shouldBeAdded(cd)) {
+					reflectionDescriptor.add(cd);
+				}
+			}
+		}
+		return reflectionDescriptor;
+	}
+	
+	/**
+	 * @return a complete list of patterns that includes those discovered in this round of processing plus those loaded from the
+	 * disk (produced during a previous set of processing).
+	 */
+	public List<String> getLatestResourcePatterns() {
+		List<String> rps = new ArrayList<>();
+		rps.addAll(newResourcePatterns);
+		rps.addAll(existingResourcePatterns);
+		return rps;
+	}
+
+	private boolean shouldBeAdded(ClassDescriptor cd) {
 		String sourceType = cd.getName(); // TODO map name to sourceType
 		return (sourceType != null && !deletedInCurrentBuild(sourceType) && !processedInCurrentBuild(sourceType));
 	}
@@ -117,7 +137,7 @@ public class ReflectionInfoCollector {
 	}
 
 	public ClassDescriptor findClassDescriptor(String typename) {
-		for (ClassDescriptor cd : classDescriptors) {
+		for (ClassDescriptor cd : newClassDescriptors) {
 			if (cd.getName().equals(typename)) {
 				return cd;
 			}
@@ -130,105 +150,17 @@ public class ReflectionInfoCollector {
 	}
 
 	public boolean addClassDescriptor(ClassDescriptor cd) {
-		return this.classDescriptors.add(cd);
+		return this.newClassDescriptors.add(cd);
 	}
 
 	public void mergeClassDescriptor(ClassDescriptor cd) {
 		ClassDescriptor exists = findClassDescriptor(cd);
 		if (exists == null) {
-			this.classDescriptors.add(cd);
+			this.newClassDescriptors.add(cd);
 		} else {
 			exists.merge(cd);
 		}
 
-	}
-
-	public void init(String projectCompilationClasspath) {
-		// Merge the 'defaults' for a boot app from the defaults json file into the
-		// results being collected
-		mergeDefaults();
-		if (projectCompilationClasspath != null) {
-			processSpringFactories(projectCompilationClasspath);
-		}
-	}
-
-	private void mergeDefaults() {
-		try (InputStream defaults = ReflectionInfoCollector.class.getClassLoader().getResourceAsStream(DEFAULTS)) {
-			ReflectionDescriptor defaultReflectEntries = ReflectStore.readMetadata(defaults);
-			for (ClassDescriptor cd : defaultReflectEntries.getClassDescriptors()) {
-				if (typeAvailable(cd.getName())) {
-					if (findClassDescriptor(cd) != null) {
-						addClassDescriptor(cd);
-					} else {
-						mergeClassDescriptor(cd);
-					}
-				}
-			}
-		} catch (Exception e) {
-			throw new IllegalStateException("Unable to load defaults", e);
-		}
-	}
-
-	private void processSpringFactories(String projectCompilationClasspath) {
-		if (projectCompilationClasspath == null) {
-			messager.printMessage(Kind.WARNING, "project compilation classpath is not set for processor");
-			return;
-		}
-		StringTokenizer st = new StringTokenizer(projectCompilationClasspath, ":");
-		List<URL> urls = new ArrayList<>();
-		while (st.hasMoreElements()) {
-			try {
-				urls.add(new File(st.nextToken()).toURI().toURL());
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			}
-		}
-		Set<String> newTypes = new HashSet<>();
-		try (URLClassLoader ucl = new URLClassLoader(urls.toArray(new URL[] {}), null)) {
-			Enumeration<URL> resources = ucl.getResources("META-INF/spring.factories");
-			while (resources.hasMoreElements()) {
-				URL nextElement = resources.nextElement();
-				Properties p = new Properties();
-				try (InputStream is = nextElement.openStream()) {
-					p.load(is);
-				}
-				for (Object o: p.keySet()) {
-					String k = (String)o;
-					String v = p.getProperty(k);
-					System.out.println("From: "+nextElement+" "+k+" we have "+v);
-					st = new StringTokenizer(v,",");
-					while (st.hasMoreElements()) {
-						String typename = st.nextToken();
-						if (typeAvailable(typename)) {
-//							System.out.println("This exists: "+typename);
-							newTypes.add(typename);
-						}
-					}
-				}
-				
-				
-//				String typesMaybeNeedingReflectiveAccess = (String) p
-//						.get("org.springframework.boot.autoconfigure.EnableAutoConfiguration");
-//				System.out.println("Keys: "+p.keySet());
-//				if (typesMaybeNeedingReflectiveAccess != null) {
-//					System.out.println("From: "+nextElement+" we have "+typesMaybeNeedingReflectiveAccess);
-//					st = new StringTokenizer(typesMaybeNeedingReflectiveAccess,",");
-//					while (st.hasMoreElements()) {
-//						String typename = st.nextToken();
-//						if (typeAvailable(typename)) {
-////							System.out.println("This exists: "+typename);
-//							newTypes.add(typename);
-//						}
-//					}
-//				}
-			}
-		} catch (Throwable t) {
-			t.printStackTrace();
-		}
-		System.out.println("Types from spring.factories: #"+newTypes.size());
-		for (String t: newTypes) {
-			addConstructorDescriptor(t);
-		}
 	}
 
 	private boolean typeAvailable(String typename) {
@@ -279,6 +211,15 @@ public class ReflectionInfoCollector {
 //			cd.setFlag(Flag.allDeclaredMethods);
 			this.mergeClassDescriptor(cd);
 		}
+	}
+	
+	public void addType(String type) {
+		// TODO deal with duplicates (shouldn't error, should just not add things twice)
+		ClassDescriptor cd = ClassDescriptor.of(type);
+		cd.setFlag(Flag.allDeclaredConstructors);
+		cd.setFlag(Flag.allDeclaredMethods);
+		this.mergeClassDescriptor(cd);
+		this.newResourcePatterns.add(type.replace(".","/")+".class");
 	}
 
 	public void addNoArgConstructorDescriptor(String type) {

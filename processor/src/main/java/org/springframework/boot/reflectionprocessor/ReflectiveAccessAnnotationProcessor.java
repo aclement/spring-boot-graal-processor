@@ -13,23 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.springframework.boot.reflectionprocessor;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.annotation.processing.AbstractProcessor;
+import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.AnnotationMirror;
+import javax.lang.model.element.AnnotationValue;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.element.Modifier;
@@ -39,11 +44,10 @@ import javax.lang.model.type.TypeKind;
 import javax.lang.model.util.Elements;
 import javax.tools.Diagnostic.Kind;
 
-import org.springframework.boot.graal.reflectconfig.ReflectionDescriptor;
-
 /**
- * Annotation {@link Processor} that writes Graal reflect.json for Spring Boot apps.
- * See <a href="https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md">
+ * Annotation {@link Processor} that writes Graal reflect.json for Spring Boot
+ * apps. See <a href=
+ * "https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md">
  * https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md</a>
  *
  * @author Andy Clement
@@ -51,28 +55,23 @@ import org.springframework.boot.graal.reflectconfig.ReflectionDescriptor;
 @SupportedAnnotationTypes({ "*" })
 public class ReflectiveAccessAnnotationProcessor extends AbstractProcessor {
 
-	static final String CONFIGURATION_ANNOTATION = "org.springframework.context."
-			+ "annotation.Configuration";
-	
-	static final String RESTCONTROLLER_ANNOTATION = "org.springframework.web.bind.annotation.RestController";
+	static final String COMPILATIONHINT_ANNOTATION = "org.springframework.CompilationHint";
 
 	static final String CLASSPATH = "org.springframework.boot.reflectiveaccessannotationprocessor.classpath";
 
-	private static final Set<String> SUPPORTED_OPTIONS = Collections
-			.unmodifiableSet(Collections.singleton(CLASSPATH));
+	private static final Set<String> SUPPORTED_OPTIONS = Collections.unmodifiableSet(Collections.singleton(CLASSPATH));
 
-	private ReflectStore metadataStore;
+	private int roundCounter;
 
-	private ReflectionInfoCollector metadataCollector;
+	private ConfigCollector configCollector;
 
 	private TypeUtils typeUtils;
 
-	protected String configurationAnnotation() {
-		return CONFIGURATION_ANNOTATION;
-	}
+	private Messager messager;
 
-	protected String restControllerAnnotation() {
-		return RESTCONTROLLER_ANNOTATION;
+	
+	protected String compilationHint() {
+		return COMPILATIONHINT_ANNOTATION;
 	}
 	
 	@Override
@@ -88,41 +87,30 @@ public class ReflectiveAccessAnnotationProcessor extends AbstractProcessor {
 	@Override
 	public synchronized void init(ProcessingEnvironment env) {
 		super.init(env);
+		this.roundCounter = 1;
 		this.typeUtils = new TypeUtils(env);
-		this.metadataStore = new ReflectStore(env);
-		this.metadataCollector = new ReflectionInfoCollector(env, this.metadataStore.readMetadata());
-		String projectCompilationClasspath = env.getOptions().get(CLASSPATH);
-		if (projectCompilationClasspath == null) {
-			env.getMessager().printMessage(Kind.WARNING,CLASSPATH+" option not set for processor");
-		}
-		this.metadataCollector.init(projectCompilationClasspath);
+		this.configCollector = new ConfigCollector(env);
+		this.messager = env.getMessager();
+		//String projectCompilationClasspath = env.getOptions().get(CLASSPATH);
+		//if (projectCompilationClasspath == null) {
+		//	messager.printMessage(Kind.WARNING,CLASSPATH+" option not set for processor");
+		//}
 	}
-
+	
 	@Override
-	public boolean process(Set<? extends TypeElement> annotations,
-			RoundEnvironment roundEnv) {
-		this.metadataCollector.processing(roundEnv);
+	public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
+		this.configCollector.processing(roundEnv);
 		Elements elementUtils = this.processingEnv.getElementUtils();
-
-		// TODO very simplistic, not even looking for meta annotated yet
-
-		TypeElement annotationType = elementUtils.getTypeElement(configurationAnnotation());
-		if (annotationType != null) {
-			for (Element element: roundEnv.getElementsAnnotatedWith(annotationType)) {
+		messager.printMessage(Kind.NOTE,"annotation processing round #"+(roundCounter++));
+		TypeElement compilationHintType = elementUtils.getTypeElement(compilationHint());
+		if (compilationHintType != null) {
+			for (Element element: roundEnv.getRootElements()) {
 				processElement(element);
 			}
 		}
-
-		annotationType = elementUtils.getTypeElement(restControllerAnnotation());
-		if (annotationType != null) {
-			for (Element element: roundEnv.getElementsAnnotatedWith(annotationType)) {
-				processElement(element);
-			}
-		}
-
 		if (roundEnv.processingOver()) {
 			try {
-				writeReflectJson();
+				this.configCollector.outputData();
 			}
 			catch (Exception ex) {
 				throw new IllegalStateException("Failed to write metadata", ex);
@@ -166,38 +154,37 @@ public class ReflectiveAccessAnnotationProcessor extends AbstractProcessor {
 		return false;
 	}
 
+	/**
+	 * Determine if the element is annotated (or meta-annotated via another annotation) with a @CompilationHint. For any
+	 * hints discovered add the correct types to the native-image config data.
+	 */
 	private void processElement(Element element) {
 		try {
-			AnnotationMirror annotation = getAnnotation(element, configurationAnnotation());
-			if (annotation != null) {
-				String prefix = getPrefix(annotation);
-				if (element instanceof TypeElement) {
-					String type = this.typeUtils.getQualifiedName(element);
-					addConstructorDescriptor(type);
-//					processAnnotatedTypeElement(prefix, (TypeElement) element);
-				}
-				else if (element instanceof ExecutableElement) {
-					processExecutableElement(prefix, (ExecutableElement) element);
+			Map<AnnotationMirror,AnnotationMirror> hints = findCompilationHints(element);
+			// hints.keys are the @CompilationHints
+			// hints.values are either null (if the hint is on a non annotation type) or
+			// the annotation mirror that is meta annotated with the @CompilationHint 
+			// (if it is being used as a meta annotation)
+
+			// Example: 
+			// Collected hints against Sample2 = {@org.springframework.CompilationHint(member={"foo"})=null}
+			// Collected hints against Sample3 = {@org.springframework.CompilationHint(member={"foo"})=@com.example.demo2.Sample2(foo={"x", "y", "z"})}
+			
+			if (!hints.isEmpty()) {
+				for (Map.Entry<AnnotationMirror,AnnotationMirror> hint: hints.entrySet()) {
+					List<String> typeStrings = getStrings(hint.getKey(),hint.getValue());
+					messager.printMessage(Kind.NOTE, 
+						"for hint "+hint.getKey()+(hint.getValue()==null?"":" on "+hint.getValue())+" adding these types "+typeStrings);
+					for (String t: typeStrings) {
+						this.configCollector.addType(t);
+					}
 				}
 			}
-		}
-		catch (Exception ex) {
-			throw new IllegalStateException(
-					"Error processing configuration meta-data on " + element, ex);
-		}
-		
-		try {
-			AnnotationMirror annotation = getAnnotation(element, restControllerAnnotation());
-			if (annotation != null) {
-				String prefix = getPrefix(annotation);
-				if (element instanceof TypeElement) {
-					String type = this.typeUtils.getQualifiedName(element);
-					addConstructorDescriptor(type);
-//					processAnnotatedTypeElement(prefix, (TypeElement) element);
-				}
-				else if (element instanceof ExecutableElement) {
-					processExecutableElement(prefix, (ExecutableElement) element);
-				}
+			
+			List<? extends Element> enclosedElements = element.getEnclosedElements();
+			for (Element enclosedElement: enclosedElements) {
+				// TODO testcase!
+				processElement(enclosedElement);		
 			}
 		}
 		catch (Exception ex) {
@@ -207,38 +194,7 @@ public class ReflectiveAccessAnnotationProcessor extends AbstractProcessor {
 	}
 	
 	private void addConstructorDescriptor(String type) {
-		System.out.println(">>> Adding ctor descriptor "+type);
-		metadataCollector.addNoArgConstructorDescriptor(type);
-	}
-
-//	private void processAnnotatedTypeElement(String prefix, TypeElement element) {
-//		String type = this.typeUtils.getQualifiedName(element);
-//		this.metadataCollector.add(ItemMetadata.newGroup(prefix, type, type, null));
-//		processTypeElement(prefix, element, null);
-//	}
-
-	private void processExecutableElement(String prefix, ExecutableElement element) {
-		if (element.getModifiers().contains(Modifier.PUBLIC)
-				&& (TypeKind.VOID != element.getReturnType().getKind())) {
-			Element returns = this.processingEnv.getTypeUtils()
-					.asElement(element.getReturnType());
-			if (returns instanceof TypeElement) {
-//				ItemMetadata group = ItemMetadata.newGroup(prefix,
-//						this.typeUtils.getQualifiedName(returns),
-//						this.typeUtils.getQualifiedName(element.getEnclosingElement()),
-//						element.toString());
-//				if (this.metadataCollector.hasSimilarGroup(group)) {
-//					this.processingEnv.getMessager().printMessage(Kind.ERROR,
-//							"Duplicate `@ConfigurationProperties` definition for prefix '"
-//									+ prefix + "'",
-//							element);
-//				}
-//				else {
-//					this.metadataCollector.add(group);
-//					processTypeElement(prefix, (TypeElement) returns, element);
-//				}
-			}
-		}
+		configCollector.addNoArgConstructorDescriptor(type);
 	}
 
 	private void processTypeElement(String prefix, TypeElement element,
@@ -377,15 +333,92 @@ public class ReflectiveAccessAnnotationProcessor extends AbstractProcessor {
 //		return getAnnotation(element, type) != null;
 //	}
 
-	private AnnotationMirror getAnnotation(Element element, String type) {
+	private Map<AnnotationMirror, AnnotationMirror> findCompilationHints(Element element) {
+		Map<AnnotationMirror, AnnotationMirror> annotationsOnType = new HashMap<>();
+		collectHints(element, null, annotationsOnType, new HashSet<>());
+		System.out.println("Collected hints against "+element.getSimpleName()+" = "+annotationsOnType);
+		return annotationsOnType;
+	}
+	
+	/**
+	 * Returns a map from the compilation hint to the annotation they are on (if used as meta annotation).
+	 */
+	private void collectHints(Element element, AnnotationMirror mirror, Map<AnnotationMirror, AnnotationMirror> collector, Set<AnnotationMirror> visited) {
+		if (mirror !=null && !visited.add(mirror)) {
+			return;
+		}
 		if (element != null) {
 			for (AnnotationMirror annotation : element.getAnnotationMirrors()) {
-				if (type.equals(annotation.getAnnotationType().toString())) {
-					return annotation;
+				if (compilationHint().equals(annotation.getAnnotationType().toString())) {
+					collector.put(annotation, mirror);
+				} else { // is it meta annotated?
+					collectHints(annotation.getAnnotationType().asElement(), annotation, collector, visited);
 				}
 			}
 		}
+	}
+
+	private List<Object> getReferencedMembers(List<String> members,Element annotation) {
+		try {
+		List<Object> results = new ArrayList<>();
+		Map<String, Object> elementValues = getAnnotationElementValues((AnnotationMirror)annotation);
+		for (String member: members) {
+			// TODO might not be a list, maybe just a reference to a single type, cope with that
+			List l = (List)elementValues.get(member);
+			if (l != null) {
+				results.addAll(l);
+			}
+		}
+		return results;
+	} catch (Throwable t) {
+		t.printStackTrace();
 		return null;
+	}
+	}
+	
+	private List<String> getName(AnnotationMirror annotation) {
+		Map<String, Object> elementValues = getAnnotationElementValues(annotation);
+		Object prefix = elementValues.get("name");
+		return (List<String>)prefix;
+	}
+	
+	private List<String> getStrings(AnnotationMirror compilationHint, AnnotationMirror annotationIfHintUsedAsMeta) {
+		List<String> names = new ArrayList<>();
+		Map<String, Object> vs = getAnnotationElementValues(compilationHint);
+		List<AnnotationValue> namesFromHint = (List<AnnotationValue>)vs.get("name");
+		if (namesFromHint != null) {
+			namesFromHint.stream().map(av -> (String)av.getValue()).collect(Collectors.toCollection(() -> names));
+		}
+		List<AnnotationValue> memberHints = (List<AnnotationValue>)vs.get("member");
+		if (annotationIfHintUsedAsMeta != null && !memberHints.isEmpty()) {
+			for (AnnotationValue memberRef: memberHints) {
+					Map<String,Object> vs2 = getAnnotationElementValues(annotationIfHintUsedAsMeta);
+					List<AnnotationValue> l = (List<AnnotationValue>)vs2.get(memberRef.getValue());
+					if (!l.isEmpty()) {
+						AnnotationValue firstElement = l.get(0);
+						if (firstElement.getValue() instanceof String) {
+							l.stream().map(av -> (String)av.getValue()).collect(Collectors.toCollection(() -> names));
+						}
+					}
+			}	
+		}
+		return names;
+	}
+	
+	//private List<Object> retrieveMetaReferenced(List<String> refs, AnnotationMirror annoThing, String fieldname) {
+		//Map<String,Object> vs = getAnnotationElemet
+	//}
+
+	private List<Class> getValue(AnnotationMirror annotation) {
+		Map<String, Object> elementValues = getAnnotationElementValues(annotation);
+		Object prefix = elementValues.get("value");
+		return (List<Class>)prefix;
+	}
+	
+	private List<String> getMember(AnnotationMirror annotation) {
+		Map<String, Object> elementValues = getAnnotationElementValues(annotation);
+		Object prefix = elementValues.get("member");
+		return (List<String>)(prefix==null?Collections.emptyList():prefix);
 	}
 
 	private String getPrefix(AnnotationMirror annotation) {
@@ -407,18 +440,6 @@ public class ReflectiveAccessAnnotationProcessor extends AbstractProcessor {
 				.put(name.getSimpleName().toString(), value.getValue()));
 		return values;
 	}
-
-	protected ReflectionDescriptor writeReflectJson() throws Exception {
-		ReflectionDescriptor metadata = this.metadataCollector.getMetadata();
-		if (!metadata.isEmpty()) {
-//		metadata = mergeAdditionalMetadata(metadata);
-//		if (!metadata.getItems().isEmpty()) {
-			this.metadataStore.writeMetadata(metadata);
-			return metadata;
-		}
-		return null;
-	}
-
 
 	private void logWarning(String msg) {
 		log(Kind.WARNING, msg);

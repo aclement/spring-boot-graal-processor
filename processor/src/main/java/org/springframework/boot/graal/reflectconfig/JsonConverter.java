@@ -30,7 +30,19 @@ import org.springframework.boot.graal.reflectconfig.ClassDescriptor.Flag;
  */
 class JsonConverter {
 
-	public JSONArray toJsonArray(ReflectionDescriptor metadata) throws Exception {
+	public JSONObject resourceConfigToJsonObject(List<String> patterns) throws Exception {
+		JSONObject object = new JSONObject();
+		JSONArray jpatterns = new JSONArray();
+		object.put("resources",jpatterns);
+		for (String pattern: patterns) {
+			JSONObject p = new JSONObject();
+			p.put("pattern",pattern);
+			jpatterns.put(p);
+		}
+		return object;
+	}
+
+	public JSONArray reflectConfigToJsonArray(ReflectionDescriptor metadata) throws Exception {
 		JSONArray jsonArray = new JSONArray();
 		for (ClassDescriptor cd : metadata.getClassDescriptors()) {
 				jsonArray.put(toJsonObject(cd));
