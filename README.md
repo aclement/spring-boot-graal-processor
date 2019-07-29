@@ -4,129 +4,37 @@ Annotation processor that produces a JSON file detailing types needing reflectiv
 
 ### Operation
 
-The processor looks at the current app to discern new types that may need reflective access and merges that information with data from a `reflect.defaults.json` resource file that covers the common cases, producing a `META-INF\reflects.json` file in the project. It also uses a supplied project compilation classpath to add in any other types necessary based on classpath analysis (e.g. from `META-INF\spring.factories` files).
+The processor is looking for a @CompilationHint either directly on a type or used as a meta annotation on a type.
+Based on these hints it computes the reflection/resource/dynamic-proxy json files in a META-INF/native-image folder and
+creates a native-image.properties file that points at them. When the native-image command is used later it will pick them up and configure
+itself appropriately.
 
 
-### Maven snippet
-
-The processor likes to know the project classpath. Until I learn how else to do it that is achieved by an extra bit of maven voodoo. Here is the snippet to include the processor:
-
-```maven
-<plugins>
-	<plugin>
-		<artifactId>maven-dependency-plugin</artifactId>
-		<version>2.8</version>
-		<executions>
-			<execution>
-				<phase>generate-sources</phase>
-				<goals>
-					<goal>build-classpath</goal>
-				</goals>
-				<configuration>
-					<outputProperty>maven.compile.classpath</outputProperty>
-					<pathSeparator>:</pathSeparator>
-				</configuration>
-			</execution>
-		</executions>
-	</plugin>
-	<plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-compiler-plugin</artifactId>
-		<configuration>
-			<compilerArgs>
-				<arg>-Aorg.springframework.boot.reflectionannotationprocessor.classpath=${maven.compile.classpath}</arg>
-			</compilerArgs>
-			<annotationProcessors>
-				<annotationProcessor>
-org.springframework.boot.reflectionprocessor.ReflectiveAccessAnnotationProcessor
-				</annotationProcessor>
-			</annotationProcessors>
-			<debug>true</debug>
-		</configuration>
-	</plugin>
-</plugins>
-```
-
-### Output
-
-The processor writes a `META-INF/reflect.json` file that has this kind of format:
-
-```json
-[
-  {
-    "name" : "java.lang.Class",
-    "allDeclaredConstructors" : true,
-    "allPublicConstructors" : true,
-    "allDeclaredMethods" : true,
-    "allPublicMethods" : true,
-    "allDeclaredClasses" : true,
-    "allPublicClasses" : true
-  },
-  {
-    "name" : "java.lang.String",
-    "fields" : [
-      { "name" : "value", "allowWrite" : true },
-      { "name" : "hash" }
-    ],
-    "methods" : [
-      { "name" : "<init>", "parameterTypes" : [] },
-      { "name" : "<init>", "parameterTypes" : ["char[]"] },
-      { "name" : "charAt" },
-      { "name" : "format", "parameterTypes" : ["java.lang.String", "java.lang.Object[]"] }
-    ]
-  },
-  {
-    "name" : "java.lang.String$CaseInsensitiveComparator",
-    "methods" : [
-      { "name" : "compare" }
-    ]
-  }
-]
-```
-as described in [REFLECTION.md](https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md)
-
-### Running Graal
-
-The `test-projects` folder includes some examples. See the `build.sh` files in each, for example:
-
-After running `mvn clean package` the `build.sh` file will:
-
-```bash
-unzip target/app-0.0.1-SNAPSHOT.jar -d target/app-0.0.1-SNAPSHOT
-
-native-image
-  -H:ReflectionConfigurationFiles=target/app-0.0.1-SNAPSHOT/META-INF/reflect.json 
-  -Dio.netty.noUnsafe=true
-  -H:+ReportExceptionStackTraces 
-  --allow-incomplete-classpath
-  -H:+ReportUnsupportedElementsAtRuntime
-  -Dfile.encoding=UTF-8 
-  -cp ".:$(echo target/app-0.0.1-SNAPSHOT/BOOT-INF/lib/*.jar | tr ' ' ':')":target/app-0.0.1-SNAPSHOT/BOOT-INF/classes
-  com.example.demo1.Application
-```
-which will result in a executable form of the app in the current folder.
+This is all very prototypey and experimenty. The interesting sample being worked on is in samples/commandlinerunner - this is
+a simple spring app that is attempting to use the output from a processor rather than a graal feature.
 
 
-### Agent usage
+For this to work you need to use a custom build of spring framework and spring boot.
 
-The `spring-boot-graal-processor` can also be run as an agent that will create a JSON file based on what it discovers as the process runs. For example:
-
-```
-java -Dspringbootgraal=file=myreflect.json -javaagent:spring-boot-graal-processor-0.0.1.BUILD-SNAPSHOT.jar -jar target/demo1-0.0.1-SNAPSHOT.jar
-```
-
-(If file is not specified in the system property, the default name is `reflect.json` in current folder)
+The compilation hint class is actually defined in the core spring framework project and then various framework/boot modules
+are configured to use this annotation processor as they are built. This results in spring framework/boot component jars that
+include the necessary graal native-image configuration data.
 
 
-### Comparing reflect json files
+Spring Framework compilation hinted fork: https://github.com/aclement/spring-framework/tree/v5.2.0.M1plus
+(The version number is 5.2.0.M1plus when built)
 
-The `spring-boot-graal-processor` is also a runnable jar. In this mode it should be passed two .json files and it will produce a simple diff:
+Spring Boot compilation hinted fork: https://github.com/aclement/spring-boot/tree/2.2.0.M2plus
+(The version number is 2.2.0.M2plus when built)
 
-```
-java -jar spring-boot-graal-processor-XXX.jar r1.json r2.json
-```
+To build these forks you must have 'mvn clean install' the processor project.
 
+And then we set the dependencies in the commandlinerunner app to be on these plus versions of framework/boot.
 
-### Resources
+It isn't quite finished yet as there are a few additional hints required across framework/boot. The compile.sh script
+in the commandlinerunner folder unpacks the jar (into an unpack folder) then runs native-image against it. There
+is a workingunpacked.zip - this contains the shape of an unpack folder that would run ok through native-image. In this
+working unpacked folder you will see the native-image folder contains files with more data that computed right now
+by pure annotation processing. i.e. it contains the entries that the annotation processor needs to be expanded
+to cover. (giving a nice target to aim at to make a working system).
 
-[Graal REFLECTION.md](https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md)
