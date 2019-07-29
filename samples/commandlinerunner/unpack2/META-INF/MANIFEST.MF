@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Implementation-Title: commandlinerunner
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: aclement
+Implementation-Vendor-Id: com.example
+Spring-Boot-Version: 2.2.0.M2plus
+Main-Class: org.springframework.boot.loader.JarLauncher
+Start-Class: com.example.commandlinerunner.CommandlinerunnerApplicatio
+ n
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+Created-By: Apache Maven 3.5.4
+Build-Jdk: 1.8.0_212
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/commandlinerunner
+

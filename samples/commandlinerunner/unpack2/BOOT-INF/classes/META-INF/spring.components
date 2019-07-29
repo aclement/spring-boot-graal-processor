@@ -1,0 +1,4 @@
+#
+#Tue Jul 23 14:02:35 PDT 2019
+com.example.commandlinerunner.CLR=org.springframework.stereotype.Component
+com.example.commandlinerunner.CommandlinerunnerApplication=org.springframework.stereotype.Component

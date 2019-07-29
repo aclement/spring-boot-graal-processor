@@ -41,6 +41,7 @@ public final class ClassDescriptor implements Comparable<ClassDescriptor> {
 		allDeclaredConstructors, //
 		allPublicConstructors, //
 		allDeclaredMethods, //
+		allDeclaredFields, //
 		allPublicMethods, //
 		allDeclaredClasses, //
 		allPublicClasses;
@@ -190,6 +191,7 @@ public final class ClassDescriptor implements Comparable<ClassDescriptor> {
 		for (Flag flag : cd.getFlags()) {
 			this.setFlag(flag);
 		}
+		if (cd.getFields() != null) {
 		for (FieldDescriptor fd : cd.getFields()) {
 			FieldDescriptor existingSimilarOne = null;
 			for (FieldDescriptor existingFd: getFields()) {
@@ -206,11 +208,14 @@ public final class ClassDescriptor implements Comparable<ClassDescriptor> {
 				addFieldDescriptor(fd);
 			}
 		}
+		}
+		if (cd.getMethods() != null) {
 		for (MethodDescriptor methodDescriptor : cd.getMethods()) {
 			if (!containsMethodDescriptor(methodDescriptor)) {
 				addMethodDescriptor(methodDescriptor);
 			}
 		}
+	}
 	}
 
 	private boolean containsMethodDescriptor(MethodDescriptor methodDescriptor) {

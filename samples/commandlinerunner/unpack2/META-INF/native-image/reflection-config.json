@@ -1,0 +1,10 @@
+[
+  {
+    "name": "com.example.commandlinerunner.CommandlinerunnerApplication",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "com.example.commandlinerunner.CLR",
+    "allDeclaredConstructors": true
+  }
+]

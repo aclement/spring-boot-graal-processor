@@ -21,9 +21,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import javax.tools.Diagnostic.Kind;
 
 import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
@@ -50,13 +52,17 @@ public class ConfigCollector {
 
 	private final List<ClassDescriptor> newClassDescriptors = new ArrayList<>();
 	
-	private final List<String> newResourcePatterns = new ArrayList<>();
+	private final Set<String> newResourcePatterns = new LinkedHashSet<>();
+	
+	private final List<List<String>> newDynamicProxies = new ArrayList<>();
 
 	private final ProcessingEnvironment processingEnvironment;
 
 	private final ReflectionDescriptor existingReflectConfig;
 
 	private final List<String> existingResourcePatterns;
+	
+	private final List<List<String>> existingDynamicProxies;
 
 	private final TypeUtils typeUtils;
 
@@ -74,7 +80,9 @@ public class ConfigCollector {
 		this.configFileStorageManager = new ConfigFileStorageManager(processingEnvironment);
 		this.existingReflectConfig = configFileStorageManager.readReflectConfig();
 		this.existingResourcePatterns = configFileStorageManager.readResourceConfig();
+		this.existingDynamicProxies = configFileStorageManager.readDynamicProxies();
 	}
+	
 
 	public void processing(RoundEnvironment roundEnv) {
 		for (Element element : roundEnv.getRootElements()) {
@@ -89,7 +97,7 @@ public class ConfigCollector {
 	}
 
 	public void outputData() throws IOException {
-		configFileStorageManager.writeIfNecessary(getLatestReflectionDescriptor(),getLatestResourcePatterns());
+		configFileStorageManager.writeIfNecessary(getLatestReflectionDescriptor(),getLatestResourcePatterns(),getLatestDynamicProxies());
 	}
 
 	/**
@@ -121,6 +129,13 @@ public class ConfigCollector {
 		rps.addAll(newResourcePatterns);
 		rps.addAll(existingResourcePatterns);
 		return rps;
+	}
+	
+	public List<List<String>> getLatestDynamicProxies() {
+		List<List<String>> dps = new ArrayList<>();
+		dps.addAll(newDynamicProxies);
+		dps.addAll(existingDynamicProxies);
+		return dps;
 	}
 
 	private boolean shouldBeAdded(ClassDescriptor cd) {
@@ -213,13 +228,49 @@ public class ConfigCollector {
 		}
 	}
 	
-	public void addType(String type) {
-		// TODO deal with duplicates (shouldn't error, should just not add things twice)
+	public void addResourcePatternForClass(String classname) {
+		System.out.println("Adding resource pattern "+classname);
+		this.newResourcePatterns.add(classname.replace(".","/").replace("$",".")+".class");
+	}
+		
+	public void addResourcePattern(String pattern) {
+		System.out.println("Adding resource pattern "+pattern);
+		this.newResourcePatterns.add(pattern);
+	}
+	
+	public void addDynamicProxy(List<String> proxyTypes) {
+		for (List<String> existingProxy: newDynamicProxies) {
+			if (existingProxy.equals(proxyTypes)) {
+				note("+++ Skipping "+proxyTypes+" proxy, already there");
+				return;
+			}	
+		}
+		System.out.println("Adding dynamic proxy entry for these types "+proxyTypes);	
+		this.newDynamicProxies.add(proxyTypes);
+	}
+	
+	private void note(String msg) {
+		log(Kind.NOTE, msg);
+		System.out.println(msg); // because maven isn't outputting annotation processor logging...
+	}
+	
+	private void log(Kind kind, String msg) {
+		messager.printMessage(kind, msg);
+	}
+	
+	public void addReflectionReference(String type, boolean allDeclaredConstructors, boolean allDeclaredMethods, boolean allDeclaredFields) {
+		System.out.println("Adding type "+type);
 		ClassDescriptor cd = ClassDescriptor.of(type);
-		cd.setFlag(Flag.allDeclaredConstructors);
-		cd.setFlag(Flag.allDeclaredMethods);
+		if (allDeclaredConstructors) {
+			cd.setFlag(Flag.allDeclaredConstructors);
+		}
+		if (allDeclaredMethods) {
+			cd.setFlag(Flag.allDeclaredMethods);
+		}	
+		if (allDeclaredFields) {
+			cd.setFlag(Flag.allDeclaredFields);
+		}
 		this.mergeClassDescriptor(cd);
-		this.newResourcePatterns.add(type.replace(".","/")+".class");
 	}
 
 	public void addNoArgConstructorDescriptor(String type) {

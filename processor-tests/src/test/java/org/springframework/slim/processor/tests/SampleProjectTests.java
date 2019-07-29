@@ -19,6 +19,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.graal.reflectconfig.ClassDescriptor;
@@ -48,17 +50,22 @@ public class SampleProjectTests extends TestInfrastructure {
 
 	// Project has @Configuration, verify ctor for that type added to reflect.json
 	@Test
-	public void demo2() {
+	public void demo2() throws Exception {
 		File project = new File(testProjectsFolder, "demo2");
 		CompilationResult result = compileProject(project);
 		System.out.println(result.getCompilationMessages());
 		String generatedReflectJson = result.getGeneratedFile("META-INF/native-image/reflection-config.json");
 		System.out.println(generatedReflectJson);
+		ReflectionDescriptor rd = ReflectionDescriptor.of(generatedReflectJson);
+		List<ClassDescriptor> cds = rd.getClassDescriptors();
+		for (ClassDescriptor cd: cds) {
+			System.out.println("cd:"+cd.getName());
+		}
+
 		String generatedResourceJson = result.getGeneratedFile("META-INF/native-image/resource-config.json");
 		System.out.println(generatedResourceJson);
 		String nativeImageProperties = result.getGeneratedFile("META-INF/native-image/native-image.properties");
 		System.out.println(nativeImageProperties);
-		// assertNotNull(generatedReflectJson);
 		//ReflectionDescriptor rd = ReflectionDescriptor.of(generatedReflectJson);
 		//ClassDescriptor classDescriptor = rd.getClassDescriptor("com.example.demo2.GreetingAutoConfiguration");
 		//assertNotNull(classDescriptor);

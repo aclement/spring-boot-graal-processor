@@ -1,0 +1,337 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.example:commandlinerunner >--------------------
+[INFO] Building commandlinerunner 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ commandlinerunner ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.1:build-classpath (default) @ commandlinerunner ---
+[INFO] Dependencies classpath:
+/Users/aclement/.m2/repository/org/springframework/boot/spring-boot-starter/2.2.0.M2/spring-boot-starter-2.2.0.M2.jar:/Users/aclement/.m2/repository/org/springframework/boot/spring-boot/2.2.0.M2/spring-boot-2.2.0.M2.jar:/Users/aclement/.m2/repository/org/springframework/spring-context/5.2.0.M1/spring-context-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/springframework/spring-aop/5.2.0.M1/spring-aop-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/springframework/spring-beans/5.2.0.M1/spring-beans-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/springframework/spring-expression/5.2.0.M1/spring-expression-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.2.0.M2/spring-boot-autoconfigure-2.2.0.M2.jar:/Users/aclement/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.2.0.M2/spring-boot-starter-logging-2.2.0.M2.jar:/Users/aclement/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/aclement/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/aclement/.m2/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar:/Users/aclement/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.11.2/log4j-to-slf4j-2.11.2.jar:/Users/aclement/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.2/log4j-api-2.11.2.jar:/Users/aclement/.m2/repository/org/slf4j/jul-to-slf4j/1.7.26/jul-to-slf4j-1.7.26.jar:/Users/aclement/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.4/jakarta.annotation-api-1.3.4.jar:/Users/aclement/.m2/repository/org/springframework/spring-core/5.2.0.M1/spring-core-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/springframework/spring-jcl/5.2.0.M1/spring-jcl-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/yaml/snakeyaml/1.24/snakeyaml-1.24.jar:/Users/aclement/.m2/repository/org/springframework/spring-boot-graal-feature/0.5.0.BUILD-SNAPSHOT/spring-boot-graal-feature-0.5.0.BUILD-SNAPSHOT.jar:/Users/aclement/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.1/jakarta.validation-api-2.0.1.jar:/Users/aclement/.m2/repository/com/oracle/substratevm/graal-hotspot-library/19.0.0/graal-hotspot-library-19.0.0.jar:/Users/aclement/.m2/repository/com/oracle/substratevm/svm/19.0.0/svm-19.0.0.jar:/Users/aclement/.m2/repository/com/oracle/substratevm/svm-hosted-native-linux-amd64/19.0.0/svm-hosted-native-linux-amd64-19.0.0.tar.gz:/Users/aclement/.m2/repository/com/oracle/substratevm/svm-hosted-native-darwin-amd64/19.0.0/svm-hosted-native-darwin-amd64-19.0.0.tar.gz:/Users/aclement/.m2/repository/com/oracle/substratevm/svm-hosted-native-windows-amd64/19.0.0/svm-hosted-native-windows-amd64-19.0.0.tar.gz:/Users/aclement/.m2/repository/org/graalvm/sdk/graal-sdk/19.0.0/graal-sdk-19.0.0.jar:/Users/aclement/.m2/repository/com/oracle/substratevm/objectfile/19.0.0/objectfile-19.0.0.jar:/Users/aclement/.m2/repository/com/oracle/substratevm/pointsto/19.0.0/pointsto-19.0.0.jar:/Users/aclement/.m2/repository/org/graalvm/truffle/truffle-nfi/19.0.0/truffle-nfi-19.0.0.jar:/Users/aclement/.m2/repository/org/graalvm/truffle/truffle-api/19.0.0/truffle-api-19.0.0.jar:/Users/aclement/.m2/repository/org/graalvm/truffle/truffle-nfi-native-linux-amd64/19.0.0/truffle-nfi-native-linux-amd64-19.0.0.tar.gz:/Users/aclement/.m2/repository/org/graalvm/truffle/truffle-nfi-native-linux-aarch64/19.0.0/truffle-nfi-native-linux-aarch64-19.0.0.tar.gz:/Users/aclement/.m2/repository/org/graalvm/truffle/truffle-nfi-native-darwin-amd64/19.0.0/truffle-nfi-native-darwin-amd64-19.0.0.tar.gz:/Users/aclement/.m2/repository/org/graalvm/compiler/compiler/19.0.0/compiler-19.0.0.jar:/Users/aclement/.m2/repository/org/springframework/spring-context-indexer/5.2.0.M1/spring-context-indexer-5.2.0.M1.jar
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ commandlinerunner ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ commandlinerunner ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /Users/aclement/gits/spring-boot-graal-feature/samples/commandlinerunner/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ commandlinerunner ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/aclement/gits/spring-boot-graal-feature/samples/commandlinerunner/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ commandlinerunner ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/aclement/gits/spring-boot-graal-feature/samples/commandlinerunner/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ commandlinerunner ---
+[INFO] 
+[INFO] --- maven-jar-plugin:3.1.1:jar (default-jar) @ commandlinerunner ---
+[INFO] Building jar: /Users/aclement/gits/spring-boot-graal-feature/samples/commandlinerunner/target/commandlinerunner-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- native-image-maven-plugin:19.0.0:native-image (default) @ commandlinerunner ---
+[INFO] ImageClasspath Entry: org.springframework.boot:spring-boot-starter:jar:2.2.0.M2:compile (file:///Users/aclement/.m2/repository/org/springframework/boot/spring-boot-starter/2.2.0.M2/spring-boot-starter-2.2.0.M2.jar)
+[INFO] ImageClasspath Entry: org.springframework.boot:spring-boot:jar:2.2.0.M2:compile (file:///Users/aclement/.m2/repository/org/springframework/boot/spring-boot/2.2.0.M2/spring-boot-2.2.0.M2.jar)
+[INFO] ImageClasspath Entry: org.springframework:spring-context:jar:5.2.0.M1:compile (file:///Users/aclement/.m2/repository/org/springframework/spring-context/5.2.0.M1/spring-context-5.2.0.M1.jar)
+[INFO] ImageClasspath Entry: org.springframework:spring-aop:jar:5.2.0.M1:compile (file:///Users/aclement/.m2/repository/org/springframework/spring-aop/5.2.0.M1/spring-aop-5.2.0.M1.jar)
+[INFO] ImageClasspath Entry: org.springframework:spring-beans:jar:5.2.0.M1:compile (file:///Users/aclement/.m2/repository/org/springframework/spring-beans/5.2.0.M1/spring-beans-5.2.0.M1.jar)
+[INFO] ImageClasspath Entry: org.springframework:spring-expression:jar:5.2.0.M1:compile (file:///Users/aclement/.m2/repository/org/springframework/spring-expression/5.2.0.M1/spring-expression-5.2.0.M1.jar)
+[INFO] ImageClasspath Entry: org.springframework.boot:spring-boot-autoconfigure:jar:2.2.0.M2:compile (file:///Users/aclement/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.2.0.M2/spring-boot-autoconfigure-2.2.0.M2.jar)
+[INFO] ImageClasspath Entry: org.springframework.boot:spring-boot-starter-logging:jar:2.2.0.M2:compile (file:///Users/aclement/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.2.0.M2/spring-boot-starter-logging-2.2.0.M2.jar)
+[INFO] ImageClasspath Entry: ch.qos.logback:logback-classic:jar:1.2.3:compile (file:///Users/aclement/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar)
+[INFO] ImageClasspath Entry: ch.qos.logback:logback-core:jar:1.2.3:compile (file:///Users/aclement/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar)
+[INFO] ImageClasspath Entry: org.slf4j:slf4j-api:jar:1.7.26:compile (file:///Users/aclement/.m2/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar)
+[INFO] ImageClasspath Entry: org.apache.logging.log4j:log4j-to-slf4j:jar:2.11.2:compile (file:///Users/aclement/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.11.2/log4j-to-slf4j-2.11.2.jar)
+[INFO] ImageClasspath Entry: org.apache.logging.log4j:log4j-api:jar:2.11.2:compile (file:///Users/aclement/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.2/log4j-api-2.11.2.jar)
+[INFO] ImageClasspath Entry: org.slf4j:jul-to-slf4j:jar:1.7.26:compile (file:///Users/aclement/.m2/repository/org/slf4j/jul-to-slf4j/1.7.26/jul-to-slf4j-1.7.26.jar)
+[INFO] ImageClasspath Entry: jakarta.annotation:jakarta.annotation-api:jar:1.3.4:compile (file:///Users/aclement/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.4/jakarta.annotation-api-1.3.4.jar)
+[INFO] ImageClasspath Entry: org.springframework:spring-core:jar:5.2.0.M1:compile (file:///Users/aclement/.m2/repository/org/springframework/spring-core/5.2.0.M1/spring-core-5.2.0.M1.jar)
+[INFO] ImageClasspath Entry: org.springframework:spring-jcl:jar:5.2.0.M1:compile (file:///Users/aclement/.m2/repository/org/springframework/spring-jcl/5.2.0.M1/spring-jcl-5.2.0.M1.jar)
+[INFO] ImageClasspath Entry: org.yaml:snakeyaml:jar:1.24:runtime (file:///Users/aclement/.m2/repository/org/yaml/snakeyaml/1.24/snakeyaml-1.24.jar)
+[INFO] ImageClasspath Entry: org.springframework:spring-boot-graal-feature:jar:0.5.0.BUILD-SNAPSHOT:compile (file:///Users/aclement/.m2/repository/org/springframework/spring-boot-graal-feature/0.5.0.BUILD-SNAPSHOT/spring-boot-graal-feature-0.5.0.BUILD-SNAPSHOT.jar)
+[INFO] ImageClasspath Entry: jakarta.validation:jakarta.validation-api:jar:2.0.1:compile (file:///Users/aclement/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.1/jakarta.validation-api-2.0.1.jar)
+[INFO] ImageClasspath Entry: com.oracle.substratevm:graal-hotspot-library:jar:19.0.0:compile (file:///Users/aclement/.m2/repository/com/oracle/substratevm/graal-hotspot-library/19.0.0/graal-hotspot-library-19.0.0.jar)
+[INFO] ImageClasspath Entry: com.oracle.substratevm:svm:jar:19.0.0:compile (file:///Users/aclement/.m2/repository/com/oracle/substratevm/svm/19.0.0/svm-19.0.0.jar)
+[WARNING] Ignoring non-jar type ImageClasspath Entry com.oracle.substratevm:svm-hosted-native-linux-amd64:tar.gz:19.0.0:compile
+[WARNING] Ignoring non-jar type ImageClasspath Entry com.oracle.substratevm:svm-hosted-native-darwin-amd64:tar.gz:19.0.0:compile
+[WARNING] Ignoring non-jar type ImageClasspath Entry com.oracle.substratevm:svm-hosted-native-windows-amd64:tar.gz:19.0.0:compile
+[INFO] ImageClasspath Entry: org.graalvm.sdk:graal-sdk:jar:19.0.0:compile (file:///Users/aclement/.m2/repository/org/graalvm/sdk/graal-sdk/19.0.0/graal-sdk-19.0.0.jar)
+[INFO] ImageClasspath Entry: com.oracle.substratevm:objectfile:jar:19.0.0:compile (file:///Users/aclement/.m2/repository/com/oracle/substratevm/objectfile/19.0.0/objectfile-19.0.0.jar)
+[INFO] ImageClasspath Entry: com.oracle.substratevm:pointsto:jar:19.0.0:compile (file:///Users/aclement/.m2/repository/com/oracle/substratevm/pointsto/19.0.0/pointsto-19.0.0.jar)
+[INFO] ImageClasspath Entry: org.graalvm.truffle:truffle-nfi:jar:19.0.0:compile (file:///Users/aclement/.m2/repository/org/graalvm/truffle/truffle-nfi/19.0.0/truffle-nfi-19.0.0.jar)
+[INFO] ImageClasspath Entry: org.graalvm.truffle:truffle-api:jar:19.0.0:compile (file:///Users/aclement/.m2/repository/org/graalvm/truffle/truffle-api/19.0.0/truffle-api-19.0.0.jar)
+[WARNING] Ignoring non-jar type ImageClasspath Entry org.graalvm.truffle:truffle-nfi-native-linux-amd64:tar.gz:19.0.0:compile
+[WARNING] Ignoring non-jar type ImageClasspath Entry org.graalvm.truffle:truffle-nfi-native-linux-aarch64:tar.gz:19.0.0:compile
+[WARNING] Ignoring non-jar type ImageClasspath Entry org.graalvm.truffle:truffle-nfi-native-darwin-amd64:tar.gz:19.0.0:compile
+[INFO] ImageClasspath Entry: org.graalvm.compiler:compiler:jar:19.0.0:compile (file:///Users/aclement/.m2/repository/org/graalvm/compiler/compiler/19.0.0/compiler-19.0.0.jar)
+[INFO] ImageClasspath Entry: org.springframework:spring-context-indexer:jar:5.2.0.M1:compile (file:///Users/aclement/.m2/repository/org/springframework/spring-context-indexer/5.2.0.M1/spring-context-indexer-5.2.0.M1.jar)
+[INFO] ImageClasspath Entry: com.example:commandlinerunner:jar:0.0.1-SNAPSHOT (file:///Users/aclement/gits/spring-boot-graal-feature/samples/commandlinerunner/target/commandlinerunner-0.0.1-SNAPSHOT.jar)
+[WARNING] jar:file:///Users/aclement/gits/spring-boot-graal-feature/samples/commandlinerunner/target/commandlinerunner-0.0.1-SNAPSHOT.jar!/META-INF/native-image/native-image.properties does not match recommended META-INF/native-image/${groupId}/${artifactId}/native-image.properties layout.
+[INFO] Executing: /Users/aclement/installs/graalvm-ce-19.0.0/Contents/Home/jre/bin/native-image -cp /Users/aclement/.m2/repository/org/springframework/boot/spring-boot-starter/2.2.0.M2/spring-boot-starter-2.2.0.M2.jar:/Users/aclement/.m2/repository/org/springframework/boot/spring-boot/2.2.0.M2/spring-boot-2.2.0.M2.jar:/Users/aclement/.m2/repository/org/springframework/spring-context/5.2.0.M1/spring-context-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/springframework/spring-aop/5.2.0.M1/spring-aop-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/springframework/spring-beans/5.2.0.M1/spring-beans-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/springframework/spring-expression/5.2.0.M1/spring-expression-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.2.0.M2/spring-boot-autoconfigure-2.2.0.M2.jar:/Users/aclement/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.2.0.M2/spring-boot-starter-logging-2.2.0.M2.jar:/Users/aclement/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/aclement/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/aclement/.m2/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar:/Users/aclement/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.11.2/log4j-to-slf4j-2.11.2.jar:/Users/aclement/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.2/log4j-api-2.11.2.jar:/Users/aclement/.m2/repository/org/slf4j/jul-to-slf4j/1.7.26/jul-to-slf4j-1.7.26.jar:/Users/aclement/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.4/jakarta.annotation-api-1.3.4.jar:/Users/aclement/.m2/repository/org/springframework/spring-core/5.2.0.M1/spring-core-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/springframework/spring-jcl/5.2.0.M1/spring-jcl-5.2.0.M1.jar:/Users/aclement/.m2/repository/org/yaml/snakeyaml/1.24/snakeyaml-1.24.jar:/Users/aclement/.m2/repository/org/springframework/spring-boot-graal-feature/0.5.0.BUILD-SNAPSHOT/spring-boot-graal-feature-0.5.0.BUILD-SNAPSHOT.jar:/Users/aclement/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.1/jakarta.validation-api-2.0.1.jar:/Users/aclement/.m2/repository/com/oracle/substratevm/graal-hotspot-library/19.0.0/graal-hotspot-library-19.0.0.jar:/Users/aclement/.m2/repository/com/oracle/substratevm/svm/19.0.0/svm-19.0.0.jar:/Users/aclement/.m2/repository/org/graalvm/sdk/graal-sdk/19.0.0/graal-sdk-19.0.0.jar:/Users/aclement/.m2/repository/com/oracle/substratevm/objectfile/19.0.0/objectfile-19.0.0.jar:/Users/aclement/.m2/repository/com/oracle/substratevm/pointsto/19.0.0/pointsto-19.0.0.jar:/Users/aclement/.m2/repository/org/graalvm/truffle/truffle-nfi/19.0.0/truffle-nfi-19.0.0.jar:/Users/aclement/.m2/repository/org/graalvm/truffle/truffle-api/19.0.0/truffle-api-19.0.0.jar:/Users/aclement/.m2/repository/org/graalvm/compiler/compiler/19.0.0/compiler-19.0.0.jar:/Users/aclement/.m2/repository/org/springframework/spring-context-indexer/5.2.0.M1/spring-context-indexer-5.2.0.M1.jar:/Users/aclement/gits/spring-boot-graal-feature/samples/commandlinerunner/target/commandlinerunner-0.0.1-SNAPSHOT.jar -H:Class=com.example.commandlinerunner.CommandlinerunnerApplication
+Build on Server(pid: 92083, port: 55755)
+[clr:92083]    classlist:   1,775.38 ms
+███████╗██████╗ ██████╗ ██╗███╗   ██╗ ██████╗     ██████╗  ██████╗  ██████╗ ████████╗     ██████╗ ██████╗  █████╗  █████╗ ██╗     
+██╔════╝██╔══██╗██╔══██╗██║████╗  ██║██╔════╝     ██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝    ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║     
+███████╗██████╔╝██████╔╝██║██╔██╗ ██║██║  ███╗    ██████╔╝██║   ██║██║   ██║   ██║       ██║  ███╗██████╔╝███████║███████║██║     
+╚════██║██╔═══╝ ██╔══██╗██║██║╚██╗██║██║   ██║    ██╔══██╗██║   ██║██║   ██║   ██║       ██║   ██║██╔══██╗██╔══██║██╔══██║██║     
+███████║██║     ██║  ██║██║██║ ╚████║╚██████╔╝    ██████╔╝╚██████╔╝╚██████╔╝   ██║       ╚██████╔╝██║  ██║██║  ██║██║  ██║███████╗
+╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝        ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+                                                                                                                                  
+[clr:92083]        (cap):   1,079.77 ms
+SBG: reflection registering #135 entries
+reflect.json included org.springframework.http.codec.support.DefaultClientCodecConfigurer but it doesn't exist in this code, skipping...
+reflect.json included org.springframework.http.codec.support.DefaultServerCodecConfigurer but it doesn't exist in this code, skipping...
+reflect.json included org.hibernate.validator.HibernateValidatorConfiguration but it doesn't exist in this code, skipping...
+Problem handling flags for org.springframework.boot.autoconfigure.web.reactive.ReactiveWebServerFactoryConfiguration$EmbeddedNetty because of missing org/springframework/http/client/reactive/ReactorResourceFactory
+reflect.json included org.springframework.boot.autoconfigure.web.reactive.ReactiveWebServerFactory but it doesn't exist in this code, skipping...
+reflect.json included org.springframework.http.client.reactive.ReactorResourceFactory but it doesn't exist in this code, skipping...
+Problem handling flags for org.springframework.boot.web.embedded.netty.NettyReactiveWebServerFactory because of missing org/springframework/http/server/reactive/HttpHandler
+reflect.json included org.springframework.web.reactive.function.client.WebClient$Builder but it doesn't exist in this code, skipping...
+Problem handling flags for org.springframework.boot.web.client.RestTemplateBuilder because of missing org/springframework/web/util/UriTemplateHandler
+reflect.json included org.springframework.web.bind.annotation.GetMapping but it doesn't exist in this code, skipping...
+reflect.json included org.springframework.web.bind.annotation.RequestMapping but it doesn't exist in this code, skipping...
+reflect.json included org.springframework.web.bind.annotation.RestController but it doesn't exist in this code, skipping...
+Problem handling flags for org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorConfiguration$ReactorNetty because of missing org/springframework/http/client/reactive/ReactorResourceFactory
+reflect.json included org.springframework.http.client.reactive.ClientHttpConnector but it doesn't exist in this code, skipping...
+reflect.json included reactor.netty.http.client.HttpClient but it doesn't exist in this code, skipping...
+reflect.json included org.springframework.web.reactive.config.WebFluxConfigurationSupport but it doesn't exist in this code, skipping...
+reflect.json included org.springframework.web.reactive.HandlerResult but it doesn't exist in this code, skipping...
+Problem handling flags for org.springframework.boot.autoconfigure.http.HttpMessageConverters because of missing org/springframework/http/converter/FormHttpMessageConverter
+reflect.json included io.netty.channel.socket.nio.NioServerSocketChannel but it doesn't exist in this code, skipping...
+reflect.json included io.netty.channel.socket.nio.NioSocketChannel but it doesn't exist in this code, skipping...
+reflect.json included org.springframework.http.codec.ClientCodecConfigurer but it doesn't exist in this code, skipping...
+reflect.json included org.springframework.http.codec.ServerCodecConfigurer but it doesn't exist in this code, skipping...
+reflect.json included org.springframework.web.reactive.result.method.AbstractHandlerMethodMapping$PreFlightAmbiguousMatchHandler but it doesn't exist in this code, skipping...
+reflect.json included org.hibernate.validator.internal.util.logging.Messages but it doesn't exist in this code, skipping...
+reflect.json included org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator but it doesn't exist in this code, skipping...
+reflect.json included org.hibernate.validator.messageinterpolation.AbstractMessageInterpolator but it doesn't exist in this code, skipping...
+reflect.json included org.hibernate.validator.internal.util.logging.Log but it doesn't exist in this code, skipping...
+reflect.json included org.hibernate.validator.internal.engine.resolver.JPATraversableResolver but it doesn't exist in this code, skipping...
+reflect.json included org.hibernate.validator.internal.engine.resolver.TraversableResolvers but it doesn't exist in this code, skipping...
+reflect.json included org.hibernate.validator.resourceloading.PlatformResourceBundleLocator but it doesn't exist in this code, skipping...
+reflect.json included org.hibernate.validator.internal.xml.config.ValidationBootstrapParameters but it doesn't exist in this code, skipping...
+reflect.json included org.hibernate.validator.internal.engine.ConfigurationImpl but it doesn't exist in this code, skipping...
+reflect.json included io.netty.channel.DefaultChannelPipeline$HeadContext but it doesn't exist in this code, skipping...
+reflect.json included io.netty.channel.DefaultChannelPipeline$TailContext but it doesn't exist in this code, skipping...
+SBG: Proxy registration: #6 proxies
+- [org.springframework.boot.context.properties.ConfigurationProperties, org.springframework.core.annotation.SynthesizedAnnotation]
+- [org.springframework.stereotype.Component]
+- [org.springframework.boot.context.properties.ConfigurationProperties]
+- [org.springframework.context.annotation.Lazy]
+- [org.springframework.web.bind.annotation.RequestMapping]
+Skipping dynamic proxy registration due to missing type: org.springframework.web.bind.annotation.RequestMapping
+- [javax.validation.Validator, org.springframework.aop.SpringProxy, org.springframework.aop.framework.Advised, org.springframework.core.DecoratingProxy]
+[clr:92083]        setup:   1,358.96 ms
+SBG: adding resources - #65 patterns
+Processing META-INF/spring.factories files...
+SBG: WARNING: Whilst processing org.springframework.boot.diagnostics.FailureAnalyzer problem adding access for type: org.springframework.boot.autoconfigure.jdbc.HikariDriverConfigurationFailureAnalyzer because of missing org/springframework/jdbc/CannotGetJdbcConnectionException
+Spring.factories processing: looking at #121 configuration references
+Including auto-configuration org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.aop.AopAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheConfigurationImportSelector
+Including auto-configuration org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator
+Excluding auto-configuration org.springframework.boot.autoconfigure.cassandra.CassandraAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.cloud.CloudServiceConnectorsAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration$ResourceBundleCondition
+Including auto-configuration org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.couchbase.CouchbaseAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.cassandra.CassandraDataAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.cassandra.CassandraReactiveDataAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.cassandra.CassandraReactiveRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.cassandra.CassandraRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.couchbase.CouchbaseDataAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.couchbase.CouchbaseReactiveDataAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.couchbase.CouchbaseReactiveRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.couchbase.CouchbaseRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchDataAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.ldap.LdapRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.mongo.MongoReactiveDataAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.mongo.MongoReactiveRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.neo4j.Neo4jDataAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.neo4j.Neo4jRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.solr.SolrRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.rest.RepositoryRestMvcAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.elasticsearch.jest.JestAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.elasticsearch.rest.RestClientAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.hazelcast.HazelcastAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.hazelcast.HazelcastJpaDependencyAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.influx.InfluxDbAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration$GitResourceAvailableCondition
+Excluding auto-configuration org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$EmbeddedDatabaseCondition
+Including auto-configuration org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceAvailableCondition
+Including auto-configuration org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceCondition
+Including auto-configuration org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceCondition$PooledDataSourceAvailable
+Including auto-configuration org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceCondition$ExplicitType
+Including auto-configuration org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$EmbeddedDatabaseConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.jdbc.JndiDataSourceAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jdbc.XADataSourceAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jms.JndiConnectionFactoryAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jms.activemq.ActiveMQAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jms.artemis.ArtemisAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jersey.JerseyAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jooq.JooqAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.ldap.embedded.EmbeddedLdapAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.ldap.LdapAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.mail.MailSenderValidatorAutoConfiguration
+PROBLEM? Can't register org/springframework/boot/autoconfigure/mail/MailSenderValidatorAutoConfiguration because cannot find javax/mail/MessagingException
+Excluding auto-configuration org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.reactor.core.ReactorCoreAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.rsocket.RSocketMessagingAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.rsocket.RSocketServerAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.rsocket.RSocketStrategiesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.security.servlet.SecurityRequestMatcherProviderAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.security.reactive.ReactiveSecurityAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.sendgrid.SendGridAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.session.SessionAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.security.oauth2.client.reactive.ReactiveOAuth2ClientAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.security.oauth2.resource.reactive.ReactiveOAuth2ResourceServerAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.transaction.jta.JtaAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration
+Including auto-configuration org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.reactive.HttpHandlerAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.reactive.ReactiveWebServerFactoryAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.reactive.WebFluxAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.reactive.error.ErrorWebFluxAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.websocket.reactive.WebSocketReactiveAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.websocket.servlet.WebSocketMessagingAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.webservices.WebServicesAutoConfiguration
+Excluding auto-configuration org.springframework.boot.autoconfigure.webservices.client.WebServiceTemplateAutoConfiguration
+  removed 107 configurations
+Processing META-INF/spring.components files...
+Registering Spring Component: com.example.commandlinerunner.CLR
+Registering Spring Component: com.example.commandlinerunner.CommandlinerunnerApplication
+SBG: forcing explicit class initialization at build or runtime:
+InitializationDescriptor #138 buildtime-classes   #95 buildtime-packages   #7 runtime-classes    #2 runtime-packages
+
+Warning: class initialization of class sun.reflect.misc.Trampoline failed with exception java.lang.NoClassDefFoundError: Could not initialize class sun.reflect.misc.Trampoline. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=sun.reflect.misc.Trampoline to explicitly request delayed initialization of this class.
+Registering these packages for buildtime initialization: 
+[io.netty.handler.address, io.netty.handler.flow, io.netty.handler.flush, io.netty.handler.ipfilter, io.netty.handler.logging, io.netty.handler.ssl, io.netty.handler.ssl.ocsp, io.netty.handler.ssl.util, io.netty.handler.stream, io.netty.handler.timeout, io.netty.handler.traffic, reactor.netty.resources, io.netty.channel.epoll, io.netty.resolver, io.netty.channel.epoll, io.netty.handler.codec.socks, io.netty.handler.codec.socksx, io.netty.handler.codec.socksx.v4, io.netty.handler.codec.socksx.v5, reactor.netty, reactor.netty.channel, reactor.netty.http, reactor.netty.http.client, reactor.netty.http.server, reactor.netty.http.websocket, reactor.netty.resources, reactor.netty.tcp, reactor.netty.udp, io.netty.buffer, io.netty.handler.proxy, io.netty.handler.codec, io.netty.handler.codec.base64, io.netty.handler.codec.bytes, io.netty.handler.codec.compression, io.netty.handler.codec.json, io.netty.handler.codec.marshalling, io.netty.handler.codec.protobuf, io.netty.handler.codec.serialization, io.netty.handler.codec.string, io.netty.handler.codec.xml, io.netty.util, io.netty.util.collection, io.netty.util.concurrent, io.netty.util.internal, io.netty.util.internal.logging, io.netty.util.internal.shaded.org.jctools.queues, io.netty.util.internal.shaded.org.jctools.queues.atomic, io.netty.util.internal.shaded.org.jctools.util, io.netty.util.internal.svm, io.netty.bootstrap, io.netty.channel, io.netty.channel.embedded, io.netty.channel.group, io.netty.channel.internal, io.netty.channel.local, io.netty.channel.nio, io.netty.channel.oio, io.netty.channel.pool, io.netty.channel.socket, io.netty.channel.socket.nio, io.netty.channel.socket.oio, io.netty.handler.codec.http, io.netty.handler.codec.http.cookie, io.netty.handler.codec.http.cors, io.netty.handler.codec.http.multipart, io.netty.handler.codec.http.websocketx, io.netty.handler.codec.http.websocketx.extensions, io.netty.handler.codec.http.websocketx.extensions.compression, io.netty.handler.codec.rtsp, io.netty.handler.codec.spdy, reactor.util, io.netty.util, io.netty.buffer, io.netty.channel, org.apache.logging.log4j, org.apache.logging.slf4j, org.jboss.logging, org.hibernate.validator.internal.metadata.provider, org.hibernate.validator.internal.metadata.aggregated, org.hibernate.validator.internal.metadata.raw, org.hibernate.validator.internal.engine, ch.qos.logback.classic.spi, javax.validation, org.hibernate.validator.constraints, org.hibernate.validator.internal.engine.groups, org.hibernate.validator.internal.engine.valueextraction, org.hibernate.validator.internal.util, org.hibernate.validator.internal.cfg.context, org.hibernate.validator.internal.metadata.core, org.hibernate.validator.internal.metadata.aggregated.rule, org.hibernate.validator.internal.engine.constraintvalidation, org.hibernate.validator.internal.util.logging.LoggerFactory, ch.qos.logback.core, ch.qos.logback.classic, ch.qos.logback.classic.util]
+Registering these packages for runtime initialization: 
+[io.netty.handler.codec.http2, io.netty.channel.unix]
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorConfiguration$ReactorNetty. Reason: java.lang.NoClassDefFoundError: org/springframework/http/client/reactive/ReactorResourceFactory.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.http.HttpMessageConverters. Reason: java.lang.NoClassDefFoundError: org/springframework/http/converter/FormHttpMessageConverter.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.mail.MailSenderValidatorAutoConfiguration. Reason: java.lang.NoClassDefFoundError: javax/mail/MessagingException.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.jdbc.HikariDriverConfigurationFailureAnalyzer. Reason: java.lang.NoClassDefFoundError: org/springframework/jdbc/CannotGetJdbcConnectionException.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.web.reactive.ReactiveWebServerFactoryConfiguration$EmbeddedNetty. Reason: java.lang.NoClassDefFoundError: org/springframework/http/client/reactive/ReactorResourceFactory.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext. Reason: java.lang.NoClassDefFoundError: org/springframework/http/server/reactive/HttpHandler.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.embedded.netty.NettyReactiveWebServerFactory. Reason: java.lang.NoClassDefFoundError: Lorg/springframework/http/client/reactive/ReactorResourceFactory;.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.client.RestTemplateBuilder. Reason: java.lang.NoClassDefFoundError: Lorg/springframework/web/util/UriTemplateHandler;.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.reactive.context.AnnotationConfigReactiveWebServerApplicationContext. Reason: java.lang.NoClassDefFoundError: org/springframework/http/server/reactive/HttpHandler.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorConfiguration$ReactorNetty. Reason: java.lang.NoClassDefFoundError: org/springframework/http/client/reactive/ReactorResourceFactory.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.mail.MailSenderValidatorAutoConfiguration. Reason: java.lang.NoClassDefFoundError: javax/mail/MessagingException.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.web.reactive.ReactiveWebServerFactoryConfiguration$EmbeddedNetty. Reason: java.lang.NoClassDefFoundError: org/springframework/http/client/reactive/ReactorResourceFactory.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.http.HttpMessageConverters. Reason: java.lang.NoClassDefFoundError: org/springframework/http/converter/FormHttpMessageConverter.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.jdbc.HikariDriverConfigurationFailureAnalyzer. Reason: java.lang.NoClassDefFoundError: org/springframework/jdbc/CannotGetJdbcConnectionException.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext. Reason: java.lang.NoClassDefFoundError: org/springframework/http/server/reactive/HttpHandler.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.embedded.netty.NettyReactiveWebServerFactory. Reason: java.lang.NoClassDefFoundError: Lorg/springframework/http/client/reactive/ReactorResourceFactory;.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.client.RestTemplateBuilder. Reason: java.lang.NoClassDefFoundError: Lorg/springframework/web/util/UriTemplateHandler;.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.reactive.context.AnnotationConfigReactiveWebServerApplicationContext. Reason: java.lang.NoClassDefFoundError: org/springframework/boot/web/reactive/context/ReactiveWebServerApplicationContext$ServerManager.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorConfiguration$ReactorNetty. Reason: java.lang.NoClassDefFoundError: org/springframework/http/client/reactive/ReactorResourceFactory.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.mail.MailSenderValidatorAutoConfiguration. Reason: java.lang.NoClassDefFoundError: javax/mail/MessagingException.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.web.reactive.ReactiveWebServerFactoryConfiguration$EmbeddedNetty. Reason: java.lang.NoClassDefFoundError: org/springframework/http/client/reactive/ReactorResourceFactory.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.http.HttpMessageConverters. Reason: java.lang.NoClassDefFoundError: org/springframework/http/converter/FormHttpMessageConverter.
+WARNING: Could not register reflection metadata for org.springframework.boot.autoconfigure.jdbc.HikariDriverConfigurationFailureAnalyzer. Reason: java.lang.NoClassDefFoundError: org/springframework/jdbc/CannotGetJdbcConnectionException.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext. Reason: java.lang.NoClassDefFoundError: org/springframework/http/server/reactive/HttpHandler.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.embedded.netty.NettyReactiveWebServerFactory. Reason: java.lang.NoClassDefFoundError: Lorg/springframework/http/client/reactive/ReactorResourceFactory;.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.client.RestTemplateBuilder. Reason: java.lang.NoClassDefFoundError: Lorg/springframework/web/util/UriTemplateHandler;.
+WARNING: Could not register reflection metadata for org.springframework.boot.web.reactive.context.AnnotationConfigReactiveWebServerApplicationContext. Reason: java.lang.NoClassDefFoundError: org/springframework/boot/web/reactive/context/ReactiveWebServerApplicationContext$ServerManager.
+[clr:92083]   (typeflow):  11,029.10 ms
+[clr:92083]    (objects):  23,912.14 ms
+[clr:92083]   (features):   1,896.86 ms
+[clr:92083]     analysis:  38,129.73 ms
+Warning: class initialization of class org.springframework.boot.autoconfigure.cache.InfinispanCacheConfiguration failed with exception java.lang.NoClassDefFoundError: org/infinispan/manager/EmbeddedCacheManager. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.autoconfigure.cache.InfinispanCacheConfiguration to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.format.number.money.Jsr354NumberFormatAnnotationFormatterFactory$PatternDecoratingFormatter failed with exception java.lang.NoClassDefFoundError: javax/money/NumberValue. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.format.number.money.Jsr354NumberFormatAnnotationFormatterFactory$PatternDecoratingFormatter to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration failed with exception java.lang.NoClassDefFoundError: org/springframework/data/redis/serializer/RedisSerializer. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.boot.autoconfigure.jdbc.HikariDriverConfigurationFailureAnalyzer failed with exception java.lang.NoClassDefFoundError: org/springframework/jdbc/CannotGetJdbcConnectionException. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.autoconfigure.jdbc.HikariDriverConfigurationFailureAnalyzer to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.boot.json.JacksonJsonParser failed with exception java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/type/TypeReference. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.json.JacksonJsonParser to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.boot.autoconfigure.mail.MailSenderValidatorAutoConfiguration failed with exception java.lang.NoClassDefFoundError: javax/mail/MessagingException. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.autoconfigure.mail.MailSenderValidatorAutoConfiguration to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer failed with exception java.lang.NoClassDefFoundError: org/springframework/jdbc/datasource/init/DatabasePopulator. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.core.type.filter.AspectJTypeFilter failed with exception java.lang.NoClassDefFoundError: org/aspectj/weaver/World. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.core.type.filter.AspectJTypeFilter to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.format.datetime.joda.JodaTimeConverters$DateToReadableInstantConverter failed with exception java.lang.NoClassDefFoundError: org/joda/time/ReadableInstant. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.format.datetime.joda.JodaTimeConverters$DateToReadableInstantConverter to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.boot.liquibase.LiquibaseServiceLocatorApplicationListener$LiquibasePresent failed with exception java.lang.NoClassDefFoundError: liquibase/servicelocator/PackageScanClassResolver. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.liquibase.LiquibaseServiceLocatorApplicationListener$LiquibasePresent to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.boot.json.GsonJsonParser failed with exception java.lang.NoClassDefFoundError: com/google/gson/reflect/TypeToken. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.json.GsonJsonParser to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.boot.autoconfigure.http.HttpMessageConverters failed with exception java.lang.NoClassDefFoundError: org/springframework/http/converter/FormHttpMessageConverter. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.autoconfigure.http.HttpMessageConverters to explicitly request delayed initialization of this class.
+[clr:92083]     (clinit):     573.00 ms
+[clr:92083]     universe:   1,238.79 ms
+[clr:92083]      (parse):   1,125.87 ms
+[clr:92083]     (inline):   2,730.36 ms
+[clr:92083]    (compile):   9,976.37 ms
+[clr:92083]      compile:  15,191.06 ms
+[clr:92083]        image:   3,159.31 ms
+[clr:92083]        write:     857.45 ms
+[clr:92083]      [total]:  61,974.74 ms
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.2.0.M2:repackage (repackage) @ commandlinerunner ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:06 min
+[INFO] Finished at: 2019-05-17T16:15:22-07:00
+[INFO] ------------------------------------------------------------------------

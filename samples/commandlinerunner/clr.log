@@ -1,0 +1,173 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.example:commandlinerunner >--------------------
+[INFO] Building commandlinerunner 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ commandlinerunner ---
+[INFO] Deleting /Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/target
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.1:build-classpath (default) @ commandlinerunner ---
+[INFO] Dependencies classpath:
+/Users/aclement/.m2/repository/org/springframework/boot/spring-boot-starter/2.2.0.M2plus/spring-boot-starter-2.2.0.M2plus.jar:/Users/aclement/.m2/repository/org/springframework/boot/spring-boot/2.2.0.M2plus/spring-boot-2.2.0.M2plus.jar:/Users/aclement/.m2/repository/org/springframework/spring-context/5.2.0.M1plus/spring-context-5.2.0.M1plus.jar:/Users/aclement/.m2/repository/org/springframework/spring-aop/5.2.0.M1plus/spring-aop-5.2.0.M1plus.jar:/Users/aclement/.m2/repository/org/springframework/spring-beans/5.2.0.M1plus/spring-beans-5.2.0.M1plus.jar:/Users/aclement/.m2/repository/org/springframework/spring-expression/5.2.0.M1plus/spring-expression-5.2.0.M1plus.jar:/Users/aclement/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.2.0.M2plus/spring-boot-autoconfigure-2.2.0.M2plus.jar:/Users/aclement/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.2.0.M2plus/spring-boot-starter-logging-2.2.0.M2plus.jar:/Users/aclement/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/aclement/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/aclement/.m2/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar:/Users/aclement/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.11.2/log4j-to-slf4j-2.11.2.jar:/Users/aclement/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.2/log4j-api-2.11.2.jar:/Users/aclement/.m2/repository/org/slf4j/jul-to-slf4j/1.7.26/jul-to-slf4j-1.7.26.jar:/Users/aclement/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.4/jakarta.annotation-api-1.3.4.jar:/Users/aclement/.m2/repository/org/springframework/spring-core/5.2.0.M1plus/spring-core-5.2.0.M1plus.jar:/Users/aclement/.m2/repository/org/springframework/spring-jcl/5.2.0.M1plus/spring-jcl-5.2.0.M1plus.jar:/Users/aclement/.m2/repository/org/yaml/snakeyaml/1.24/snakeyaml-1.24.jar:/Users/aclement/.m2/repository/org/springframework/spring-context-indexer/5.2.0.M1plus/spring-context-indexer-5.2.0.M1plus.jar:/Users/aclement/.m2/repository/org/springframework/graal-processor/0.0.1.BUILD-SNAPSHOT/graal-processor-0.0.1.BUILD-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ commandlinerunner ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ commandlinerunner ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/target/classes
+>>options are:{}
+Spring Graal Annotation Processor running...
+PROCESSING #CommandlinerunnerApplication
+processing hint on com.example.commandlinerunner.CommandlinerunnerApplication = @SpringBootApplication(proxyBeanMethods=false)>@SpringBootConfiguration>@Configuration(proxyBeanMethods=false)>@Component>@CompilationHint(access={reflection:constructors}) @SpringBootApplication(proxyBeanMethods=false)>@ConfigurationPropertiesScan>@Import(value={ConfigurationPropertiesScanRegistrar})>@CompilationHint(member={value})
+[CommandlinerunnerApplication] hints {@org.springframework.core.annotation.CompilationHint(access={"reflection:constructors"})=[@org.springframework.boot.autoconfigure.SpringBootApplication(proxyBeanMethods=false), @org.springframework.boot.SpringBootConfiguration, @org.springframework.context.annotation.Configuration(proxyBeanMethods=false), @org.springframework.stereotype.Component], @org.springframework.core.annotation.CompilationHint(member={"value"})=[@org.springframework.boot.autoconfigure.SpringBootApplication(proxyBeanMethods=false), @org.springframework.boot.context.properties.ConfigurationPropertiesScan, @org.springframework.context.annotation.Import({org.springframework.boot.context.properties.ConfigurationPropertiesScanRegistrar.class})]} give [com.example.commandlinerunner.CommandlinerunnerApplication]
+AccessibilityNeeded is "reflection:constructors" class?com.sun.tools.javac.util.List
+Comparing "reflection:constructors" with resource
+Comparing "reflection:constructors" with reflection:constructors
+reflection:constructors matched
+Adding reflection reference for com.example.commandlinerunner.CommandlinerunnerApplication? true false false
+Adding type com.example.commandlinerunner.CommandlinerunnerApplication
+[CommandlinerunnerApplication] hints {@org.springframework.core.annotation.CompilationHint(access={"reflection:constructors"})=[@org.springframework.boot.autoconfigure.SpringBootApplication(proxyBeanMethods=false), @org.springframework.boot.SpringBootConfiguration, @org.springframework.context.annotation.Configuration(proxyBeanMethods=false), @org.springframework.stereotype.Component], @org.springframework.core.annotation.CompilationHint(member={"value"})=[@org.springframework.boot.autoconfigure.SpringBootApplication(proxyBeanMethods=false), @org.springframework.boot.context.properties.ConfigurationPropertiesScan, @org.springframework.context.annotation.Import({org.springframework.boot.context.properties.ConfigurationPropertiesScanRegistrar.class})]} give [com.example.commandlinerunner.CommandlinerunnerApplication]
+AccessibilityNeeded is [] class?java.util.Collections$EmptyList
+Adding reflection reference for com.example.commandlinerunner.CommandlinerunnerApplication? false false false
+PROCESSING #CLR
+processing hint on com.example.commandlinerunner.CLR = @Component>@CompilationHint(access={reflection:constructors})
+[CLR] hints {@org.springframework.core.annotation.CompilationHint(access={"reflection:constructors"})=[@org.springframework.stereotype.Component]} give [com.example.commandlinerunner.CLR]
+AccessibilityNeeded is "reflection:constructors" class?com.sun.tools.javac.util.List
+Comparing "reflection:constructors" with resource
+Comparing "reflection:constructors" with reflection:constructors
+reflection:constructors matched
+Adding reflection reference for com.example.commandlinerunner.CLR? true false false
+Adding type com.example.commandlinerunner.CLR
+Outputting data: cds?true  rps?false
+Writing reflect config[{"name":"com.example.commandlinerunner.CommandlinerunnerApplication","allDeclaredConstructors":true},{"name":"com.example.commandlinerunner.CLR","allDeclaredConstructors":true}]
+Generating META-INF/native-image/native-image.properties
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ commandlinerunner ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ commandlinerunner ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/target/test-classes
+>>options are:{}
+Spring Graal Annotation Processor running...
+Outputting data: cds?false  rps?false
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ commandlinerunner ---
+[INFO] 
+[INFO] --- maven-jar-plugin:3.1.1:jar (default-jar) @ commandlinerunner ---
+[INFO] Building jar: /Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/target/commandlinerunner-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.2.0.M2plus:repackage (repackage) @ commandlinerunner ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.296 s
+[INFO] Finished at: 2019-07-23T17:42:46-07:00
+[INFO] ------------------------------------------------------------------------
+Unpacking commandlinerunner-0.0.1-SNAPSHOT.jar
+
+Compile
+Apply file:///Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/classes/META-INF/native-image/native-image.properties
+Apply file:///Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/classes/META-INF/native-image/resource-config.json
+Apply jar:file:///Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-beans-5.2.0.M1plus.jar!/META-INF/native-image/org.springframework/spring-beans/native-image.properties
+Apply jar:file:///Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-boot-autoconfigure-2.2.0.M2plus.jar!/META-INF/native-image/org.springframework.boot/spring-boot-autoconfigure/resource-config.json
+Apply jar:file:///Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-context-5.2.0.M1plus.jar!/META-INF/native-image/org.springframework/spring-context/native-image.properties
+Apply file:///Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/classes/META-INF/native-image/native-image.properties
+Apply file:///Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/classes/META-INF/native-image/resource-config.json
+Executing [
+/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/bin/java \
+-XX:+UnlockExperimentalVMOptions \
+-XX:+EnableJVMCI \
+-XX:-UseJVMCICompiler \
+-Dtruffle.TrustAllTruffleRuntimeProviders=true \
+-Dtruffle.TruffleRuntime=com.oracle.truffle.api.impl.DefaultTruffleRuntime \
+-Dgraalvm.ForcePolyglotInvalid=true \
+-Dgraalvm.locatorDisabled=true \
+-d64 \
+-XX:-UseJVMCIClassLoader \
+-Xss10m \
+-Xms1g \
+-Xmx14g \
+-Duser.country=US \
+-Duser.language=en \
+-Dorg.graalvm.version=19.0.2 \
+-Dorg.graalvm.config=CE \
+-Dcom.oracle.graalvm.isaot=true \
+-Djvmci.class.path.append=/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/jvmci/graal.jar \
+-Dio.netty.noUnsafe=true \
+-Xbootclasspath/a:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/boot/graaljs-scriptengine.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/boot/graal-sdk.jar \
+-cp \
+/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/llvm-wrapper.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/svm.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/javacpp.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/objectfile.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/graal-llvm.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/svm-llvm.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/llvm-platform-specific.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/pointsto.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/jvmci/graal.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/jvmci/graal-management.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/jvmci/jvmci-api.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/jvmci/jvmci-hotspot.jar \
+com.oracle.svm.hosted.NativeImageGeneratorRunner \
+-imagecp \
+/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/boot/graaljs-scriptengine.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/boot/graal-sdk.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/llvm-wrapper.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/svm.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/javacpp.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/objectfile.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/graal-llvm.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/svm-llvm.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/llvm-platform-specific.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/builder/pointsto.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/jvmci/graal.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/jvmci/graal-management.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/jvmci/jvmci-api.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/jvmci/jvmci-hotspot.jar:/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/library-support.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/classes:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-boot-2.2.0.M2plus.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/log4j-api-2.11.2.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/slf4j-api-1.7.26.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-expression-5.2.0.M1plus.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-boot-starter-2.2.0.M2plus.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-core-5.2.0.M1plus.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-beans-5.2.0.M1plus.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/log4j-to-slf4j-2.11.2.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/logback-classic-1.2.3.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/snakeyaml-1.24.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-aop-5.2.0.M1plus.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/jul-to-slf4j-1.7.26.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-boot-autoconfigure-2.2.0.M2plus.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/graal-processor-0.0.1.BUILD-SNAPSHOT.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/logback-core-1.2.3.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/jakarta.annotation-api-1.3.4.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-boot-starter-logging-2.2.0.M2plus.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-context-indexer-5.2.0.M1plus.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-jcl-5.2.0.M1plus.jar:/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/lib/spring-context-5.2.0.M1plus.jar \
+-H:Path=/Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner/unpack/BOOT-INF/classes \
+-H:Name=clr \
+-H:+ReportExceptionStackTraces \
+-H:FallbackThreshold=0 \
+-H:+AllowIncompleteClasspath \
+-H:ClassInitialization=ch.qos.logback.classic.LoggerContext:build_time,ch.qos.logback.classic:build_time,ch.qos.logback.classic.Logger:build_time,org.springframework.util:build_time,org.apache.commons.logging:build_time,ch.qos.logback:build_time,org.apache.logging:build_time,ch.qos.logback.classic:build_time,org.slf4j.LoggerFactory:build_time,org.slf4j.helpers.SubstituteLoggerFactory:build_time,org.slf4j.helpers.NOPLoggerFactory:build_time,org.slf4j.impl.StaticLoggerBinder:build_time,org.springframework.core.annotation:build_time,org.slf4j.helpers.Util:build_time \
+-H:+ReportUnsupportedElementsAtRuntime \
+-H:ReflectionConfigurationResources=META-INF/native-image/org.springframework/spring-beans/reflection-config.json \
+-H:ResourceConfigurationResources=META-INF/native-image/org.springframework.boot/spring-boot-autoconfigure/resource-config.json \
+-H:ReflectionConfigurationResources=META-INF/native-image/org.springframework/spring-context/reflection-config.json \
+-H:ReflectionConfigurationResources=META-INF/native-image/reflection-config.json \
+-H:ResourceConfigurationResources=META-INF/native-image/resource-config.json \
+-H:CLibraryPath=/Users/aclement/installs/graalvm-ce-19.0.2/Contents/Home/jre/lib/svm/clibraries/darwin-amd64 \
+-H:Class=com.example.commandlinerunner.CommandlinerunnerApplication
+]
+[clr:82456]    classlist:   3,423.68 ms
+[clr:82456]        (cap):   1,153.44 ms
+[clr:82456]        setup:   2,259.86 ms
+[clr:82456]   (typeflow):   9,876.19 ms
+[clr:82456]    (objects):  12,127.69 ms
+[clr:82456]   (features):   5,946.32 ms
+[clr:82456]     analysis:  28,566.31 ms
+Warning: class initialization of class org.springframework.format.number.money.Jsr354NumberFormatAnnotationFormatterFactory$PatternDecoratingFormatter failed with exception java.lang.NoClassDefFoundError: javax/money/NumberValue. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.format.number.money.Jsr354NumberFormatAnnotationFormatterFactory$PatternDecoratingFormatter to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.format.datetime.joda.JodaTimeConverters$DateToReadableInstantConverter failed with exception java.lang.NoClassDefFoundError: org/joda/time/ReadableInstant. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.format.datetime.joda.JodaTimeConverters$DateToReadableInstantConverter to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.core.type.filter.AspectJTypeFilter failed with exception java.lang.NoClassDefFoundError: org/aspectj/weaver/World. This class will be initialized at run time because either option --report-unsupported-elements-at-runtime or option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.core.type.filter.AspectJTypeFilter to explicitly request delayed initialization of this class.
+[clr:82456]     (clinit):     439.93 ms
+[clr:82456]     universe:     999.42 ms
+[clr:82456]      (parse):   1,464.85 ms
+[clr:82456]     (inline):   2,960.28 ms
+[clr:82456]    (compile):  17,966.93 ms
+[clr:82456]      compile:  23,912.35 ms
+[clr:82456]        image:   2,619.86 ms
+[clr:82456]        write:     587.17 ms
+[clr:82456]      [total]:  62,505.54 ms
+
+
+Compiled app (clr)
+17:43:50.840 [main] DEBUG org.springframework.core.env.StandardEnvironment - Activating profiles []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                        
+
+17:43:50.842 [main] DEBUG org.springframework.context.index.CandidateComponentsIndexLoader - Loaded 1] index(es)
+17:43:50.843 [main] INFO com.example.commandlinerunner.CommandlinerunnerApplication - Starting CommandlinerunnerApplication on Andys-MacBook-Pro-2018.local with PID 82591 (started by aclement in /Users/aclement/gits3/spring-boot-graal-processor/samples/commandlinerunner)
+17:43:50.843 [main] DEBUG com.example.commandlinerunner.CommandlinerunnerApplication - Running with Spring Boot, Spring
+17:43:50.843 [main] INFO com.example.commandlinerunner.CommandlinerunnerApplication - No active profile set, falling back to default profiles: default
+17:43:50.843 [main] DEBUG org.springframework.boot.SpringApplication - Loading source class com.example.commandlinerunner.CommandlinerunnerApplication
+17:43:50.844 [main] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4895d27d
+17:43:50.844 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+17:43:50.844 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+17:43:50.844 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+17:43:50.844 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+17:43:50.844 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'commandlinerunnerApplication'
+17:43:50.844 [main] INFO com.example.commandlinerunner.CommandlinerunnerApplication - Started CommandlinerunnerApplication in 0.009 seconds (JVM running for 0.009)
+17:43:50.845 [Thread-2] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4895d27d, started on Tue Jul 23 17:43:50 PDT 2019
+
+real	0m0.127s
+user	0m0.007s
+sys	0m0.009s

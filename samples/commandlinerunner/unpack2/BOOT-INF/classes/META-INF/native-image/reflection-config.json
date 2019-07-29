@@ -1,0 +1,71 @@
+[
+  {
+    "name": "com.example.commandlinerunner.CommandlinerunnerApplication",
+    "allDeclaredConstructors": true,
+"allDeclaredMethods": true
+  },
+  {
+    "name": "com.example.commandlinerunner.CLR",
+    "allDeclaredConstructors": true,
+"allDeclaredMethods": true
+},
+
+
+
+  {
+    "name": "org.springframework.boot.autoconfigure.AutoConfigurationExcludeFilter",
+    "allDeclaredConstructors": true
+  },
+
+  {
+    "name": "org.springframework.boot.context.TypeExcludeFilter",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.context.annotation.AnnotationScopeMetadataResolver",
+    "allDeclaredConstructors": true
+  },
+
+  {
+    "name": "org.springframework.stereotype.Component",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.context.annotation.Configuration",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+
+  {
+    "name": "org.springframework.boot.autoconfigure.EnableAutoConfiguration",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+
+  {
+    "name": "org.springframework.boot.autoconfigure.SpringBootApplication",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+
+  {
+    "name": "org.springframework.context.annotation.ComponentScan",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+
+  {
+    "name": "org.springframework.boot.SpringBootConfiguration",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.context.annotation.ComponentScan$Filter",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  }
+]

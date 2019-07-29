@@ -8,9 +8,9 @@
 		<version>2.1.1.RELEASE</version>
 	</parent>
 
-	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>org.springframework</groupId>
+	<artifactId>graal-processor-parent</artifactId>
+	<version>0.0.1.BUILD-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Parent Demo</name>
 

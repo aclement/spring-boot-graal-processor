@@ -325,7 +325,8 @@ public class JSONStringer {
 			switch (c) {
 			case '"':
 			case '\\':
-			case '/':
+			// TODO should this be in or out?
+			//case '/':
 				this.out.append('\\').append(c);
 				break;
 

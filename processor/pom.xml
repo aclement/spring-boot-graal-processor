@@ -9,7 +9,8 @@
 		<version>2.1.1.RELEASE</version>
 	</parent>
 
-	<artifactId>spring-boot-graal-processor</artifactId>
+	<groupId>org.springframework</groupId>
+	<artifactId>graal-processor</artifactId>
 	<version>0.0.1.BUILD-SNAPSHOT</version>
 
 	<name>Spring Boot Graal Processor</name>

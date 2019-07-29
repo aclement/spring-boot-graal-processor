@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {
+      "pattern": "META-INF/spring.components"
+    },
+    {
+      "pattern": "com/example/commandlinerunner/CommandlinerunnerApplication.class"
+    },
+    {
+      "pattern": "com/example/commandlinerunner/CLR.class"
+    },
+
+    {
+      "pattern": "org/springframework/boot/CommandLineRunner.class"
+    }
+  ]
+}

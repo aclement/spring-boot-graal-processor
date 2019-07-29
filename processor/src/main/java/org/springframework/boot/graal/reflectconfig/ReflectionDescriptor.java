@@ -16,8 +16,10 @@
 
 package org.springframework.boot.graal.reflectconfig;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md
@@ -66,6 +68,19 @@ public class ReflectionDescriptor {
 		}
 	}
 
+	public static ReflectionDescriptor of(InputStream fileInputStream) {
+		StringBuilder json = new StringBuilder();
+		try {
+		Scanner s = new Scanner(fileInputStream);
+		while (s.hasNextLine()) {
+			json.append(s.nextLine());
+		}
+			return JsonMarshaller.readReflectConfig(json.toString());
+		} catch (Exception e) {
+			throw new IllegalStateException("Unable to read json:\n"+json.toString(), e);
+		}
+	}
+
 	public boolean hasClassDescriptor(String string) {
 		for (ClassDescriptor cd: classDescriptors) {
 			if (cd.getName().equals(string)) {
@@ -83,5 +98,6 @@ public class ReflectionDescriptor {
 		}
 		return null;
 	}
+
 
 }

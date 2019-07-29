@@ -1,0 +1,1474 @@
+Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T11:33:14-07:00)
+Maven home: /usr/local/Cellar/maven/3.5.4/libexec
+Java version: 1.8.0_192, vendor: Oracle Corporation, runtime: /Users/aclement/jvms/jdk180u192/Home/jre
+Default locale: en_CA, platform encoding: UTF-8
+OS name: "mac os x", version: "10.14.5", arch: "x86_64", family: "mac"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.annotation.* < plexus.core
+[DEBUG]   Imported: javax.annotation.security.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.inject.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.util.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.fusesource.jansi.* < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[INFO] Error stacktraces are turned on.
+[DEBUG] Message scheme: color
+[DEBUG] Message styles: debug info warning error success failure strong mojo project
+[DEBUG] Reading global settings from /usr/local/Cellar/maven/3.5.4/libexec/conf/settings.xml
+[DEBUG] Reading user settings from /Users/aclement/.m2/settings.xml
+[DEBUG] Reading global toolchains from /usr/local/Cellar/maven/3.5.4/libexec/conf/toolchains.xml
+[DEBUG] Reading user toolchains from /Users/aclement/.m2/toolchains.xml
+[DEBUG] Using local repository at /Users/aclement/.m2/repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for /Users/aclement/.m2/repository
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project org.springframework:graal-processor:jar:0.0.1.BUILD-SNAPSHOT: (none)
+[DEBUG] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.springframework.boot:spring-boot-starter-parent:pom:2.1.1.RELEASE: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.springframework.boot:spring-boot-dependencies:pom:2.1.1.RELEASE: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.springframework:graal-processor:jar:0.0.1.BUILD-SNAPSHOT
+[WARNING] 'parent.relativePath' of POM org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT (/Users/aclement/gits3/spring-boot-graal-processor/processor/pom.xml) points at org.springframework:graal-processor-parent instead of org.springframework.boot:spring-boot-starter-parent, please verify your project structure @ line 6, column 10
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: org.springframework:graal-processor:jar:0.0.1.BUILD-SNAPSHOT
+[DEBUG] Tasks:   [clean, install]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] ----------------< org.springframework:graal-processor >-----------------
+[INFO] Building Spring Boot Graal Processor 0.0.1.BUILD-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [compile, runtime, test]
+[DEBUG] Repositories (dependencies): [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean (default-clean)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <directory default-value="${project.build.directory}"/>
+  <excludeDefaultDirectories default-value="false">${maven.clean.excludeDefaultDirectories}</excludeDefaultDirectories>
+  <failOnError default-value="true">${maven.clean.failOnError}</failOnError>
+  <followSymLinks default-value="false">${maven.clean.followSymLinks}</followSymLinks>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <reportDirectory default-value="${project.build.outputDirectory}"/>
+  <retryOnError default-value="true">${maven.clean.retryOnError}</retryOnError>
+  <skip default-value="false">${maven.clean.skip}</skip>
+  <testOutputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <verbose>${maven.clean.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.codehaus.mojo:build-helper-maven-plugin:3.0.0:add-source (add-json-shade-source)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <project default-value="${project}"/>
+  <sources>
+    <source>/Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java</source>
+  </sources>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.1.0:resources (default-resources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <delimiters>
+    <delimiter>@</delimiter>
+  </delimiters>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.resources.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true">false</useDefaultDelimiters>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <parameters default-value="false">true</parameters>
+  <proc>none</proc>
+  <project default-value="${project}"/>
+  <projectArtifact default-value="${project.artifact}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <skipMain>${maven.main.skip}</skipMain>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.6">${maven.compiler.source}</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.6">${maven.compiler.target}</target>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.1.0:testResources (default-testResources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <delimiters>
+    <delimiter>@</delimiter>
+  </delimiters>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <resources default-value="${project.testResources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true">false</useDefaultDelimiters>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.8.0:testCompile (default-testCompile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.testCompileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedTestSourcesDirectory default-value="${project.build.directory}/generated-test-sources/test-annotations"/>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <parameters default-value="false">true</parameters>
+  <proc>none</proc>
+  <project default-value="${project}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <skip>${maven.test.skip}</skip>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.6">${maven.compiler.source}</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.6">${maven.compiler.target}</target>
+  <testPath default-value="${project.testClasspathElements}"/>
+  <testRelease>${maven.compiler.testRelease}</testRelease>
+  <testSource>${maven.compiler.testSource}</testSource>
+  <testTarget>${maven.compiler.testTarget}</testTarget>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test (default-test)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathElements>${maven.test.additionalClasspath}</additionalClasspathElements>
+  <argLine>${argLine}</argLine>
+  <basedir default-value="${basedir}"/>
+  <childDelegation default-value="false">${childDelegation}</childDelegation>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <classpathDependencyExcludes>${maven.test.dependency.excludes}</classpathDependencyExcludes>
+  <debugForkedProcess>${maven.surefire.debug}</debugForkedProcess>
+  <dependenciesToScan>${dependenciesToScan}</dependenciesToScan>
+  <disableXmlReport default-value="false">${disableXmlReport}</disableXmlReport>
+  <enableAssertions default-value="true">${enableAssertions}</enableAssertions>
+  <encoding default-value="${project.reporting.outputEncoding}">${surefire.encoding}</encoding>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludesFile>${surefire.excludesFile}</excludesFile>
+  <failIfNoSpecifiedTests>${surefire.failIfNoSpecifiedTests}</failIfNoSpecifiedTests>
+  <failIfNoTests>${failIfNoTests}</failIfNoTests>
+  <forkCount default-value="1">${forkCount}</forkCount>
+  <forkMode default-value="once">${forkMode}</forkMode>
+  <forkedProcessExitTimeoutInSeconds default-value="30">${surefire.exitTimeout}</forkedProcessExitTimeoutInSeconds>
+  <forkedProcessTimeoutInSeconds>${surefire.timeout}</forkedProcessTimeoutInSeconds>
+  <groups>${groups}</groups>
+  <includesFile>${surefire.includesFile}</includesFile>
+  <junitArtifactName default-value="junit:junit">${junitArtifactName}</junitArtifactName>
+  <junitPlatformArtifactName default-value="org.junit.platform:junit-platform-engine">${junitPlatformArtifactName}</junitPlatformArtifactName>
+  <jvm>${jvm}</jvm>
+  <localRepository default-value="${localRepository}"/>
+  <objectFactory>${objectFactory}</objectFactory>
+  <parallel>${parallel}</parallel>
+  <parallelMavenExecution default-value="${session.parallel}"/>
+  <parallelOptimized default-value="true">${parallelOptimized}</parallelOptimized>
+  <parallelTestsTimeoutForcedInSeconds>${surefire.parallel.forcedTimeout}</parallelTestsTimeoutForcedInSeconds>
+  <parallelTestsTimeoutInSeconds>${surefire.parallel.timeout}</parallelTestsTimeoutInSeconds>
+  <perCoreThreadCount default-value="true">${perCoreThreadCount}</perCoreThreadCount>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <pluginDescriptor default-value="${plugin}"/>
+  <printSummary default-value="true">${surefire.printSummary}</printSummary>
+  <projectArtifactMap>${project.artifactMap}</projectArtifactMap>
+  <projectBuildDirectory default-value="${project.build.directory}"/>
+  <redirectTestOutputToFile default-value="false">${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
+  <remoteRepositories default-value="${project.pluginArtifactRepositories}"/>
+  <reportFormat default-value="brief">${surefire.reportFormat}</reportFormat>
+  <reportNameSuffix default-value="">${surefire.reportNameSuffix}</reportNameSuffix>
+  <reportsDirectory default-value="${project.build.directory}/surefire-reports"/>
+  <rerunFailingTestsCount default-value="0">${surefire.rerunFailingTestsCount}</rerunFailingTestsCount>
+  <reuseForks default-value="true">${reuseForks}</reuseForks>
+  <runOrder default-value="filesystem">${surefire.runOrder}</runOrder>
+  <shutdown default-value="testset">${surefire.shutdown}</shutdown>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <skipAfterFailureCount default-value="0">${surefire.skipAfterFailureCount}</skipAfterFailureCount>
+  <skipExec>${maven.test.skip.exec}</skipExec>
+  <skipTests default-value="false">${skipTests}</skipTests>
+  <suiteXmlFiles>${surefire.suiteXmlFiles}</suiteXmlFiles>
+  <tempDir default-value="surefire">${tempDir}</tempDir>
+  <test>${test}</test>
+  <testClassesDirectory default-value="${project.build.testOutputDirectory}"/>
+  <testFailureIgnore default-value="false">${maven.test.failure.ignore}</testFailureIgnore>
+  <testNGArtifactName default-value="org.testng:testng">${testNGArtifactName}</testNGArtifactName>
+  <testSourceDirectory default-value="${project.build.testSourceDirectory}"/>
+  <threadCount>${threadCount}</threadCount>
+  <threadCountClasses default-value="0">${threadCountClasses}</threadCountClasses>
+  <threadCountMethods default-value="0">${threadCountMethods}</threadCountMethods>
+  <threadCountSuites default-value="0">${threadCountSuites}</threadCountSuites>
+  <trimStackTrace default-value="true">${trimStackTrace}</trimStackTrace>
+  <useFile default-value="true">${surefire.useFile}</useFile>
+  <useManifestOnlyJar default-value="true">${surefire.useManifestOnlyJar}</useManifestOnlyJar>
+  <useSystemClassLoader default-value="true">${surefire.useSystemClassLoader}</useSystemClassLoader>
+  <useUnlimitedThreads default-value="false">${useUnlimitedThreads}</useUnlimitedThreads>
+  <workingDirectory>${basedir}</workingDirectory>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-jar-plugin:3.1.1:jar (default-jar)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <archive>
+    <index>true</index>
+    <manifest>
+      <addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
+      <addDefaultImplementationEntries>false</addDefaultImplementationEntries>
+      <mainClass>${start-class}</mainClass>
+    </manifest>
+    <manifestEntries>
+      <Premain-Class>org.springframework.boot.agent.reflectionrecorder.RecorderAgent</Premain-Class>
+      <Agent-Class>org.springframework.boot.agent.reflectionrecorder.RecorderAgent</Agent-Class>
+      <Can-Redefine-Classes>true</Can-Redefine-Classes>
+      <Main-Class>org.springframework.boot.graal.compare.ReflectJsonCompare</Main-Class>
+    </manifestEntries>
+  </archive>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <finalName default-value="${project.build.finalName}"/>
+  <forceCreation default-value="false">${maven.jar.forceCreation}</forceCreation>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+  <skipIfEmpty default-value="false"/>
+  <useDefaultManifestFile default-value="false">${jar.useDefaultManifestFile}</useDefaultManifestFile>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-shade-plugin:3.2.1:shade (default)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <createDependencyReducedPom default-value="true">true</createDependencyReducedPom>
+  <dependencyReducedPomLocation default-value="${basedir}/dependency-reduced-pom.xml"/>
+  <filters>
+    <filter>
+      <artifact>org.ow2.asm:asm</artifact>
+      <includes>
+        <include>org/**</include>
+      </includes>
+      <excludes>
+        <exclude>META-INF/*.SF</exclude>
+        <exclude>META-INF/*.DSA</exclude>
+        <exclude>META-INF/*.RSA</exclude>
+      </excludes>
+    </filter>
+  </filters>
+  <generateUniqueDependencyReducedPom default-value="false"/>
+  <keepDependenciesWithProvidedScope>true</keepDependenciesWithProvidedScope>
+  <localRepository default-value="${localRepository}"/>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <project default-value="${project}"/>
+  <relocations>
+    <relocation>
+      <pattern>org.objectweb.asm</pattern>
+      <shadedPattern>gap.org.objectweb.asm</shadedPattern>
+    </relocation>
+  </relocations>
+  <remoteArtifactRepositories default-value="${project.remoteArtifactRepositories}"/>
+  <session default-value="${session}"/>
+  <shadeSourcesContent default-value="false">${shadeSourcesContent}</shadeSourcesContent>
+  <shadeTestJar default-value="false"/>
+  <shadedArtifactId default-value="${project.artifactId}"/>
+  <shadedClassifierName default-value="shaded"/>
+  <transformers>
+    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+      <resource>META-INF/spring.handlers</resource>
+    </transformer>
+    <transformer implementation="org.springframework.boot.maven.PropertiesMergingResourceTransformer">
+      <resource>META-INF/spring.factories</resource>
+    </transformer>
+    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+      <resource>META-INF/spring.schemas</resource>
+    </transformer>
+    <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+      <mainClass>${start-class}</mainClass>
+    </transformer>
+  </transformers>
+  <useBaseVersion default-value="false"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-install-plugin:2.5.2:install (default-install)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <artifact default-value="${project.artifact}"/>
+  <attachedArtifacts default-value="${project.attachedArtifacts}"/>
+  <createChecksum default-value="false">${createChecksum}</createChecksum>
+  <installAtEnd default-value="false">${installAtEnd}</installAtEnd>
+  <localRepository>${localRepository}</localRepository>
+  <packaging default-value="${project.packaging}"/>
+  <pomFile default-value="${project.file}"/>
+  <project default-value="${project}"/>
+  <reactorProjects default-value="${reactorProjects}"/>
+  <skip default-value="false">${maven.install.skip}</skip>
+  <updateReleaseInfo default-value="false">${updateReleaseInfo}</updateReleaseInfo>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=502676, ConflictMarker.markTime=326051, ConflictMarker.nodeCount=8, ConflictIdSorter.graphTime=356913, ConflictIdSorter.topsortTime=291630, ConflictIdSorter.conflictIdCount=5, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=2342546, ConflictResolver.conflictItemCount=7, DefaultDependencyCollector.collectTime=32354892, DefaultDependencyCollector.transformTime=5348940}
+[DEBUG] org.springframework:graal-processor:jar:0.0.1.BUILD-SNAPSHOT
+[DEBUG]    org.hamcrest:hamcrest-core:jar:1.3:test
+[DEBUG]    org.ow2.asm:asm:jar:7.1:compile
+[DEBUG]    org.hamcrest:hamcrest-library:jar:1.3:test
+[DEBUG]    org.assertj:assertj-core:jar:3.11.1:test
+[DEBUG]    junit:junit:jar:4.12:provided
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ graal-processor ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=44052, ConflictMarker.markTime=45641, ConflictMarker.nodeCount=14, ConflictIdSorter.graphTime=15675, ConflictIdSorter.topsortTime=12229, ConflictIdSorter.conflictIdCount=12, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=354689, ConflictResolver.conflictItemCount=14, DefaultDependencyCollector.collectTime=62357032, DefaultDependencyCollector.transformTime=522593}
+[DEBUG] org.apache.maven.plugins:maven-clean-plugin:jar:3.1.0:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model:jar:3.0:compile
+[DEBUG]          org.codehaus.plexus:plexus-utils:jar:2.0.4:compile
+[DEBUG]       org.apache.maven:maven-artifact:jar:3.0:compile
+[DEBUG]       org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile
+[DEBUG]          org.codehaus.plexus:plexus-component-annotations:jar:1.7.1:compile
+[DEBUG]          org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile
+[DEBUG]          org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile
+[DEBUG]             org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile
+[DEBUG]    org.apache.maven.shared:maven-shared-utils:jar:3.2.1:compile
+[DEBUG]       commons-io:commons-io:jar:2.5:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.1.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.1.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.1.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-clean-plugin:jar:3.1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:2.0.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.7.1
+[DEBUG]   Included: org.sonatype.sisu:sisu-inject-bean:jar:1.4.2
+[DEBUG]   Included: org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.2.1
+[DEBUG]   Included: commons-io:commons-io:jar:2.5
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-clean-plugin:3.1.0, parent: sun.misc.Launcher$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean' with basic configurator -->
+[DEBUG]   (f) directory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target
+[DEBUG]   (f) excludeDefaultDirectories = false
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) followSymLinks = false
+[DEBUG]   (f) outputDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[DEBUG]   (f) reportDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[DEBUG]   (f) retryOnError = true
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) testOutputDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes
+[DEBUG] -- end configuration --
+[INFO] Deleting /Users/aclement/gits3/spring-boot-graal-processor/processor/target
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/surefire-reports/TEST-org.springframework.boot.graal.reflectconfig.JsonMarshallerTests.xml
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/surefire-reports/org.springframework.boot.graal.reflectconfig.JsonMarshallerTests.txt
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/surefire-reports
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/original-graal-processor-0.0.1.BUILD-SNAPSHOT.jar
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/graal-processor-0.0.1.BUILD-SNAPSHOT.jar
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-test-sources/test-annotations
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-test-sources
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-archiver/pom.properties
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-archiver
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-status/maven-compiler-plugin/compile/default-compile
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-status/maven-compiler-plugin/compile
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-status/maven-compiler-plugin/testCompile
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-status/maven-compiler-plugin
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/maven-status
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/reflect.defaults.json
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/META-INF/services/javax.annotation.processing.Processor
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/META-INF/services
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/META-INF
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/graal/reflectconfig/MethodDescriptor.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/graal/reflectconfig/ClassDescriptor$Flag.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/graal/reflectconfig/FieldDescriptor.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/graal/reflectconfig/MemberDescriptor.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/graal/reflectconfig/JsonConverter.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/graal/reflectconfig/JsonMarshaller.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/graal/reflectconfig/ClassDescriptor.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/graal/reflectconfig/ReflectionDescriptor.class
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/graal/reflectconfig
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/graal
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/reflectionprocessor/ConfigCollector.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/reflectionprocessor/TypeUtils$TypeExtractor.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/reflectionprocessor/ReflectiveAccessAnnotationProcessor.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/reflectionprocessor/ConfigFileStorageManager.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/reflectionprocessor/TypeUtils.class
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/reflectionprocessor
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/configurationprocessor/json/JSONObject.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/configurationprocessor/json/JSONStringer$Scope.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/configurationprocessor/json/JSONTokener.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/configurationprocessor/json/JSONArray.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/configurationprocessor/json/JSON.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/configurationprocessor/json/JSONObject$1.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/configurationprocessor/json/JSONStringer.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/configurationprocessor/json/JSONException.class
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/configurationprocessor/json
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/configurationprocessor
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/RewriteReflectionAdaptor.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/Configuration.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/RI$Sortable$Thing.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/RI$InactivityDumper.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/RI$Sortable.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/RI$Info.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/JVM.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/RewriteReflectionAdaptor$RewritingMethodAdapter.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/ClassPreProcessorAgentAdapter.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/RI$ReflectiveCall.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/RecorderAgent.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/RecorderPreProcessor.class
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder/RI.class
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent/reflectionrecorder
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot/agent
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/boot
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework/CompilationHint.class
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org/springframework
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/org
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-sources/annotations
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-sources
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes/org/springframework/boot/graal/reflectconfig/JsonMarshallerTests.class
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes/org/springframework/boot/graal/reflectconfig
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes/org/springframework/boot/graal
+[INFO] Deleting file /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes/org/springframework/boot/configurationsample/incremental/BarProperties.snippet
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes/org/springframework/boot/configurationsample/incremental
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes/org/springframework/boot/configurationsample
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes/org/springframework/boot
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes/org/springframework
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes/org
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes
+[INFO] Deleting directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target
+[DEBUG] Skipping non-existing directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[DEBUG] Skipping non-existing directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes
+[DEBUG] Skipping non-existing directory /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-source (add-json-shade-source) @ graal-processor ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=191203, ConflictMarker.markTime=105840, ConflictMarker.nodeCount=82, ConflictIdSorter.graphTime=113168, ConflictIdSorter.topsortTime=20621, ConflictIdSorter.conflictIdCount=31, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=2281079, ConflictResolver.conflictItemCount=80, DefaultDependencyCollector.collectTime=96378880, DefaultDependencyCollector.transformTime=2733123}
+[DEBUG] org.codehaus.mojo:build-helper-maven-plugin:jar:3.0.0:
+[DEBUG]    org.apache.maven:maven-core:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-artifact:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-aether-provider:jar:3.0:runtime
+[DEBUG]       org.sonatype.aether:aether-impl:jar:1.7:compile
+[DEBUG]          org.sonatype.aether:aether-spi:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-api:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-util:jar:1.7:compile
+[DEBUG]       org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile
+[DEBUG]          org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile
+[DEBUG]             org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.14:compile
+[DEBUG]       org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[DEBUG]       org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]          org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.0.24:compile
+[DEBUG]    org.beanshell:bsh:jar:2.0b4:compile
+[DEBUG]    org.apache.maven.shared:file-management:jar:3.0.0:compile
+[DEBUG]       org.apache.maven.shared:maven-shared-io:jar:3.0.0:compile
+[DEBUG]          org.apache.maven:maven-compat:jar:3.0:compile
+[DEBUG]          org.apache.maven.wagon:wagon-provider-api:jar:2.10:compile
+[DEBUG]       org.apache.maven.shared:maven-shared-utils:jar:3.0.0:compile
+[DEBUG]          commons-io:commons-io:jar:2.4:compile
+[DEBUG]          com.google.code.findbugs:jsr305:jar:2.0.1:compile
+[DEBUG] Created new class realm plugin>org.codehaus.mojo:build-helper-maven-plugin:3.0.0
+[DEBUG] Importing foreign packages into class realm plugin>org.codehaus.mojo:build-helper-maven-plugin:3.0.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.codehaus.mojo:build-helper-maven-plugin:3.0.0
+[DEBUG]   Included: org.codehaus.mojo:build-helper-maven-plugin:jar:3.0.0
+[DEBUG]   Included: org.sonatype.aether:aether-util:jar:1.7
+[DEBUG]   Included: org.sonatype.sisu:sisu-inject-bean:jar:1.4.2
+[DEBUG]   Included: org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.14
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.5.5
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.24
+[DEBUG]   Included: org.beanshell:bsh:jar:2.0b4
+[DEBUG]   Included: org.apache.maven.shared:file-management:jar:3.0.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-io:jar:3.0.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.0.0
+[DEBUG]   Included: commons-io:commons-io:jar:2.4
+[DEBUG]   Included: com.google.code.findbugs:jsr305:jar:2.0.1
+[DEBUG] Configuring mojo org.codehaus.mojo:build-helper-maven-plugin:3.0.0:add-source from plugin realm ClassRealm[plugin>org.codehaus.mojo:build-helper-maven-plugin:3.0.0, parent: sun.misc.Launcher$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo 'org.codehaus.mojo:build-helper-maven-plugin:3.0.0:add-source' with basic configurator -->
+[DEBUG]   (f) project = MavenProject: org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT @ /Users/aclement/gits3/spring-boot-graal-processor/processor/pom.xml
+[DEBUG]   (f) sources = [/Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java]
+[DEBUG] -- end configuration --
+[INFO] Source directory: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java added.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ graal-processor ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=153599, ConflictMarker.markTime=94448, ConflictMarker.nodeCount=68, ConflictIdSorter.graphTime=67363, ConflictIdSorter.topsortTime=17949, ConflictIdSorter.conflictIdCount=28, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1212210, ConflictResolver.conflictItemCount=67, DefaultDependencyCollector.collectTime=24467704, DefaultDependencyCollector.transformTime=1565247}
+[DEBUG] org.apache.maven.plugins:maven-resources-plugin:jar:3.1.0:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-artifact:jar:3.0:compile
+[DEBUG]       org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile
+[DEBUG]          org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile
+[DEBUG]             org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile
+[DEBUG]    org.apache.maven:maven-core:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-aether-provider:jar:3.0:runtime
+[DEBUG]       org.sonatype.aether:aether-impl:jar:1.7:compile
+[DEBUG]          org.sonatype.aether:aether-spi:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-api:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-util:jar:1.7:compile
+[DEBUG]       org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.7.1:compile
+[DEBUG]       org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]          org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]    org.apache.maven:maven-model:jar:3.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.1.0:compile
+[DEBUG]    org.apache.maven.shared:maven-filtering:jar:3.1.1:compile
+[DEBUG]       org.apache.maven.shared:maven-shared-utils:jar:3.0.0:compile
+[DEBUG]          com.google.code.findbugs:jsr305:jar:2.0.1:compile
+[DEBUG]       org.sonatype.plexus:plexus-build-api:jar:0.0.7:compile
+[DEBUG]    commons-io:commons-io:jar:2.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-interpolation:jar:1.24:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.1.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.1.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.1.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-resources-plugin:jar:3.1.0
+[DEBUG]   Included: org.sonatype.sisu:sisu-inject-bean:jar:1.4.2
+[DEBUG]   Included: org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7
+[DEBUG]   Included: org.sonatype.aether:aether-util:jar:1.7
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.7.1
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.1.0
+[DEBUG]   Included: org.apache.maven.shared:maven-filtering:jar:3.1.1
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.0.0
+[DEBUG]   Included: com.google.code.findbugs:jsr305:jar:2.0.1
+[DEBUG]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.7
+[DEBUG]   Included: commons-io:commons-io:jar:2.5
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.24
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-resources-plugin:3.1.0:resources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.1.0, parent: sun.misc.Launcher$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-resources-plugin:3.1.0:resources' with basic configurator -->
+[DEBUG]   (f) addDefaultExcludes = true
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (s) delimiters = [@]
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (f) fileNameFiltering = false
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT @ /Users/aclement/gits3/spring-boot-graal-processor/processor/pom.xml
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: true, FileSet {directory: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/resources, PatternSet [includes: {**/application*.yml, **/application*.yaml, **/application*.properties}, excludes: {}]}}, Resource {targetPath: null, filtering: false, FileSet {directory: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/resources, PatternSet [includes: {}, excludes: {**/application*.yml, **/application*.yaml, **/application*.properties}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@61019f59
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = false
+[DEBUG] -- end configuration --
+[DEBUG] properties used {project.baseUri=file:/Users/aclement/gits3/spring-boot-graal-processor/processor/, statsd-client.version=3.1.0, saaj-impl.version=1.5.0, jaxen.version=1.1.6, xml-apis.version=1.4.01, spring.version=5.1.3.RELEASE, env.LC_CTYPE=en_CA.UTF-8, env.TERM=xterm-256color, byte-buddy.version=1.9.5, janino.version=3.0.11, htmlunit.version=2.33, nio-multipart-parser.version=1.1.0, env.OLDPWD=/Users/aclement/gits3/spring-boot-graal-processor/processor, maven-source-plugin.version=3.0.1, user.dir=/Users/aclement/gits3/spring-boot-graal-processor/processor, java.vm.version=25.192-b12, env.ITERM_PROFILE=Default, env.Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.xzMo1fpvRZ/Render, env.ITERM_SESSION_ID=w0t0p0:7FA8E81D-CC28-477C-A07F-C365731DDE2F, selenium.version=3.14.0, versions-maven-plugin.version=2.7, jackson.version=2.9.7, thymeleaf-extras-java8time.version=3.0.2.RELEASE, sun.os.patch.level=unknown, snakeyaml.version=1.23, javax-validation.version=2.0.1.Final, jetty.version=9.4.12.v20180830, java.vm.specification.name=Java Virtual Machine Specification, httpclient.version=4.5.6, solr.version=7.4.0, tomcat.version=9.0.13, spring-kafka.version=2.2.2.RELEASE, jboss-transaction-spi.version=7.6.0.Final, mimepull.version=1.9.10, influxdb-java.version=2.14, netty.version=4.1.31.Final, jdom2.version=2.0.6, os.name=Mac OS X, pooled-jms-version=1.0.3, rxjava2.version=2.2.4, maven.version=3.5.4, maven-install-plugin.version=2.5.2, env.XPC_FLAGS=0x0, log4j2.version=2.11.1, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, os.arch=x86_64, user.name=aclement, servlet-api.version=4.0.1, activemq.version=5.15.8, aspectj.version=1.9.2, sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher -X -Denforcer.skip=true -DskipTests clean install, env.USER=aclement, ehcache.version=2.10.6, env.LOGNAME=aclement, project.reporting.outputEncoding=UTF-8, undertow.version=2.0.16.Final, javax-jaxws.version=2.3.1, querydsl.version=4.2.1, mssql-jdbc.version=6.4.0.jre8, user.country=CA, slf4j.version=1.7.25, enforcer.skip=true, java.endorsed.dirs=/Users/aclement/jvms/jdk180u192/Home/jre/lib/endorsed, maven-dependency-plugin.version=3.1.1, kotlin.version=1.2.71, ehcache3.version=3.6.2, junit.version=4.12, java.vm.specification.version=1.8, ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, env.SHLVL=1, kafka.version=2.0.1, spring-data-releasetrain.version=Lovelace-SR3, java.vendor=Oracle Corporation, spring-session-bom.version=Bean-SR1, hamcrest.version=1.3, spring-restdocs.version=2.0.2.RELEASE, file.separator=/, flyway.version=5.2.3, antlr2.version=2.7.7, unboundid-ldapsdk.version=4.0.9, exec-maven-plugin.version=1.6.0, atomikos.version=4.0.6, glassfish-jaxb.version=2.3.1, jolokia.version=1.6.0, sun.java.launcher=SUN_STANDARD, env.PAGER=less, mockito.version=2.23.4, spring-ldap.version=2.3.2.RELEASE, maven-antrun-plugin.version=1.8, commons-pool2.version=2.6.0, java.library.path=/Users/aclement/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., glassfish-el.version=3.0.0, classworlds.conf=/usr/local/Cellar/maven/3.5.4/libexec/bin/m2.conf, jmustache.version=1.14, quartz.version=2.3.0, project.build.sourceEncoding=UTF-8, sun.arch.data.model=64, micrometer.version=1.1.1, junit-jupiter.version=5.3.2, env.PATH=/Users/aclement/jvms/jdk180u192/Home/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/aclement/bin:/Users/aclement/installs/graalvm/Contents/Home/bin, path.separator=:, git-commit-id-plugin.version=2.2.5, env.TERM_PROGRAM=iTerm.app, sun.io.unicode.encoding=UnicodeBig, maven-invoker-plugin.version=3.1.0, httpcore.version=4.4.10, xml-maven-plugin.version=1.0.2, user.language=en, jaybird.version=3.0.5, johnzon.version=1.1.10, env.GREP_COLOR=1;33, joda-time.version=2.10.1, appengine-sdk.version=1.9.68, env.ZSH=/Users/aclement/.oh-my-zsh, gopherProxySet=false, maven.compiler.source=1.8, java.class.version=52.0, main.basedir=/Users/aclement/gits3/spring-boot-graal-processor/processor/../../.., lettuce.version=5.1.3.RELEASE, couchbase-client.version=2.7.1, jboss-logging.version=3.3.2.Final, maven-javadoc-plugin.version=3.0.1, mariadb.version=2.3.0, jooq.version=3.11.7, file.encoding.pkg=sun.io, sun.cpu.endian=little, maven.compiler.target=1.8, cassandra-driver.version=3.6.0, maven-site-plugin.version=3.7.1, env.SHELL=/bin/zsh, prometheus-pushgateway.version=0.5.0, socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16, groovy.version=2.5.4, java.home=/Users/aclement/jvms/jdk180u192/Home/jre, jetty-el.version=8.5.33.1, spring-batch.version=4.1.0.RELEASE, javax-activation.version=1.2.0, maven.home=/usr/local/Cellar/maven/3.5.4/libexec, rxjava-adapter.version=1.2.1, commons-lang3.version=3.8.1, maven-shade-plugin.version=3.2.1, http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, maven-enforcer-plugin.version=3.0.0-M2, commons-pool.version=1.6, maven-war-plugin.version=3.2.2, httpasyncclient.version=4.1.4, javax-persistence.version=2.2, rxjava.version=1.3.8, thymeleaf-extras-springsecurity.version=3.0.4.RELEASE, couchbase-cache-client.version=2.1.0, commons-dbcp2.version=2.5.0, maven-failsafe-plugin.version=2.22.1, xmlunit2.version=2.6.2, dom4j.version=1.6.1, env.SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.Nqa8sbB14e/Listeners, liquibase.version=3.6.2, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, wsdl4j.version=1.6.3, library.jansi.path=/usr/local/Cellar/maven/3.5.4/libexec/lib/jansi-native, json-path.version=2.4.0, env.XPC_SERVICE_NAME=0, jsonassert.version=1.5.0, hazelcast.version=3.11, env.COMMAND_MODE=unix2003, javax-transaction.version=1.3, h2.version=1.4.197, env.SECURITYSESSIONID=186a9, spring-retry.version=1.2.2.RELEASE, maven-clean-plugin.version=3.1.0, spring-plugin.version=1.2.0.RELEASE, java.vm.specification.vendor=Oracle Corporation, dropwizard-metrics.version=4.0.3, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, java.io.tmpdir=/var/folders/tg/klfmdszs2z129xkyrpyzlfyc0000gn/T/, java.vendor.url=http://java.oracle.com/, lombok.version=1.18.4, javax-jsonb.version=1.0, sun.boot.library.path=/Users/aclement/jvms/jdk180u192/Home/jre/lib, jetty-reactive-httpclient.version=1.0.2, derby.version=10.14.2.0, gson.version=2.8.5, env.JAVA_MAIN_CLASS_73697=org.codehaus.plexus.classworlds.launcher.Launcher, javax-jms.version=2.0.1, spring-security.version=5.1.2.RELEASE, java.runtime.name=Java(TM) SE Runtime Environment, javax-websocket.version=1.1, maven-resources-plugin.version=3.1.0, maven.conf=/usr/local/Cellar/maven/3.5.4/libexec/conf, assertj.version=3.11.1, sun.cpu.isalist=, spring-amqp.version=2.1.2.RELEASE, hibernate-validator.version=6.0.13.Final, maven.multiModuleProjectDirectory=/Users/aclement/gits3/spring-boot-graal-processor, commons-codec.version=1.11, user.home=/Users/aclement, env.JAVA_HOME=/Users/aclement/jvms/jdk180u192/Home, johnzon-jsonb.version=1.1.10, env.LSCOLORS=exfxcxdxbxegedabagacad, mongodb.version=3.8.2, java.specification.name=Java Platform API Specification, logback.version=1.2.3, java.specification.vendor=Oracle Corporation, maven-help-plugin.version=3.1.0, rabbit-amqp-client.version=5.4.3, java.version=1.8.0_192, thymeleaf.version=3.0.11.RELEASE, embedded-mongo.version=2.1.1, postgresql.version=42.2.5, hsqldb.version=2.4.1, env.LESS=-R, hazelcast-hibernate5.version=1.2.3, javax-mail.version=1.6.2, env.RPROMPT=, webjars-hal-browser.version=3325375, flatten-maven-plugin.version=1.0.1, env.MAVEN_PROJECTBASEDIR=/Users/aclement/gits3/spring-boot-graal-processor, maven.build.timestamp=2019-07-12T04:42:19Z, jersey.version=2.27, jna.version=4.5.2, env.PWD=/Users/aclement/gits3/spring-boot-graal-processor/processor, env.TMPDIR=/var/folders/tg/klfmdszs2z129xkyrpyzlfyc0000gn/T/, line.separator=
+, java.specification.version=1.8, java.vm.info=mixed mode, env.TERM_PROGRAM_VERSION=3.2.4, spring-cloud-connectors.version=2.0.4.RELEASE, javax-annotation.version=1.3.2, skipTests=true, sun.boot.class.path=/Users/aclement/jvms/jdk180u192/Home/jre/lib/resources.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/rt.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/sunrsasign.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/jsse.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/jce.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/charsets.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/jfr.jar:/Users/aclement/jvms/jdk180u192/Home/jre/classes, env.COLORFGBG=15;0, build-helper-maven-plugin.version=3.0.0, javax-json.version=1.1.4, bitronix.version=2.1.4, maven-deploy-plugin.version=2.8.2, jetty-jsp.version=2.2.0.v201112011158, env.HOME=/Users/aclement, mongo-driver-reactivestreams.version=1.9.2, infinispan.version=9.4.3.Final, nekohtml.version=1.9.22, java.awt.printerjob=sun.lwawt.macosx.CPrinterJob, jstl.version=1.2, sun.jnu.encoding=UTF-8, hibernate.version=5.3.7.Final, javax-money.version=1.0.3, java.runtime.version=1.8.0_192-b12, sendgrid.version=4.3.0, reactive-streams.version=1.0.2, env.COLORTERM=truecolor, maven.build.version=Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T11:33:14-07:00), user.timezone=, resource.delimiter=@, reactor-bom.version=Californium-SR3, netty-tcnative.version=2.0.20.Final, mysql.version=8.0.13, hikaricp.version=3.2.0, spring-hateoas.version=0.25.0.RELEASE, java.ext.dirs=/Users/aclement/Library/Java/Extensions:/Users/aclement/jvms/jdk180u192/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java, env.MAVEN_CMD_LINE_ARGS= -X -Denforcer.skip=true -DskipTests clean install, caffeine.version=2.6.2, javax-jaxb.version=2.3.1, spring-integration.version=5.1.1.RELEASE, jest.version=6.3.1, java.class.path=/usr/local/Cellar/maven/3.5.4/libexec/boot/plexus-classworlds-2.5.2.jar, maven-jar-plugin.version=3.1.0, os.version=10.14.5, neo4j-ogm.version=3.1.5, rest-assured.version=3.1.1, thymeleaf-layout-dialect.version=2.3.0, env.LS_COLORS=di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:, sqlite-jdbc.version=3.25.2, classmate.version=1.4.0, javax-cache.version=1.1.0, env.TERM_SESSION_ID=w0t0p0:7FA8E81D-CC28-477C-A07F-C365731DDE2F, env.LANG=en_CA.UTF-8, java.awt.graphicsenv=sun.awt.CGraphicsEnvironment, jedis.version=2.9.0, maven-compiler-plugin.version=3.8.0, java.vm.vendor=Oracle Corporation, maven-assembly-plugin.version=3.1.0, spring-framework.version=5.1.3.RELEASE, elasticsearch.version=6.4.3, freemarker.version=2.3.28, thymeleaf-extras-data-attribute.version=2.0.1, selenium-htmlunit.version=2.33.0, sun-mail.version=1.6.2, webjars-locator-core.version=0.35, artemis.version=2.6.3, maven-surefire-plugin.version=2.22.1, jtds.version=1.3.1, spring-ws.version=3.0.4.RELEASE, file.encoding=UTF-8, env.__CF_USER_TEXT_ENCODING=0x1F5:0x0:0x52, awt.toolkit=sun.lwawt.macosx.LWCToolkit}
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[DEBUG] resource with targetPath null
+directory /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/resources
+excludes []
+includes [**/application*.yml, **/application*.yaml, **/application*.properties]
+[DEBUG] ignoreDelta true
+[INFO] Copying 0 resource
+[DEBUG] resource with targetPath null
+directory /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/resources
+excludes [**/application*.yml, **/application*.yaml, **/application*.properties]
+includes []
+[DEBUG] ignoreDelta true
+[INFO] Copying 2 resources
+[DEBUG] Copying file META-INF/services/javax.annotation.processing.Processor
+[DEBUG] file javax.annotation.processing.Processor has a filtered file extension
+[DEBUG] copy /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/resources/META-INF/services/javax.annotation.processing.Processor to /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/META-INF/services/javax.annotation.processing.Processor
+[DEBUG] Copying file reflect.defaults.json
+[DEBUG] file reflect.defaults.json has a filtered file extension
+[DEBUG] copy /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/resources/reflect.defaults.json to /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes/reflect.defaults.json
+[DEBUG] no use filter components
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ graal-processor ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=258937, ConflictMarker.markTime=183604, ConflictMarker.nodeCount=118, ConflictIdSorter.graphTime=115431, ConflictIdSorter.topsortTime=40558, ConflictIdSorter.conflictIdCount=45, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1136670, ConflictResolver.conflictItemCount=72, DefaultDependencyCollector.collectTime=69077880, DefaultDependencyCollector.transformTime=1752688}
+[DEBUG] org.apache.maven.plugins:maven-compiler-plugin:jar:3.8.0:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model:jar:3.0:compile
+[DEBUG]       org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile
+[DEBUG]          org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile
+[DEBUG]             org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:3.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:2.0.4:compile
+[DEBUG]    org.apache.maven:maven-core:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-aether-provider:jar:3.0:runtime
+[DEBUG]       org.sonatype.aether:aether-impl:jar:1.7:compile
+[DEBUG]          org.sonatype.aether:aether-spi:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-api:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-util:jar:1.7:compile
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.14:compile
+[DEBUG]       org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.7.1:compile
+[DEBUG]       org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]          org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]    org.apache.maven.shared:maven-shared-utils:jar:3.2.1:compile
+[DEBUG]       commons-io:commons-io:jar:2.5:compile
+[DEBUG]    org.apache.maven.shared:maven-shared-incremental:jar:1.1:compile
+[DEBUG]    org.codehaus.plexus:plexus-java:jar:0.9.10:compile
+[DEBUG]       org.ow2.asm:asm:jar:6.2:compile
+[DEBUG]       com.thoughtworks.qdox:qdox:jar:2.0-M9:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-api:jar:2.8.4:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-manager:jar:2.8.4:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-javac:jar:2.8.4:runtime
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.8.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.8.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.8.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-compiler-plugin:jar:3.8.0
+[DEBUG]   Included: org.sonatype.sisu:sisu-inject-bean:jar:1.4.2
+[DEBUG]   Included: org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:2.0.4
+[DEBUG]   Included: org.sonatype.aether:aether-util:jar:1.7
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.14
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.7.1
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.2.1
+[DEBUG]   Included: commons-io:commons-io:jar:2.5
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-incremental:jar:1.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-java:jar:0.9.10
+[DEBUG]   Included: org.ow2.asm:asm:jar:6.2
+[DEBUG]   Included: com.thoughtworks.qdox:qdox:jar:2.0-M9
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-api:jar:2.8.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-manager:jar:2.8.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-javac:jar:2.8.4
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.8.0, parent: sun.misc.Launcher$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile' with basic configurator -->
+[DEBUG]   (f) basedir = /Users/aclement/gits3/spring-boot-graal-processor/processor
+[DEBUG]   (f) buildDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target
+[DEBUG]   (f) compilePath = [/Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes, /Users/aclement/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar, /Users/aclement/.m2/repository/junit/junit/4.12/junit-4.12.jar]
+[DEBUG]   (f) compileSourceRoots = [/Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java, /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) failOnWarning = false
+[DEBUG]   (f) forceJavacCompilerUse = false
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) generatedSourcesDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-sources/annotations
+[DEBUG]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile {execution: default-compile}
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[DEBUG]   (f) parameters = true
+[DEBUG]   (f) proc = none
+[DEBUG]   (f) project = MavenProject: org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT @ /Users/aclement/gits3/spring-boot-graal-processor/processor/pom.xml
+[DEBUG]   (f) projectArtifact = org.springframework:graal-processor:jar:0.0.1.BUILD-SNAPSHOT
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@61019f59
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = false
+[DEBUG]   (f) skipMultiThreadWarning = false
+[DEBUG]   (f) source = 1.8
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (s) target = 1.8
+[DEBUG]   (f) useIncrementalCompilation = true
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Adding /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-sources/annotations to compile source roots:
+  /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java
+  /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java
+[DEBUG] New compile source roots:
+  /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java
+  /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java
+  /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-sources/annotations
+[DEBUG] CompilerReuseStrategy: reuseCreated
+[DEBUG] useIncrementalCompilation enabled
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/CompilationHint.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/agent/reflectionrecorder/Configuration.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/agent/reflectionrecorder/RecorderAgent.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/graal/reflectconfig/FieldDescriptor.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/graal/reflectconfig/MethodDescriptor.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/reflectionprocessor/ConfigCollector.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/graal/reflectconfig/ClassDescriptor.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/agent/reflectionrecorder/RecorderPreProcessor.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java/org/springframework/boot/configurationprocessor/json/JSONObject.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java/org/springframework/boot/configurationprocessor/json/JSONTokener.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/graal/reflectconfig/JsonConverter.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/reflectionprocessor/ConfigFileStorageManager.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java/org/springframework/boot/configurationprocessor/json/JSONException.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/graal/reflectconfig/JsonMarshaller.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/reflectionprocessor/TypeUtils.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java/org/springframework/boot/configurationprocessor/json/JSON.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/graal/reflectconfig/ReflectionDescriptor.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java/org/springframework/boot/configurationprocessor/json/JSONArray.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/agent/reflectionrecorder/JVM.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/graal/compare/ReflectJsonCompare.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/graal/reflectconfig/MemberDescriptor.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/reflectionprocessor/ReflectiveAccessAnnotationProcessor.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java/org/springframework/boot/configurationprocessor/json/JSONStringer.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/agent/reflectionrecorder/RI.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/agent/reflectionrecorder/RewriteReflectionAdaptor.java
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/agent/reflectionrecorder/ClassPreProcessorAgentAdapter.java
+[INFO] Changes detected - recompiling the module!
+[DEBUG] Classpath:
+[DEBUG]  /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[DEBUG]  /Users/aclement/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar
+[DEBUG]  /Users/aclement/.m2/repository/junit/junit/4.12/junit-4.12.jar
+[DEBUG] Source roots:
+[DEBUG]  /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java
+[DEBUG]  /Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java
+[DEBUG]  /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-sources/annotations
+[DEBUG] Command line options:
+[DEBUG] -d /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes -classpath /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes:/Users/aclement/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar:/Users/aclement/.m2/repository/junit/junit/4.12/junit-4.12.jar: -sourcepath /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java:/Users/aclement/gits3/spring-boot-graal-processor/processor/src/json-shade/java:/Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-sources/annotations: -s /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-sources/annotations -proc:none -g -parameters -nowarn -target 1.8 -source 1.8 -encoding UTF-8
+[DEBUG] incrementalBuildHelper#beforeRebuildExecution
+[INFO] Compiling 26 source files to /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[DEBUG] incrementalBuildHelper#afterRebuildExecution
+[WARNING] /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/agent/reflectionrecorder/JVM.java:[130,28] sun.reflect.Reflection is internal proprietary API and may be removed in a future release
+[WARNING] /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/agent/reflectionrecorder/RI.java:[364,46] sun.reflect.Reflection is internal proprietary API and may be removed in a future release
+[WARNING] /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/agent/reflectionrecorder/RI.java:[368,45] sun.reflect.Reflection is internal proprietary API and may be removed in a future release
+[INFO] /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/reflectionprocessor/ReflectiveAccessAnnotationProcessor.java: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/reflectionprocessor/ReflectiveAccessAnnotationProcessor.java uses unchecked or unsafe operations.
+[INFO] /Users/aclement/gits3/spring-boot-graal-processor/processor/src/main/java/org/springframework/boot/reflectionprocessor/ReflectiveAccessAnnotationProcessor.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ graal-processor ---
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-resources-plugin:3.1.0:testResources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.1.0, parent: sun.misc.Launcher$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-resources-plugin:3.1.0:testResources' with basic configurator -->
+[DEBUG]   (f) addDefaultExcludes = true
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (s) delimiters = [@]
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (f) fileNameFiltering = false
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT @ /Users/aclement/gits3/spring-boot-graal-processor/processor/pom.xml
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/test/resources, PatternSet [includes: {}, excludes: {}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@61019f59
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = false
+[DEBUG] -- end configuration --
+[DEBUG] properties used {project.baseUri=file:/Users/aclement/gits3/spring-boot-graal-processor/processor/, statsd-client.version=3.1.0, saaj-impl.version=1.5.0, jaxen.version=1.1.6, xml-apis.version=1.4.01, spring.version=5.1.3.RELEASE, env.LC_CTYPE=en_CA.UTF-8, env.TERM=xterm-256color, byte-buddy.version=1.9.5, janino.version=3.0.11, htmlunit.version=2.33, nio-multipart-parser.version=1.1.0, env.OLDPWD=/Users/aclement/gits3/spring-boot-graal-processor/processor, maven-source-plugin.version=3.0.1, user.dir=/Users/aclement/gits3/spring-boot-graal-processor/processor, java.vm.version=25.192-b12, env.ITERM_PROFILE=Default, env.Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.xzMo1fpvRZ/Render, env.ITERM_SESSION_ID=w0t0p0:7FA8E81D-CC28-477C-A07F-C365731DDE2F, selenium.version=3.14.0, versions-maven-plugin.version=2.7, jackson.version=2.9.7, thymeleaf-extras-java8time.version=3.0.2.RELEASE, sun.os.patch.level=unknown, snakeyaml.version=1.23, javax-validation.version=2.0.1.Final, jetty.version=9.4.12.v20180830, java.vm.specification.name=Java Virtual Machine Specification, httpclient.version=4.5.6, solr.version=7.4.0, tomcat.version=9.0.13, spring-kafka.version=2.2.2.RELEASE, jboss-transaction-spi.version=7.6.0.Final, mimepull.version=1.9.10, influxdb-java.version=2.14, netty.version=4.1.31.Final, jdom2.version=2.0.6, os.name=Mac OS X, pooled-jms-version=1.0.3, rxjava2.version=2.2.4, maven.version=3.5.4, maven-install-plugin.version=2.5.2, env.XPC_FLAGS=0x0, log4j2.version=2.11.1, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, os.arch=x86_64, user.name=aclement, servlet-api.version=4.0.1, activemq.version=5.15.8, aspectj.version=1.9.2, sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher -X -Denforcer.skip=true -DskipTests clean install, env.USER=aclement, ehcache.version=2.10.6, env.LOGNAME=aclement, project.reporting.outputEncoding=UTF-8, undertow.version=2.0.16.Final, javax-jaxws.version=2.3.1, querydsl.version=4.2.1, mssql-jdbc.version=6.4.0.jre8, user.country=CA, slf4j.version=1.7.25, enforcer.skip=true, java.endorsed.dirs=/Users/aclement/jvms/jdk180u192/Home/jre/lib/endorsed, maven-dependency-plugin.version=3.1.1, kotlin.version=1.2.71, ehcache3.version=3.6.2, junit.version=4.12, java.vm.specification.version=1.8, ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, env.SHLVL=1, kafka.version=2.0.1, spring-data-releasetrain.version=Lovelace-SR3, java.vendor=Oracle Corporation, spring-session-bom.version=Bean-SR1, hamcrest.version=1.3, spring-restdocs.version=2.0.2.RELEASE, file.separator=/, flyway.version=5.2.3, antlr2.version=2.7.7, unboundid-ldapsdk.version=4.0.9, exec-maven-plugin.version=1.6.0, atomikos.version=4.0.6, glassfish-jaxb.version=2.3.1, jolokia.version=1.6.0, sun.java.launcher=SUN_STANDARD, env.PAGER=less, mockito.version=2.23.4, spring-ldap.version=2.3.2.RELEASE, maven-antrun-plugin.version=1.8, commons-pool2.version=2.6.0, java.library.path=/Users/aclement/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., glassfish-el.version=3.0.0, classworlds.conf=/usr/local/Cellar/maven/3.5.4/libexec/bin/m2.conf, jmustache.version=1.14, quartz.version=2.3.0, project.build.sourceEncoding=UTF-8, sun.arch.data.model=64, micrometer.version=1.1.1, junit-jupiter.version=5.3.2, env.PATH=/Users/aclement/jvms/jdk180u192/Home/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/aclement/bin:/Users/aclement/installs/graalvm/Contents/Home/bin, path.separator=:, git-commit-id-plugin.version=2.2.5, env.TERM_PROGRAM=iTerm.app, sun.io.unicode.encoding=UnicodeBig, maven-invoker-plugin.version=3.1.0, httpcore.version=4.4.10, xml-maven-plugin.version=1.0.2, user.language=en, jaybird.version=3.0.5, johnzon.version=1.1.10, env.GREP_COLOR=1;33, joda-time.version=2.10.1, appengine-sdk.version=1.9.68, env.ZSH=/Users/aclement/.oh-my-zsh, gopherProxySet=false, maven.compiler.source=1.8, java.class.version=52.0, main.basedir=/Users/aclement/gits3/spring-boot-graal-processor/processor/../../.., lettuce.version=5.1.3.RELEASE, couchbase-client.version=2.7.1, jboss-logging.version=3.3.2.Final, maven-javadoc-plugin.version=3.0.1, mariadb.version=2.3.0, jooq.version=3.11.7, file.encoding.pkg=sun.io, sun.cpu.endian=little, maven.compiler.target=1.8, cassandra-driver.version=3.6.0, maven-site-plugin.version=3.7.1, env.SHELL=/bin/zsh, prometheus-pushgateway.version=0.5.0, socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16, groovy.version=2.5.4, java.home=/Users/aclement/jvms/jdk180u192/Home/jre, jetty-el.version=8.5.33.1, spring-batch.version=4.1.0.RELEASE, javax-activation.version=1.2.0, maven.home=/usr/local/Cellar/maven/3.5.4/libexec, rxjava-adapter.version=1.2.1, commons-lang3.version=3.8.1, maven-shade-plugin.version=3.2.1, http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, maven-enforcer-plugin.version=3.0.0-M2, commons-pool.version=1.6, maven-war-plugin.version=3.2.2, httpasyncclient.version=4.1.4, javax-persistence.version=2.2, rxjava.version=1.3.8, thymeleaf-extras-springsecurity.version=3.0.4.RELEASE, couchbase-cache-client.version=2.1.0, commons-dbcp2.version=2.5.0, maven-failsafe-plugin.version=2.22.1, xmlunit2.version=2.6.2, dom4j.version=1.6.1, env.SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.Nqa8sbB14e/Listeners, liquibase.version=3.6.2, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, wsdl4j.version=1.6.3, library.jansi.path=/usr/local/Cellar/maven/3.5.4/libexec/lib/jansi-native, json-path.version=2.4.0, env.XPC_SERVICE_NAME=0, jsonassert.version=1.5.0, hazelcast.version=3.11, env.COMMAND_MODE=unix2003, javax-transaction.version=1.3, h2.version=1.4.197, env.SECURITYSESSIONID=186a9, spring-retry.version=1.2.2.RELEASE, maven-clean-plugin.version=3.1.0, spring-plugin.version=1.2.0.RELEASE, java.vm.specification.vendor=Oracle Corporation, dropwizard-metrics.version=4.0.3, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, java.io.tmpdir=/var/folders/tg/klfmdszs2z129xkyrpyzlfyc0000gn/T/, java.vendor.url=http://java.oracle.com/, lombok.version=1.18.4, javax-jsonb.version=1.0, sun.boot.library.path=/Users/aclement/jvms/jdk180u192/Home/jre/lib, jetty-reactive-httpclient.version=1.0.2, derby.version=10.14.2.0, gson.version=2.8.5, env.JAVA_MAIN_CLASS_73697=org.codehaus.plexus.classworlds.launcher.Launcher, javax-jms.version=2.0.1, spring-security.version=5.1.2.RELEASE, java.runtime.name=Java(TM) SE Runtime Environment, javax-websocket.version=1.1, maven-resources-plugin.version=3.1.0, maven.conf=/usr/local/Cellar/maven/3.5.4/libexec/conf, assertj.version=3.11.1, sun.cpu.isalist=, spring-amqp.version=2.1.2.RELEASE, hibernate-validator.version=6.0.13.Final, maven.multiModuleProjectDirectory=/Users/aclement/gits3/spring-boot-graal-processor, commons-codec.version=1.11, user.home=/Users/aclement, env.JAVA_HOME=/Users/aclement/jvms/jdk180u192/Home, johnzon-jsonb.version=1.1.10, env.LSCOLORS=exfxcxdxbxegedabagacad, mongodb.version=3.8.2, java.specification.name=Java Platform API Specification, logback.version=1.2.3, java.specification.vendor=Oracle Corporation, maven-help-plugin.version=3.1.0, rabbit-amqp-client.version=5.4.3, java.version=1.8.0_192, thymeleaf.version=3.0.11.RELEASE, embedded-mongo.version=2.1.1, postgresql.version=42.2.5, hsqldb.version=2.4.1, env.LESS=-R, hazelcast-hibernate5.version=1.2.3, javax-mail.version=1.6.2, env.RPROMPT=, webjars-hal-browser.version=3325375, flatten-maven-plugin.version=1.0.1, env.MAVEN_PROJECTBASEDIR=/Users/aclement/gits3/spring-boot-graal-processor, maven.build.timestamp=2019-07-12T04:42:20Z, jersey.version=2.27, jna.version=4.5.2, env.PWD=/Users/aclement/gits3/spring-boot-graal-processor/processor, env.TMPDIR=/var/folders/tg/klfmdszs2z129xkyrpyzlfyc0000gn/T/, line.separator=
+, java.specification.version=1.8, java.vm.info=mixed mode, env.TERM_PROGRAM_VERSION=3.2.4, spring-cloud-connectors.version=2.0.4.RELEASE, javax-annotation.version=1.3.2, skipTests=true, sun.boot.class.path=/Users/aclement/jvms/jdk180u192/Home/jre/lib/resources.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/rt.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/sunrsasign.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/jsse.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/jce.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/charsets.jar:/Users/aclement/jvms/jdk180u192/Home/jre/lib/jfr.jar:/Users/aclement/jvms/jdk180u192/Home/jre/classes, env.COLORFGBG=15;0, build-helper-maven-plugin.version=3.0.0, javax-json.version=1.1.4, bitronix.version=2.1.4, maven-deploy-plugin.version=2.8.2, jetty-jsp.version=2.2.0.v201112011158, env.HOME=/Users/aclement, mongo-driver-reactivestreams.version=1.9.2, infinispan.version=9.4.3.Final, nekohtml.version=1.9.22, java.awt.printerjob=sun.lwawt.macosx.CPrinterJob, jstl.version=1.2, sun.jnu.encoding=UTF-8, hibernate.version=5.3.7.Final, javax-money.version=1.0.3, java.runtime.version=1.8.0_192-b12, sendgrid.version=4.3.0, reactive-streams.version=1.0.2, env.COLORTERM=truecolor, maven.build.version=Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T11:33:14-07:00), user.timezone=, resource.delimiter=@, reactor-bom.version=Californium-SR3, netty-tcnative.version=2.0.20.Final, mysql.version=8.0.13, hikaricp.version=3.2.0, spring-hateoas.version=0.25.0.RELEASE, java.ext.dirs=/Users/aclement/Library/Java/Extensions:/Users/aclement/jvms/jdk180u192/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java, env.MAVEN_CMD_LINE_ARGS= -X -Denforcer.skip=true -DskipTests clean install, caffeine.version=2.6.2, javax-jaxb.version=2.3.1, spring-integration.version=5.1.1.RELEASE, jest.version=6.3.1, java.class.path=/usr/local/Cellar/maven/3.5.4/libexec/boot/plexus-classworlds-2.5.2.jar, maven-jar-plugin.version=3.1.0, os.version=10.14.5, neo4j-ogm.version=3.1.5, rest-assured.version=3.1.1, thymeleaf-layout-dialect.version=2.3.0, env.LS_COLORS=di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:, sqlite-jdbc.version=3.25.2, classmate.version=1.4.0, javax-cache.version=1.1.0, env.TERM_SESSION_ID=w0t0p0:7FA8E81D-CC28-477C-A07F-C365731DDE2F, env.LANG=en_CA.UTF-8, java.awt.graphicsenv=sun.awt.CGraphicsEnvironment, jedis.version=2.9.0, maven-compiler-plugin.version=3.8.0, java.vm.vendor=Oracle Corporation, maven-assembly-plugin.version=3.1.0, spring-framework.version=5.1.3.RELEASE, elasticsearch.version=6.4.3, freemarker.version=2.3.28, thymeleaf-extras-data-attribute.version=2.0.1, selenium-htmlunit.version=2.33.0, sun-mail.version=1.6.2, webjars-locator-core.version=0.35, artemis.version=2.6.3, maven-surefire-plugin.version=2.22.1, jtds.version=1.3.1, spring-ws.version=3.0.4.RELEASE, file.encoding=UTF-8, env.__CF_USER_TEXT_ENCODING=0x1F5:0x0:0x52, awt.toolkit=sun.lwawt.macosx.LWCToolkit}
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[DEBUG] resource with targetPath null
+directory /Users/aclement/gits3/spring-boot-graal-processor/processor/src/test/resources
+excludes []
+includes []
+[DEBUG] ignoreDelta true
+[INFO] Copying 1 resource
+[DEBUG] Copying file org/springframework/boot/configurationsample/incremental/BarProperties.snippet
+[DEBUG] file BarProperties.snippet has a filtered file extension
+[DEBUG] copy /Users/aclement/gits3/spring-boot-graal-processor/processor/src/test/resources/org/springframework/boot/configurationsample/incremental/BarProperties.snippet to /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes/org/springframework/boot/configurationsample/incremental/BarProperties.snippet
+[DEBUG] no use filter components
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ graal-processor ---
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-compiler-plugin:3.8.0:testCompile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.8.0, parent: sun.misc.Launcher$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-compiler-plugin:3.8.0:testCompile' with basic configurator -->
+[DEBUG]   (f) basedir = /Users/aclement/gits3/spring-boot-graal-processor/processor
+[DEBUG]   (f) buildDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target
+[DEBUG]   (f) compilePath = [/Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes, /Users/aclement/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar, /Users/aclement/.m2/repository/junit/junit/4.12/junit-4.12.jar]
+[DEBUG]   (f) compileSourceRoots = [/Users/aclement/gits3/spring-boot-graal-processor/processor/src/test/java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) failOnWarning = false
+[DEBUG]   (f) forceJavacCompilerUse = false
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) generatedTestSourcesDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-test-sources/test-annotations
+[DEBUG]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.8.0:testCompile {execution: default-testCompile}
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes
+[DEBUG]   (f) parameters = true
+[DEBUG]   (f) proc = none
+[DEBUG]   (f) project = MavenProject: org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT @ /Users/aclement/gits3/spring-boot-graal-processor/processor/pom.xml
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@61019f59
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = false
+[DEBUG]   (f) skipMultiThreadWarning = false
+[DEBUG]   (f) source = 1.8
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (s) target = 1.8
+[DEBUG]   (f) testPath = [/Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes, /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes, /Users/aclement/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar, /Users/aclement/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar, /Users/aclement/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar, /Users/aclement/.m2/repository/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.jar, /Users/aclement/.m2/repository/junit/junit/4.12/junit-4.12.jar]
+[DEBUG]   (f) useIncrementalCompilation = true
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Adding /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-test-sources/test-annotations to test-compile source roots:
+  /Users/aclement/gits3/spring-boot-graal-processor/processor/src/test/java
+[DEBUG] New test-compile source roots:
+  /Users/aclement/gits3/spring-boot-graal-processor/processor/src/test/java
+  /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-test-sources/test-annotations
+[DEBUG] CompilerReuseStrategy: reuseCreated
+[DEBUG] useIncrementalCompilation enabled
+[DEBUG] Stale source detected: /Users/aclement/gits3/spring-boot-graal-processor/processor/src/test/java/org/springframework/boot/graal/reflectconfig/JsonMarshallerTests.java
+[INFO] Changes detected - recompiling the module!
+[DEBUG] Classpath:
+[DEBUG]  /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes
+[DEBUG]  /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[DEBUG]  /Users/aclement/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+[DEBUG]  /Users/aclement/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar
+[DEBUG]  /Users/aclement/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar
+[DEBUG]  /Users/aclement/.m2/repository/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.jar
+[DEBUG]  /Users/aclement/.m2/repository/junit/junit/4.12/junit-4.12.jar
+[DEBUG] Source roots:
+[DEBUG]  /Users/aclement/gits3/spring-boot-graal-processor/processor/src/test/java
+[DEBUG]  /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-test-sources/test-annotations
+[DEBUG] Command line options:
+[DEBUG] -d /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes -classpath /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes:/Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes:/Users/aclement/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/aclement/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar:/Users/aclement/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/Users/aclement/.m2/repository/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.jar:/Users/aclement/.m2/repository/junit/junit/4.12/junit-4.12.jar: -sourcepath /Users/aclement/gits3/spring-boot-graal-processor/processor/src/test/java:/Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-test-sources/test-annotations: -s /Users/aclement/gits3/spring-boot-graal-processor/processor/target/generated-test-sources/test-annotations -proc:none -g -parameters -nowarn -target 1.8 -source 1.8 -encoding UTF-8
+[DEBUG] incrementalBuildHelper#beforeRebuildExecution
+[INFO] Compiling 1 source file to /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes
+[DEBUG] incrementalBuildHelper#afterRebuildExecution
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ graal-processor ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=271918, ConflictMarker.markTime=64837, ConflictMarker.nodeCount=115, ConflictIdSorter.graphTime=176461, ConflictIdSorter.topsortTime=30026, ConflictIdSorter.conflictIdCount=37, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1034545, ConflictResolver.conflictItemCount=79, DefaultDependencyCollector.collectTime=41010296, DefaultDependencyCollector.transformTime=1594354}
+[DEBUG] org.apache.maven.plugins:maven-surefire-plugin:jar:2.22.1:
+[DEBUG]    org.apache.maven.surefire:maven-surefire-common:jar:2.22.1:compile
+[DEBUG]       org.apache.maven:maven-plugin-api:jar:2.2.1:compile
+[DEBUG]       org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.5.2:compile
+[DEBUG]       org.apache.maven.surefire:surefire-api:jar:2.22.1:compile
+[DEBUG]          org.apache.maven.surefire:surefire-logger-api:jar:2.22.1:compile
+[DEBUG]       org.apache.maven.surefire:surefire-booter:jar:2.22.1:compile
+[DEBUG]       org.apache.maven:maven-artifact:jar:2.2.1:compile
+[DEBUG]          org.codehaus.plexus:plexus-utils:jar:1.5.15:compile
+[DEBUG]       org.apache.maven:maven-plugin-descriptor:jar:2.2.1:compile
+[DEBUG]          org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]             junit:junit:jar:4.12:compile
+[DEBUG]                org.hamcrest:hamcrest-core:jar:1.3:compile
+[DEBUG]       org.apache.maven:maven-project:jar:2.2.1:compile
+[DEBUG]          org.apache.maven:maven-settings:jar:2.2.1:compile
+[DEBUG]          org.apache.maven:maven-profile:jar:2.2.1:compile
+[DEBUG]          org.apache.maven:maven-artifact-manager:jar:2.2.1:compile
+[DEBUG]             backport-util-concurrent:backport-util-concurrent:jar:3.1:compile
+[DEBUG]          org.apache.maven:maven-plugin-registry:jar:2.2.1:compile
+[DEBUG]          org.codehaus.plexus:plexus-interpolation:jar:1.11:compile
+[DEBUG]       org.apache.maven:maven-model:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-core:jar:2.2.1:compile
+[DEBUG]          org.apache.maven:maven-plugin-parameter-documenter:jar:2.2.1:compile
+[DEBUG]          org.slf4j:slf4j-jdk14:jar:1.5.6:runtime
+[DEBUG]             org.slf4j:slf4j-api:jar:1.5.6:runtime
+[DEBUG]          org.slf4j:jcl-over-slf4j:jar:1.5.6:runtime
+[DEBUG]          org.apache.maven.reporting:maven-reporting-api:jar:3.0:compile
+[DEBUG]          org.apache.maven:maven-repository-metadata:jar:2.2.1:compile
+[DEBUG]          org.apache.maven:maven-error-diagnostics:jar:2.2.1:compile
+[DEBUG]          org.apache.maven:maven-monitor:jar:2.2.1:compile
+[DEBUG]          classworlds:classworlds:jar:1.1:compile
+[DEBUG]          org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]             org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]       org.apache.maven:maven-toolchain:jar:2.2.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-java:jar:0.9.10:compile
+[DEBUG]          org.ow2.asm:asm:jar:6.2:compile
+[DEBUG]          com.thoughtworks.qdox:qdox:jar:2.0-M8:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:2.22.1
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:2.22.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:2.22.1
+[DEBUG]   Included: org.apache.maven.plugins:maven-surefire-plugin:jar:2.22.1
+[DEBUG]   Included: org.apache.maven.surefire:maven-surefire-common:jar:2.22.1
+[DEBUG]   Included: org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.5.2
+[DEBUG]   Included: org.apache.maven.surefire:surefire-api:jar:2.22.1
+[DEBUG]   Included: org.apache.maven.surefire:surefire-logger-api:jar:2.22.1
+[DEBUG]   Included: org.apache.maven.surefire:surefire-booter:jar:2.22.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:1.5.15
+[DEBUG]   Included: junit:junit:jar:4.12
+[DEBUG]   Included: org.hamcrest:hamcrest-core:jar:1.3
+[DEBUG]   Included: backport-util-concurrent:backport-util-concurrent:jar:3.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.11
+[DEBUG]   Included: org.slf4j:slf4j-jdk14:jar:1.5.6
+[DEBUG]   Included: org.slf4j:jcl-over-slf4j:jar:1.5.6
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-api:jar:3.0
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-java:jar:0.9.10
+[DEBUG]   Included: org.ow2.asm:asm:jar:6.2
+[DEBUG]   Included: com.thoughtworks.qdox:qdox:jar:2.0-M8
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-surefire-plugin:2.22.1, parent: sun.misc.Launcher$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test' with basic configurator -->
+[DEBUG]   (s) additionalClasspathElements = []
+[DEBUG]   (s) basedir = /Users/aclement/gits3/spring-boot-graal-processor/processor
+[DEBUG]   (s) childDelegation = false
+[DEBUG]   (s) classesDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[DEBUG]   (s) classpathDependencyExcludes = []
+[DEBUG]   (s) dependenciesToScan = []
+[DEBUG]   (s) disableXmlReport = false
+[DEBUG]   (s) enableAssertions = true
+[DEBUG]   (s) encoding = UTF-8
+[DEBUG]   (f) forkCount = 1
+[DEBUG]   (s) forkMode = once
+[DEBUG]   (s) forkedProcessExitTimeoutInSeconds = 30
+[DEBUG]   (s) junitArtifactName = junit:junit
+[DEBUG]   (s) junitPlatformArtifactName = org.junit.platform:junit-platform-engine
+[DEBUG]   (s) localRepository =       id: local
+      url: file:///Users/aclement/.m2/repository/
+   layout: default
+snapshots: [enabled => true, update => always]
+ releases: [enabled => true, update => always]
+
+[DEBUG]   (f) parallelMavenExecution = false
+[DEBUG]   (s) parallelOptimized = true
+[DEBUG]   (s) perCoreThreadCount = true
+[DEBUG]   (s) pluginArtifactMap = {org.apache.maven.plugins:maven-surefire-plugin=org.apache.maven.plugins:maven-surefire-plugin:maven-plugin:2.22.1:, org.apache.maven.surefire:maven-surefire-common=org.apache.maven.surefire:maven-surefire-common:jar:2.22.1:compile, org.apache.maven:maven-plugin-api=org.apache.maven:maven-plugin-api:jar:2.2.1:compile, org.apache.maven.plugin-tools:maven-plugin-annotations=org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.5.2:compile, org.apache.maven.surefire:surefire-api=org.apache.maven.surefire:surefire-api:jar:2.22.1:compile, org.apache.maven.surefire:surefire-logger-api=org.apache.maven.surefire:surefire-logger-api:jar:2.22.1:compile, org.apache.maven.surefire:surefire-booter=org.apache.maven.surefire:surefire-booter:jar:2.22.1:compile, org.apache.maven:maven-artifact=org.apache.maven:maven-artifact:jar:2.2.1:compile, org.codehaus.plexus:plexus-utils=org.codehaus.plexus:plexus-utils:jar:1.5.15:compile, org.apache.maven:maven-plugin-descriptor=org.apache.maven:maven-plugin-descriptor:jar:2.2.1:compile, org.codehaus.plexus:plexus-container-default=org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile, junit:junit=junit:junit:jar:4.12:compile, org.hamcrest:hamcrest-core=org.hamcrest:hamcrest-core:jar:1.3:compile, org.apache.maven:maven-project=org.apache.maven:maven-project:jar:2.2.1:compile, org.apache.maven:maven-settings=org.apache.maven:maven-settings:jar:2.2.1:compile, org.apache.maven:maven-profile=org.apache.maven:maven-profile:jar:2.2.1:compile, org.apache.maven:maven-artifact-manager=org.apache.maven:maven-artifact-manager:jar:2.2.1:compile, backport-util-concurrent:backport-util-concurrent=backport-util-concurrent:backport-util-concurrent:jar:3.1:compile, org.apache.maven:maven-plugin-registry=org.apache.maven:maven-plugin-registry:jar:2.2.1:compile, org.codehaus.plexus:plexus-interpolation=org.codehaus.plexus:plexus-interpolation:jar:1.11:compile, org.apache.maven:maven-model=org.apache.maven:maven-model:jar:2.2.1:compile, org.apache.maven:maven-core=org.apache.maven:maven-core:jar:2.2.1:compile, org.apache.maven:maven-plugin-parameter-documenter=org.apache.maven:maven-plugin-parameter-documenter:jar:2.2.1:compile, org.slf4j:slf4j-jdk14=org.slf4j:slf4j-jdk14:jar:1.5.6:runtime, org.slf4j:slf4j-api=org.slf4j:slf4j-api:jar:1.5.6:runtime, org.slf4j:jcl-over-slf4j=org.slf4j:jcl-over-slf4j:jar:1.5.6:runtime, org.apache.maven.reporting:maven-reporting-api=org.apache.maven.reporting:maven-reporting-api:jar:3.0:compile, org.apache.maven:maven-repository-metadata=org.apache.maven:maven-repository-metadata:jar:2.2.1:compile, org.apache.maven:maven-error-diagnostics=org.apache.maven:maven-error-diagnostics:jar:2.2.1:compile, org.apache.maven:maven-monitor=org.apache.maven:maven-monitor:jar:2.2.1:compile, classworlds:classworlds=classworlds:classworlds:jar:1.1:compile, org.sonatype.plexus:plexus-sec-dispatcher=org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile, org.sonatype.plexus:plexus-cipher=org.sonatype.plexus:plexus-cipher:jar:1.4:compile, org.apache.maven:maven-toolchain=org.apache.maven:maven-toolchain:jar:2.2.1:compile, org.codehaus.plexus:plexus-java=org.codehaus.plexus:plexus-java:jar:0.9.10:compile, org.ow2.asm:asm=org.ow2.asm:asm:jar:6.2:compile, com.thoughtworks.qdox:qdox=com.thoughtworks.qdox:qdox:jar:2.0-M8:compile}
+[DEBUG]   (f) pluginDescriptor = Component Descriptor: role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugin.surefire.HelpMojo', role hint: 'org.apache.maven.plugins:maven-surefire-plugin:2.22.1:help'
+role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugin.surefire.SurefirePlugin', role hint: 'org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test'
+---
+[DEBUG]   (s) printSummary = true
+[DEBUG]   (s) projectArtifactMap = {org.hamcrest:hamcrest-core=org.hamcrest:hamcrest-core:jar:1.3:test, org.ow2.asm:asm=org.ow2.asm:asm:jar:7.1:compile, org.hamcrest:hamcrest-library=org.hamcrest:hamcrest-library:jar:1.3:test, org.assertj:assertj-core=org.assertj:assertj-core:jar:3.11.1:test, junit:junit=junit:junit:jar:4.12:provided}
+[DEBUG]   (s) projectBuildDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target
+[DEBUG]   (s) redirectTestOutputToFile = false
+[DEBUG]   (s) remoteRepositories = [      id: central
+      url: https://repo.maven.apache.org/maven2
+   layout: default
+snapshots: [enabled => false, update => daily]
+ releases: [enabled => true, update => never]
+]
+[DEBUG]   (s) reportFormat = brief
+[DEBUG]   (s) reportsDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/surefire-reports
+[DEBUG]   (f) rerunFailingTestsCount = 0
+[DEBUG]   (f) reuseForks = true
+[DEBUG]   (s) runOrder = filesystem
+[DEBUG]   (f) shutdown = testset
+[DEBUG]   (s) skip = false
+[DEBUG]   (f) skipAfterFailureCount = 0
+[DEBUG]   (s) skipTests = true
+[DEBUG]   (s) suiteXmlFiles = []
+[DEBUG]   (s) tempDir = surefire
+[DEBUG]   (s) testClassesDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/test-classes
+[DEBUG]   (s) testFailureIgnore = false
+[DEBUG]   (s) testNGArtifactName = org.testng:testng
+[DEBUG]   (s) testSourceDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/src/test/java
+[DEBUG]   (s) threadCountClasses = 0
+[DEBUG]   (s) threadCountMethods = 0
+[DEBUG]   (s) threadCountSuites = 0
+[DEBUG]   (s) trimStackTrace = true
+[DEBUG]   (s) useFile = true
+[DEBUG]   (s) useManifestOnlyJar = true
+[DEBUG]   (s) useSystemClassLoader = true
+[DEBUG]   (s) useUnlimitedThreads = false
+[DEBUG]   (s) workingDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor
+[DEBUG]   (s) project = MavenProject: org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT @ /Users/aclement/gits3/spring-boot-graal-processor/processor/pom.xml
+[DEBUG]   (s) session = org.apache.maven.execution.MavenSession@61019f59
+[DEBUG] -- end configuration --
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.1.1:jar (default-jar) @ graal-processor ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=259642, ConflictMarker.markTime=97189, ConflictMarker.nodeCount=83, ConflictIdSorter.graphTime=157148, ConflictIdSorter.topsortTime=33995, ConflictIdSorter.conflictIdCount=32, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1292295, ConflictResolver.conflictItemCount=74, DefaultDependencyCollector.collectTime=45504189, DefaultDependencyCollector.transformTime=1868896}
+[DEBUG] org.apache.maven.plugins:maven-jar-plugin:jar:3.1.1:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model:jar:3.0:compile
+[DEBUG]       org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile
+[DEBUG]          org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile
+[DEBUG]             org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile
+[DEBUG]    org.apache.maven:maven-core:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-aether-provider:jar:3.0:runtime
+[DEBUG]       org.sonatype.aether:aether-impl:jar:1.7:compile
+[DEBUG]          org.sonatype.aether:aether-spi:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-api:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-util:jar:1.7:compile
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.14:compile
+[DEBUG]       org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.7.1:compile
+[DEBUG]       org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]          org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:3.0:compile
+[DEBUG]    org.apache.maven:maven-archiver:jar:3.3.0:compile
+[DEBUG]       org.apache.maven.shared:maven-shared-utils:jar:3.2.1:compile
+[DEBUG]       commons-io:commons-io:jar:2.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-archiver:jar:3.7.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-io:jar:3.1.0:compile
+[DEBUG]       org.apache.commons:commons-compress:jar:1.18:compile
+[DEBUG]       org.iq80.snappy:snappy:jar:0.4:compile
+[DEBUG]       org.tukaani:xz:jar:1.8:runtime
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.1.0:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-jar-plugin:3.1.1
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-jar-plugin:3.1.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-jar-plugin:3.1.1
+[DEBUG]   Included: org.apache.maven.plugins:maven-jar-plugin:jar:3.1.1
+[DEBUG]   Included: org.sonatype.sisu:sisu-inject-bean:jar:1.4.2
+[DEBUG]   Included: org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7
+[DEBUG]   Included: org.sonatype.aether:aether-util:jar:1.7
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.14
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.7.1
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.apache.maven:maven-archiver:jar:3.3.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.2.1
+[DEBUG]   Included: commons-io:commons-io:jar:2.5
+[DEBUG]   Included: org.codehaus.plexus:plexus-archiver:jar:3.7.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-io:jar:3.1.0
+[DEBUG]   Included: org.apache.commons:commons-compress:jar:1.18
+[DEBUG]   Included: org.iq80.snappy:snappy:jar:0.4
+[DEBUG]   Included: org.tukaani:xz:jar:1.8
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.1.0
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-jar-plugin:3.1.1:jar from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-jar-plugin:3.1.1, parent: sun.misc.Launcher$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-jar-plugin:3.1.1:jar' with basic configurator -->
+[DEBUG]   (s) index = true
+[DEBUG]   (s) addDefaultSpecificationEntries = false
+[DEBUG]   (s) addDefaultImplementationEntries = false
+[DEBUG]   (s) manifest = org.apache.maven.archiver.ManifestConfiguration@e23af91
+[DEBUG]   (s) manifestEntries = {Agent-Class=org.springframework.boot.agent.reflectionrecorder.RecorderAgent, Can-Redefine-Classes=true, Main-Class=org.springframework.boot.graal.compare.ReflectJsonCompare, Premain-Class=org.springframework.boot.agent.reflectionrecorder.RecorderAgent}
+[DEBUG]   (f) archive = org.apache.maven.archiver.MavenArchiveConfiguration@396ec737
+[DEBUG]   (f) classesDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target/classes
+[DEBUG]   (f) finalName = graal-processor-0.0.1.BUILD-SNAPSHOT
+[DEBUG]   (f) forceCreation = false
+[DEBUG]   (f) outputDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target
+[DEBUG]   (f) project = MavenProject: org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT @ /Users/aclement/gits3/spring-boot-graal-processor/processor/pom.xml
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@61019f59
+[DEBUG]   (f) skipIfEmpty = false
+[DEBUG]   (f) useDefaultManifestFile = false
+[DEBUG] -- end configuration --
+[DEBUG] isUp2date: false (Destination /Users/aclement/gits3/spring-boot-graal-processor/processor/target/graal-processor-0.0.1.BUILD-SNAPSHOT.jar not found.)
+[INFO] Building jar: /Users/aclement/gits3/spring-boot-graal-processor/processor/target/graal-processor-0.0.1.BUILD-SNAPSHOT.jar
+[DEBUG] adding directory META-INF/
+[DEBUG] adding entry META-INF/MANIFEST.MF
+[DEBUG] adding directory org/
+[DEBUG] adding directory org/springframework/
+[DEBUG] adding directory org/springframework/boot/
+[DEBUG] adding directory org/springframework/boot/agent/
+[DEBUG] adding directory org/springframework/boot/agent/reflectionrecorder/
+[DEBUG] adding directory org/springframework/boot/configurationprocessor/
+[DEBUG] adding directory org/springframework/boot/configurationprocessor/json/
+[DEBUG] adding directory org/springframework/boot/reflectionprocessor/
+[DEBUG] adding directory org/springframework/boot/graal/
+[DEBUG] adding directory org/springframework/boot/graal/reflectconfig/
+[DEBUG] adding directory META-INF/services/
+[DEBUG] adding entry org/springframework/CompilationHint.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/RI.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/RecorderPreProcessor.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/RecorderAgent.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/RI$ReflectiveCall.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/ClassPreProcessorAgentAdapter.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/RewriteReflectionAdaptor$RewritingMethodAdapter.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/JVM.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/RI$Info.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/RI$Sortable.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/RI$InactivityDumper.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/RI$Sortable$Thing.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/Configuration.class
+[DEBUG] adding entry org/springframework/boot/agent/reflectionrecorder/RewriteReflectionAdaptor.class
+[DEBUG] adding entry org/springframework/boot/configurationprocessor/json/JSONException.class
+[DEBUG] adding entry org/springframework/boot/configurationprocessor/json/JSONStringer.class
+[DEBUG] adding entry org/springframework/boot/configurationprocessor/json/JSONObject$1.class
+[DEBUG] adding entry org/springframework/boot/configurationprocessor/json/JSON.class
+[DEBUG] adding entry org/springframework/boot/configurationprocessor/json/JSONArray.class
+[DEBUG] adding entry org/springframework/boot/configurationprocessor/json/JSONTokener.class
+[DEBUG] adding entry org/springframework/boot/configurationprocessor/json/JSONStringer$Scope.class
+[DEBUG] adding entry org/springframework/boot/configurationprocessor/json/JSONObject.class
+[DEBUG] adding entry org/springframework/boot/reflectionprocessor/TypeUtils.class
+[DEBUG] adding entry org/springframework/boot/reflectionprocessor/ConfigFileStorageManager.class
+[DEBUG] adding entry org/springframework/boot/reflectionprocessor/ReflectiveAccessAnnotationProcessor.class
+[DEBUG] adding entry org/springframework/boot/reflectionprocessor/TypeUtils$TypeExtractor.class
+[DEBUG] adding entry org/springframework/boot/reflectionprocessor/ConfigCollector.class
+[DEBUG] adding entry org/springframework/boot/graal/reflectconfig/ReflectionDescriptor.class
+[DEBUG] adding entry org/springframework/boot/graal/reflectconfig/ClassDescriptor.class
+[DEBUG] adding entry org/springframework/boot/graal/reflectconfig/JsonMarshaller.class
+[DEBUG] adding entry org/springframework/boot/graal/reflectconfig/JsonConverter.class
+[DEBUG] adding entry org/springframework/boot/graal/reflectconfig/MemberDescriptor.class
+[DEBUG] adding entry org/springframework/boot/graal/reflectconfig/FieldDescriptor.class
+[DEBUG] adding entry org/springframework/boot/graal/reflectconfig/ClassDescriptor$Flag.class
+[DEBUG] adding entry org/springframework/boot/graal/reflectconfig/MethodDescriptor.class
+[DEBUG] adding entry META-INF/services/javax.annotation.processing.Processor
+[DEBUG] adding entry reflect.defaults.json
+[DEBUG] adding directory META-INF/maven/
+[DEBUG] adding directory META-INF/maven/org.springframework/
+[DEBUG] adding directory META-INF/maven/org.springframework/graal-processor/
+[DEBUG] adding entry META-INF/maven/org.springframework/graal-processor/pom.xml
+[DEBUG] adding entry META-INF/maven/org.springframework/graal-processor/pom.properties
+[DEBUG] adding entry META-INF/INDEX.LIST
+[INFO] 
+[INFO] --- maven-shade-plugin:3.2.1:shade (default) @ graal-processor ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=539277, ConflictMarker.markTime=359304, ConflictMarker.nodeCount=265, ConflictIdSorter.graphTime=165094, ConflictIdSorter.topsortTime=53542, ConflictIdSorter.conflictIdCount=63, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1768907, ConflictResolver.conflictItemCount=126, DefaultDependencyCollector.collectTime=169419045, DefaultDependencyCollector.transformTime=2916812}
+[DEBUG] org.apache.maven.plugins:maven-shade-plugin:jar:3.2.1:
+[DEBUG]    org.springframework.boot:spring-boot-maven-plugin:jar:2.1.1.RELEASE:runtime
+[DEBUG]       org.springframework.boot:spring-boot-loader-tools:jar:2.1.1.RELEASE:runtime
+[DEBUG]          org.springframework:spring-core:jar:5.1.3.RELEASE:runtime
+[DEBUG]             org.springframework:spring-jcl:jar:5.1.3.RELEASE:runtime
+[DEBUG]          org.apache.commons:commons-compress:jar:1.18:runtime
+[DEBUG]       org.apache.maven:maven-archiver:jar:3.2.0:runtime
+[DEBUG]          org.apache.maven.shared:maven-shared-utils:jar:3.2.0:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:3.3.9:compile
+[DEBUG]       org.apache.maven.shared:maven-common-artifact-filters:jar:3.0.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-archiver:jar:3.6.0:runtime
+[DEBUG]          org.codehaus.plexus:plexus-io:jar:3.0.1:runtime
+[DEBUG]          org.iq80.snappy:snappy:jar:0.4:runtime
+[DEBUG]          org.tukaani:xz:jar:1.8:runtime
+[DEBUG]       org.sonatype.plexus:plexus-build-api:jar:0.0.7:runtime
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.0:compile
+[DEBUG]       org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile
+[DEBUG]          org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile
+[DEBUG]             org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile
+[DEBUG]    org.apache.maven:maven-model:jar:3.0:compile
+[DEBUG]    org.apache.maven:maven-core:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-aether-provider:jar:3.0:runtime
+[DEBUG]       org.sonatype.aether:aether-impl:jar:1.7:compile
+[DEBUG]          org.sonatype.aether:aether-spi:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-api:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-util:jar:1.7:compile
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.14:compile
+[DEBUG]       org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.7.1:compile
+[DEBUG]       org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]          org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:3.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.1.0:compile
+[DEBUG]    org.apache.maven.shared:maven-artifact-transfer:jar:0.10.0:compile
+[DEBUG]       commons-codec:commons-codec:jar:1.11:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.5:compile
+[DEBUG]    org.ow2.asm:asm:jar:7.0:compile
+[DEBUG]    org.ow2.asm:asm-commons:jar:7.0:compile
+[DEBUG]       org.ow2.asm:asm-tree:jar:7.0:compile
+[DEBUG]       org.ow2.asm:asm-analysis:jar:7.0:compile
+[DEBUG]    org.jdom:jdom2:jar:2.0.6:compile
+[DEBUG]    org.apache.maven.shared:maven-dependency-tree:jar:3.0.1:compile
+[DEBUG]       org.eclipse.aether:aether-util:jar:0.9.0.M2:compile
+[DEBUG]    commons-io:commons-io:jar:2.5:compile
+[DEBUG]    org.vafer:jdependency:jar:2.1.1:compile
+[DEBUG]       org.ow2.asm:asm-util:jar:7.0-beta:compile
+[DEBUG]    com.google.guava:guava:jar:19.0:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-shade-plugin:3.2.1
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-shade-plugin:3.2.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-shade-plugin:3.2.1
+[DEBUG]   Included: org.apache.maven.plugins:maven-shade-plugin:jar:3.2.1
+[DEBUG]   Included: org.springframework.boot:spring-boot-maven-plugin:jar:2.1.1.RELEASE
+[DEBUG]   Included: org.springframework.boot:spring-boot-loader-tools:jar:2.1.1.RELEASE
+[DEBUG]   Included: org.springframework:spring-core:jar:5.1.3.RELEASE
+[DEBUG]   Included: org.springframework:spring-jcl:jar:5.1.3.RELEASE
+[DEBUG]   Included: org.apache.commons:commons-compress:jar:1.18
+[DEBUG]   Included: org.apache.maven:maven-archiver:jar:3.2.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.2.0
+[DEBUG]   Included: org.apache.maven.shared:maven-common-artifact-filters:jar:3.0.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-archiver:jar:3.6.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-io:jar:3.0.1
+[DEBUG]   Included: org.iq80.snappy:snappy:jar:0.4
+[DEBUG]   Included: org.tukaani:xz:jar:1.8
+[DEBUG]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.7
+[DEBUG]   Included: org.sonatype.sisu:sisu-inject-bean:jar:1.4.2
+[DEBUG]   Included: org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7
+[DEBUG]   Included: org.sonatype.aether:aether-util:jar:1.7
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.14
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.7.1
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.1.0
+[DEBUG]   Included: org.apache.maven.shared:maven-artifact-transfer:jar:0.10.0
+[DEBUG]   Included: commons-codec:commons-codec:jar:1.11
+[DEBUG]   Included: org.ow2.asm:asm:jar:7.0
+[DEBUG]   Included: org.ow2.asm:asm-commons:jar:7.0
+[DEBUG]   Included: org.ow2.asm:asm-tree:jar:7.0
+[DEBUG]   Included: org.ow2.asm:asm-analysis:jar:7.0
+[DEBUG]   Included: org.jdom:jdom2:jar:2.0.6
+[DEBUG]   Included: org.apache.maven.shared:maven-dependency-tree:jar:3.0.1
+[DEBUG]   Included: org.eclipse.aether:aether-util:jar:0.9.0.M2
+[DEBUG]   Included: commons-io:commons-io:jar:2.5
+[DEBUG]   Included: org.vafer:jdependency:jar:2.1.1
+[DEBUG]   Included: org.ow2.asm:asm-util:jar:7.0-beta
+[DEBUG]   Included: com.google.guava:guava:jar:19.0
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-shade-plugin:3.2.1:shade from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-shade-plugin:3.2.1, parent: sun.misc.Launcher$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-shade-plugin:3.2.1:shade' with basic configurator -->
+[DEBUG]   (f) createDependencyReducedPom = true
+[DEBUG]   (f) dependencyReducedPomLocation = /Users/aclement/gits3/spring-boot-graal-processor/processor/dependency-reduced-pom.xml
+[DEBUG]   (f) artifact = org.ow2.asm:asm
+[DEBUG]   (f) includes = [org/**]
+[DEBUG]   (f) excludes = [META-INF/*.DSA, META-INF/*.SF, META-INF/*.RSA]
+[DEBUG]   (f) filters = [org.apache.maven.plugins.shade.mojo.ArchiveFilter@1013aa94]
+[DEBUG]   (f) generateUniqueDependencyReducedPom = false
+[DEBUG]   (f) keepDependenciesWithProvidedScope = true
+[DEBUG]   (f) localRepository =       id: local
+      url: file:///Users/aclement/.m2/repository/
+   layout: default
+snapshots: [enabled => true, update => always]
+ releases: [enabled => true, update => always]
+
+[DEBUG]   (f) outputDirectory = /Users/aclement/gits3/spring-boot-graal-processor/processor/target
+[DEBUG]   (f) project = MavenProject: org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT @ /Users/aclement/gits3/spring-boot-graal-processor/processor/pom.xml
+[DEBUG]   (f) pattern = org.objectweb.asm
+[DEBUG]   (f) shadedPattern = gap.org.objectweb.asm
+[DEBUG]   (f) relocations = [org.apache.maven.plugins.shade.mojo.PackageRelocation@26a004ed]
+[DEBUG]   (f) remoteArtifactRepositories = [      id: central
+      url: https://repo.maven.apache.org/maven2
+   layout: default
+snapshots: [enabled => false, update => daily]
+ releases: [enabled => true, update => daily]
+]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@61019f59
+[DEBUG]   (f) shadeSourcesContent = false
+[DEBUG]   (f) shadeTestJar = false
+[DEBUG]   (f) shadedArtifactId = graal-processor
+[DEBUG]   (f) shadedClassifierName = shaded
+[DEBUG]   (f) resource = META-INF/spring.handlers
+[DEBUG]   (s) resource = META-INF/spring.factories
+[DEBUG]   (f) resource = META-INF/spring.schemas
+[DEBUG]   (f) transformers = [org.apache.maven.plugins.shade.resource.AppendingTransformer@75c30a4f, org.springframework.boot.maven.PropertiesMergingResourceTransformer@360e4235, org.apache.maven.plugins.shade.resource.AppendingTransformer@1b0fc8b, org.apache.maven.plugins.shade.resource.ServicesResourceTransformer@61c644fe, org.apache.maven.plugins.shade.resource.ManifestResourceTransformer@cbaabfb]
+[DEBUG]   (f) useBaseVersion = false
+[DEBUG] -- end configuration --
+[INFO] Including org.ow2.asm:asm:jar:7.1 in the shaded jar.
+[DEBUG] Processing JAR /Users/aclement/gits3/spring-boot-graal-processor/processor/target/graal-processor-0.0.1.BUILD-SNAPSHOT.jar
+[DEBUG] Transforming META-INF/services/javax.annotation.processing.Processor using org.apache.maven.plugins.shade.resource.ServicesResourceTransformer
+[DEBUG] Processing JAR /Users/aclement/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /Users/aclement/gits3/spring-boot-graal-processor/processor/target/graal-processor-0.0.1.BUILD-SNAPSHOT.jar with /Users/aclement/gits3/spring-boot-graal-processor/processor/target/graal-processor-0.0.1.BUILD-SNAPSHOT-shaded.jar
+[INFO] Dependency-reduced POM written at: /Users/aclement/gits3/spring-boot-graal-processor/processor/dependency-reduced-pom.xml
+[DEBUG] Extension realms for project org.springframework:graal-processor:jar:0.0.1.BUILD-SNAPSHOT: (none)
+[DEBUG] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.springframework.boot:spring-boot-starter-parent:pom:2.1.1.RELEASE: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.springframework.boot:spring-boot-dependencies:pom:2.1.1.RELEASE: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] updateExcludesInDeps()
+[DEBUG] building maven31 dependency graph for org.springframework:graal-processor:jar:0.0.1.BUILD-SNAPSHOT with Maven31DependencyGraphBuilder
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=38680, ConflictMarker.markTime=19878, ConflictMarker.nodeCount=8, ConflictIdSorter.graphTime=5874, ConflictIdSorter.topsortTime=22694, ConflictIdSorter.conflictIdCount=5, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=192127, ConflictResolver.conflictItemCount=7, DefaultDependencyCollector.collectTime=3402576, DefaultDependencyCollector.transformTime=287930}
+[DEBUG] org.springframework:graal-processor:jar:0.0.1.BUILD-SNAPSHOT
+[DEBUG]    org.hamcrest:hamcrest-core:jar:1.3:test
+[DEBUG]    org.ow2.asm:asm:jar:7.1:provided
+[DEBUG]    org.hamcrest:hamcrest-library:jar:1.3:test
+[DEBUG]    org.assertj:assertj-core:jar:3.11.1:test
+[DEBUG]    junit:junit:jar:4.12:provided
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ graal-processor ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=86388, ConflictMarker.markTime=28899, ConflictMarker.nodeCount=40, ConflictIdSorter.graphTime=64392, ConflictIdSorter.topsortTime=16044, ConflictIdSorter.conflictIdCount=19, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=377903, ConflictResolver.conflictItemCount=40, DefaultDependencyCollector.collectTime=10583114, DefaultDependencyCollector.transformTime=597337}
+[DEBUG] org.apache.maven.plugins:maven-install-plugin:jar:2.5.2:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.2.1:compile
+[DEBUG]    org.apache.maven:maven-project:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-plugin-registry:jar:2.2.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.11:compile
+[DEBUG]       org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]          junit:junit:jar:3.8.1:compile
+[DEBUG]          classworlds:classworlds:jar:1.1-alpha-2:compile
+[DEBUG]    org.apache.maven:maven-model:jar:2.2.1:compile
+[DEBUG]    org.apache.maven:maven-artifact-manager:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.2.1:compile
+[DEBUG]       backport-util-concurrent:backport-util-concurrent:jar:3.1:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.2.1:compile
+[DEBUG]    commons-codec:commons-codec:jar:1.6:compile
+[DEBUG]    org.apache.maven.shared:maven-shared-utils:jar:0.4:compile
+[DEBUG]       com.google.code.findbugs:jsr305:jar:2.0.1:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.0.15:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-install-plugin:2.5.2
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-install-plugin:2.5.2
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-install-plugin:2.5.2
+[DEBUG]   Included: org.apache.maven.plugins:maven-install-plugin:jar:2.5.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.11
+[DEBUG]   Included: junit:junit:jar:3.8.1
+[DEBUG]   Included: backport-util-concurrent:backport-util-concurrent:jar:3.1
+[DEBUG]   Included: commons-codec:commons-codec:jar:1.6
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:0.4
+[DEBUG]   Included: com.google.code.findbugs:jsr305:jar:2.0.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.15
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-install-plugin:2.5.2:install from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-install-plugin:2.5.2, parent: sun.misc.Launcher$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-install-plugin:2.5.2:install' with basic configurator -->
+[DEBUG]   (f) artifact = org.springframework:graal-processor:jar:0.0.1.BUILD-SNAPSHOT
+[DEBUG]   (f) attachedArtifacts = []
+[DEBUG]   (f) createChecksum = false
+[DEBUG]   (f) installAtEnd = false
+[DEBUG]   (f) localRepository =       id: local
+      url: file:///Users/aclement/.m2/repository/
+   layout: default
+snapshots: [enabled => true, update => always]
+ releases: [enabled => true, update => always]
+
+[DEBUG]   (f) packaging = jar
+[DEBUG]   (f) pomFile = /Users/aclement/gits3/spring-boot-graal-processor/processor/dependency-reduced-pom.xml
+[DEBUG]   (f) project = MavenProject: org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT @ /Users/aclement/gits3/spring-boot-graal-processor/processor/dependency-reduced-pom.xml
+[DEBUG]   (f) reactorProjects = [MavenProject: org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT @ /Users/aclement/gits3/spring-boot-graal-processor/processor/dependency-reduced-pom.xml]
+[DEBUG]   (s) skip = false
+[DEBUG]   (f) updateReleaseInfo = false
+[DEBUG] -- end configuration --
+[INFO] Installing /Users/aclement/gits3/spring-boot-graal-processor/processor/target/graal-processor-0.0.1.BUILD-SNAPSHOT.jar to /Users/aclement/.m2/repository/org/springframework/graal-processor/0.0.1.BUILD-SNAPSHOT/graal-processor-0.0.1.BUILD-SNAPSHOT.jar
+[DEBUG] Writing tracking file /Users/aclement/.m2/repository/org/springframework/graal-processor/0.0.1.BUILD-SNAPSHOT/_remote.repositories
+[INFO] Installing /Users/aclement/gits3/spring-boot-graal-processor/processor/dependency-reduced-pom.xml to /Users/aclement/.m2/repository/org/springframework/graal-processor/0.0.1.BUILD-SNAPSHOT/graal-processor-0.0.1.BUILD-SNAPSHOT.pom
+[DEBUG] Writing tracking file /Users/aclement/.m2/repository/org/springframework/graal-processor/0.0.1.BUILD-SNAPSHOT/_remote.repositories
+[DEBUG] Installing org.springframework:graal-processor:0.0.1.BUILD-SNAPSHOT/maven-metadata.xml to /Users/aclement/.m2/repository/org/springframework/graal-processor/0.0.1.BUILD-SNAPSHOT/maven-metadata-local.xml
+[DEBUG] Installing org.springframework:graal-processor/maven-metadata.xml to /Users/aclement/.m2/repository/org/springframework/graal-processor/maven-metadata-local.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.001 s
+[INFO] Finished at: 2019-07-11T21:42:21-07:00
+[INFO] ------------------------------------------------------------------------

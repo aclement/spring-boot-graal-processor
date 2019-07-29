@@ -94,6 +94,25 @@ public class JsonMarshaller {
 		}
 	}
 	
+		
+	public void writeDynamicProxyList(List<List<String>> dynamicProxies, OutputStream outputStream)
+			throws IOException {
+		try {
+			JsonConverter converter = new JsonConverter();
+			JSONArray jsonObject = converter.dynamicProxyListToJsonArray(dynamicProxies);
+			outputStream.write(jsonObject.toString(2).getBytes(StandardCharsets.UTF_8));
+		}
+		catch (Exception ex) {
+			if (ex instanceof IOException) {
+				throw (IOException) ex;
+			}
+			if (ex instanceof RuntimeException) {
+				throw (RuntimeException) ex;
+			}
+			throw new IllegalStateException(ex);
+		}
+	}
+	
 	public static ReflectionDescriptor readReflectConfig(String input) throws Exception {
 		try (ByteArrayInputStream bais = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8))) {
 			return readReflectConfig(bais);
@@ -111,6 +130,20 @@ public class JsonMarshaller {
 		return metadata;
 	}
 
+	public static List<List<String>> readDynamicProxyList(InputStream inputStream) throws Exception {
+		List<List<String>> dynamicProxies = new ArrayList<>();
+		JSONArray array = new JSONArray(toString(inputStream));
+		for (int i=0;i<array.length();i++) {
+		  JSONArray oneProxy = array.getJSONArray(i);	
+		  List<String> oneProxyTypes = new ArrayList<>();
+		  for (int j=0;j<oneProxy.length();j++) {
+			  oneProxyTypes.add(oneProxy.getString(j));
+		  }
+		  dynamicProxies.add(oneProxyTypes);
+		}
+		return dynamicProxies;
+	}
+	
 	public static List<String> readResourceConfig(InputStream inputStream) throws Exception {
 		List<String> patterns = new ArrayList<>();
 		JSONObject obj = new JSONObject(toString(inputStream));

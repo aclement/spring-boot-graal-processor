@@ -41,6 +41,18 @@ class JsonConverter {
 		}
 		return object;
 	}
+	
+	public JSONArray dynamicProxyListToJsonArray(List<List<String>> dynamicProxies) throws Exception {
+		JSONArray proxies = new JSONArray();
+		for (List<String> oneProxyTypes: dynamicProxies) {
+			JSONArray oneProxy = new JSONArray();
+			for (String oneProxyType: oneProxyTypes) {
+				oneProxy.put(oneProxyType);
+			}
+			proxies.put(oneProxy);
+		}
+		return proxies;
+	}
 
 	public JSONArray reflectConfigToJsonArray(ReflectionDescriptor metadata) throws Exception {
 		JSONArray jsonArray = new JSONArray();
