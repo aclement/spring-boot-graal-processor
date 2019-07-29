@@ -2,6 +2,8 @@
 
 Annotation processor that produces a JSON file detailing types needing reflective access that can be passed to a graal native image build step.
 
+Note: 29-Jul: The `compilationhint` branch actually is looking at what it would mean to process hint annotations on spring framework/boot and apps and produce the right data (as opposed to purely trying to work it out from class files). That represents the most up to date experiment...
+
 ### Operation
 
 The processor looks at the current app to discern new types that may need reflective access and merges that information with data from a `reflect.defaults.json` resource file that covers the common cases, producing a `META-INF\reflects.json` file in the project. It also uses a supplied project compilation classpath to add in any other types necessary based on classpath analysis (e.g. from `META-INF\spring.factories` files).
